@@ -1076,6 +1076,9 @@ pre .xml .cdata {
 .post h6 {
   font-size: 14px;
 }
+.post p {
+  margin-bottom: 12px;
+}
 
 .post-nav {
   display: flex;
@@ -1350,4 +1353,10 @@ body[data-theme=dark] .search-article input[type=search] {
 }
 body[data-theme=dark] .search-article input[type=search]::-webkit-input-placeholder {
   color: rgba(128, 128, 128, 0.8);
+}
+
+.wrapper.post .page-content.poems {
+  font-family: "楷体", "KaiTi", "STKaiti", "华文楷体", serif;
+  font-size: 18px;
+  font-weight: 550;
 }
