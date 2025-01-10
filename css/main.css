@@ -1355,8 +1355,12 @@ body[data-theme=dark] .search-article input[type=search]::-webkit-input-placehol
   color: rgba(128, 128, 128, 0.8);
 }
 
-.wrapper.post .page-content.poems {
+.wrapper.post .page-content.poems blockquote {
   font-family: "楷体", "KaiTi", "STKaiti", "华文楷体", serif;
   font-size: 18px;
   font-weight: 550;
+  text-align: left;
+}
+.wrapper.post .page-content.poems blockquote p {
+  font-style: normal;
 }
