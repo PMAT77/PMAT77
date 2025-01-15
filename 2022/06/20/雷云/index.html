@@ -282,7 +282,9 @@
   
 
     
-      <script src="/PMAT77/js/main.js"></script>
+      <script src="/PMAT77/js/main.js" ></script>
+    
+      <script src="/PMAT77/js/search.js" ></script>
     
   
   <script>
@@ -292,7 +294,14 @@
       maxRPS: 3,
       hoverDelay: 50,
     };
+
+    var sjs = SimpleJekyllSearch({
+      searchInput: document.getElementById('search-input'),
+      resultsContainer: document.getElementById('search-results'),
+      json: ['/search.json'],
+    });
   </script>
   <script defer src="https://cdn.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"></script>
+
 </body>
 </html>

@@ -8,7 +8,7 @@
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title> [ Paolos ]</title>
+<title>船讯 [ Paolos ]</title>
 
   <link rel="icon" href="/PMAT77/img/favicon.jpeg">
 
@@ -233,50 +233,35 @@
       </div>
     </nav>
   </div>
-  
-  <div class="wrapper">
-    <div class="author">
-        <div class="author-avatar-wrapper">
-          <img
-            class="author-avatar"
-            src="https://cdn.jsdelivr.net/gh/PMAT77/PMAT77CDN@latest/images/avatar.jpeg"
-            alt="avatar"
-            loading="lazy"
-          />
-      </div>
-      <h2 class="author-name">Paolos</h2>
-      <p class="author-bio">🪁河堤上的风筝拉长自由...</p>
-    </div>
-    <main aria-label="Content">
-      
+  <div class="wrapper post">
+  <main class="page-content" aria-label="Content">
+      <header class="header">
+        
+        <h1 class="header-title" itemprop="headline">船讯</h1>
+          <div class="post-meta">
+            <time>Apr 10, 2018</time>
+            <span itemprop="author">
+              <span itemprop="name">Paolos</span>
+            </span>
+          </div>
+        </header>
 
-    <h3 class="posts-item-note" aria-label="Recent Posts">Recent Posts</h3>
+          <div class="page-content "><p>窗台外成片荫蔽，<br>茂盛的树叶也兜不住的阳光，<br>错杂斑驳投落在墙角，<br>悄无声息好像牛奶里漂浮的碎面。</p>
+<p>海鸥捎回恍如隔世的船讯。</p>
+<p>是不是绳子打了结就能拘束这四月的风。<br>如果季风有形状，我想大概是  的样子。</p>
+</div>
+          <nav class="post-nav">
     
-      <article class="post-item">
-        <span class="post-item-date" datetime="2019-02-25T10:14:12.000Z">Feb 25, 2019</span>
-        <h4 class="post-item-title">
-          <a href="/PMAT77/2019/02/25/%E5%A4%B8%E4%BD%A0%E5%8F%AF%E7%88%B1/">夸你可爱</a>
-        </h4>
-      </article>
+    <a class="post-nav-item post-nav-prev" href="/PMAT77/2018/06/12/%E5%AF%BB%E7%BE%8A/">
+      <div class="nav-arrow">&lt;&nbsp;NEWER</div>
+      <span class="post-title">寻羊</span>
+    </a>
     
-      <article class="post-item">
-        <span class="post-item-date" datetime="2019-02-07T13:28:33.000Z">Feb 07, 2019</span>
-        <h4 class="post-item-title">
-          <a href="/PMAT77/2019/02/07/514%E8%B7%AF/">514路</a>
-        </h4>
-      </article>
     
-      <article class="post-item">
-        <span class="post-item-date" datetime="2018-06-12T09:41:58.000Z">Jun 12, 2018</span>
-        <h4 class="post-item-title">
-          <a href="/PMAT77/2018/06/12/%E5%AF%BB%E7%BE%8A/">寻羊</a>
-        </h4>
-      </article>
-    
+  </nav>
 
-
-    </main>
-  </div>
+   </main>
+</div>
 
   <footer class="footer">
     <small class="footer_copyright">
@@ -292,7 +277,9 @@
   
 
     
-      <script src="/PMAT77/js/main.js"></script>
+      <script src="/PMAT77/js/main.js" ></script>
+    
+      <script src="/PMAT77/js/search.js" ></script>
     
   
   <script>
@@ -302,7 +289,14 @@
       maxRPS: 3,
       hoverDelay: 50,
     };
+
+    var sjs = SimpleJekyllSearch({
+      searchInput: document.getElementById('search-input'),
+      resultsContainer: document.getElementById('search-results'),
+      json: ['/search.json'],
+    });
   </script>
   <script defer src="https://cdn.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"></script>
+
 </body>
 </html>
