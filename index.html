@@ -233,24 +233,29 @@
       </div>
     </nav>
   </div>
-  
   <div class="wrapper">
-    <div class="author">
-        <div class="author-avatar-wrapper">
-          <img
-            class="author-avatar"
-            src="https://cdn.jsdelivr.net/gh/PMAT77/PMAT77CDN@latest/images/avatar.jpeg"
-            alt="avatar"
-            loading="lazy"
-          />
-      </div>
-      <h2 class="author-name">Paolos</h2>
-      <p class="author-bio">🪁河堤上的风筝拉长自由...</p>
+  <div class="author">
+    <div class="author-avatar-wrapper">
+      <img
+        class="author-avatar"
+        src="https://cdn.jsdelivr.net/gh/PMAT77/PMAT77CDN@latest/images/avatar.jpeg"
+        alt="avatar"
+        loading="lazy"
+      />
     </div>
-    <main aria-label="Content">
-      
+    <h2 class="author-name">Paolos</h2>
+    <p class="author-bio">🪁河堤上的风筝拉长自由...</p>
+  </div>
+  <main aria-label="Content">
 
     <h3 class="posts-item-note" aria-label="Recent Posts">Recent Posts</h3>
+    
+      <article class="post-item">
+        <span class="post-item-date" datetime="2025-02-01T16:30:10.000Z">Feb 02, 2025</span>
+        <h4 class="post-item-title">
+          <a href="/PMAT77/2025/02/02/DeepSeek/">DeepSeek</a>
+        </h4>
+      </article>
     
       <article class="post-item">
         <span class="post-item-date" datetime="2024-12-18T07:59:54.000Z">Dec 18, 2024</span>
@@ -263,6 +268,13 @@
         <span class="post-item-date" datetime="2023-05-22T11:21:18.000Z">May 22, 2023</span>
         <h4 class="post-item-title">
           <a href="/PMAT77/2023/05/22/%E6%B1%9F%E9%A3%8E%E5%BE%AE%E9%9B%A8%EF%BC%8C%E5%87%A0%E5%A4%84%E9%97%B2%E9%92%93/">江风微雨，几处闲钓</a>
+        </h4>
+      </article>
+    
+      <article class="post-item">
+        <span class="post-item-date" datetime="2022-08-20T16:47:50.000Z">Aug 21, 2022</span>
+        <h4 class="post-item-title">
+          <a href="/PMAT77/2022/08/21/%E8%9A%8A/">蚊</a>
         </h4>
       </article>
     
@@ -308,24 +320,9 @@
         </h4>
       </article>
     
-      <article class="post-item">
-        <span class="post-item-date" datetime="2019-07-25T16:07:36.000Z">Jul 26, 2019</span>
-        <h4 class="post-item-title">
-          <a href="/PMAT77/2019/07/26/%E6%B5%B7%E8%92%82/">海蒂</a>
-        </h4>
-      </article>
-    
-      <article class="post-item">
-        <span class="post-item-date" datetime="2019-04-08T06:04:24.000Z">Apr 08, 2019</span>
-        <h4 class="post-item-title">
-          <a href="/PMAT77/2019/04/08/%E8%B9%B2%E5%9D%91/">蹲坑</a>
-        </h4>
-      </article>
-    
 
-
-    </main>
-  </div>
+</main>
+</div>
 
   <footer class="footer">
     <small class="footer_copyright">
@@ -338,29 +335,36 @@
     </small>
   </footer>
   
-  
+   
+<script src="/PMAT77/js/main.js"></script>
 
-    
-      <script src="/PMAT77/js/main.js" ></script>
-    
-      <script src="/PMAT77/js/search.js" ></script>
-    
-  
-  <script>
-    window.FPConfig = {
-      delay: 0,
-      ignoreKeywords: [],
-      maxRPS: 3,
-      hoverDelay: 50,
-    };
+<script src="/PMAT77/js/search.js"></script>
+ 
+<script>
+  window.FPConfig = {
+    delay: 0,
+    ignoreKeywords: [],
+    maxRPS: 3,
+    hoverDelay: 50,
+  };
 
+  function initializeSearch() {
+    console.log(SimpleJekyllSearch);
+    const searchInput = document.getElementById("search-input") || null;
+    if (!searchInput) return;
     var sjs = SimpleJekyllSearch({
-      searchInput: document.getElementById('search-input'),
-      resultsContainer: document.getElementById('search-results'),
-      json: ['/search.json'],
+      searchInput: searchInput,
+      resultsContainer: document.getElementById("search-results"),
+      json: ["/search.json"],
     });
-  </script>
-  <script defer src="https://cdn.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"></script>
+  }
+  document.addEventListener("DOMContentLoaded", initializeSearch);
+</script>
+<script src="https://cdn.jsdelivr.net/npm/simple-jekyll-search@latest/dest/simple-jekyll-search.min.js"></script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"
+></script>
 
 </body>
 </html>

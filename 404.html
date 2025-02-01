@@ -256,29 +256,36 @@
     </small>
   </footer>
   
-  
+   
+<script src="/PMAT77/js/main.js"></script>
 
-    
-      <script src="/PMAT77/js/main.js" ></script>
-    
-      <script src="/PMAT77/js/search.js" ></script>
-    
-  
-  <script>
-    window.FPConfig = {
-      delay: 0,
-      ignoreKeywords: [],
-      maxRPS: 3,
-      hoverDelay: 50,
-    };
+<script src="/PMAT77/js/search.js"></script>
+ 
+<script>
+  window.FPConfig = {
+    delay: 0,
+    ignoreKeywords: [],
+    maxRPS: 3,
+    hoverDelay: 50,
+  };
 
+  function initializeSearch() {
+    console.log(SimpleJekyllSearch);
+    const searchInput = document.getElementById("search-input") || null;
+    if (!searchInput) return;
     var sjs = SimpleJekyllSearch({
-      searchInput: document.getElementById('search-input'),
-      resultsContainer: document.getElementById('search-results'),
-      json: ['/search.json'],
+      searchInput: searchInput,
+      resultsContainer: document.getElementById("search-results"),
+      json: ["/search.json"],
     });
-  </script>
-  <script defer src="https://cdn.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"></script>
+  }
+  document.addEventListener("DOMContentLoaded", initializeSearch);
+</script>
+<script src="https://cdn.jsdelivr.net/npm/simple-jekyll-search@latest/dest/simple-jekyll-search.min.js"></script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"
+></script>
 
 </body>
 </html>
