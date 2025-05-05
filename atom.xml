@@ -6,7 +6,7 @@
   <link href="https://pmat77.github.io/PMAT77/atom.xml" rel="self"/>
   
   <link href="https://pmat77.github.io/PMAT77/"/>
-  <updated>2025-04-03T15:33:49.991Z</updated>
+  <updated>2025-05-05T15:08:14.219Z</updated>
   <id>https://pmat77.github.io/PMAT77/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>单点登录的模式</title>
+    <link href="https://pmat77.github.io/PMAT77/2025/05/05/%E5%89%8D%E7%AB%AF%E5%8D%95%E7%82%B9%E7%99%BB%E5%BD%95/"/>
+    <id>https://pmat77.github.io/PMAT77/2025/05/05/%E5%89%8D%E7%AB%AF%E5%8D%95%E7%82%B9%E7%99%BB%E5%BD%95/</id>
+    <published>2025-05-05T14:27:10.000Z</published>
+    <updated>2025-05-05T15:08:14.219Z</updated>
+    
+    <content type="html"><![CDATA[<p>一、单点登录的定义<br>随着公司规模扩大，当业务线中存在多个服务，多个服务之间需要共享用户信息，那么可以使用<strong>单点登录模式</strong>，即用户只需要登录一次，后续其他子系统都无需登录。</p><p>二、Session + Cookie 模式</p><p>基本思路：<br>所有子系统的登录请求由同一个<strong>认证中心服务</strong>统一处理，用户登录成功时，认证中心会生成一个<strong>唯一</strong>且<strong>定时过期</strong>的键值对——该键值对由 <code>sessionID</code> 和 <code>用户身份信息</code> 构成。存储在服务器 Session 列表中，并通过 <code>Cookie</code> 将 <code>sessionID</code> 返回给用户。当用户访问子系统时，同样通过 <code>Cookie</code> 将 <code>sessionID</code> 传递过去，子系统接受请求后，用接收到的 <code>sessionID</code> 去询问认证中心，该 <code>sessionID</code> 是否存在，如果存在则表示登录有效返回用户身份信息，如果不存在则表示登录失效。</p><p>优势：对用户登录状态的强控制力，无需单独控制每个子系统，直接通过删除认证中心的 <code>sessionID</code>，达到强制用户下线的目的。</p><p>缺点：很明显，该模式下所有子系统需要对认证中心进行网络请求，增加了网络请求的开销，对于认证中心服务的压力很大，当子系统扩容时，认证中心服务同样需要扩容。因此该模式成本大，几乎只适合大型企业，对中小企业来说得不偿失。</p><p>三、Token 模式（分布式认证模式）</p><p>基本思路：<br>在上述架构不变的情况下，取消 <code>Session列表</code> 的存储，改为生成一个不可篡改的字符串，即称 <code>Token</code> 令牌（一般用 Jwt 生成）。当用户在认证中心登录成功时，将 token 返回给用户，用户访问子系统时，通过 <code>Cookie</code> 将 token 传递过去，子系统接受请求后，会通过提前约定的密钥，将 token 解密，并验证 token 是否有效，如果有效则返回用户身份信息，否则返回登录失败。</p><p>优势：子系统无需访问认证中心，极大减小了认证中心的压力。</p><p>缺点：对用户登录状态的控制力很弱，无法控制用户下线。</p><p>四、双 Token 优化</p><p>基本思路：<br>在 Token 模式中，当用户登录成功时，在认证中心生成两个 token，一个用于登录（有效期短），一个用于刷新（有效期长）。当用户访问子系统时，通过 <code>Cookie</code> 将 token 传递过去，子系统接受请求后，先验证登录 token 是否有效，如果有效则返回用户身份信息，否则通过刷新 token 进行刷新，如果刷新成功则返回用户身份信息，否则返回登录失败。</p><p>该方案优化了普通 Token 模式无法控制用户登录的缺陷，利用 <code>长token</code> 刷新的机制变相控制用户登录状态。该模式适合绝大多数中小型企业的登录场景需求。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;一、单点登录的定义&lt;br&gt;随着公司规模扩大，当业务线中存在多个服务，多个服务之间需要共享用户信息，那么可以使用&lt;strong&gt;单点登录模式&lt;/strong&gt;，即用户只需要登录一次，后续其他子系统都无需登录。&lt;/p&gt;
+&lt;p&gt;二、Session + Cookie 模式&lt;/p&gt;
+</summary>
+      
+    
+    
+    
+    
+    <category term="技术沉淀" scheme="https://pmat77.github.io/PMAT77/tags/%E6%8A%80%E6%9C%AF%E6%B2%89%E6%B7%80/"/>
+    
+  </entry>
   
   <entry>
     <title>关于AI的胡思乱想</title>
