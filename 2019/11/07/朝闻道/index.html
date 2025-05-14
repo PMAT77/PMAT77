@@ -291,6 +291,40 @@
 
 <script src="/PMAT77/js/search.js"></script>
  
+
+<!-- 微信 JS-SDK -->
+<script src="https://res2.wx.qq.com/open/js/jweixin-1.6.0.js"></script>
+
+<script>
+  // 当前页面完整 URL（去除#后部分）
+  const url = window.location.href.split("#")[0];
+
+  fetch(`https://your-scf-domain.com?url=${encodeURIComponent(url)}`)
+    .then((res) => res.json())
+    .then((config) => {
+      wx.config({
+        debug: false,
+        appId: config.appId,
+        timestamp: config.timestamp,
+        nonceStr: config.noncestr,
+        signature: config.signature,
+        jsApiList: ["updateAppMessageShareData"],
+      });
+
+      wx.ready(() => {
+        wx.updateAppMessageShareData({
+          title: "文章标题",
+          link: url,
+          imgUrl: "封面图URL",
+        });
+      });
+
+      wx.error((err) => {
+        console.error("微信 SDK 错误:", err);
+      });
+    });
+</script>
+
 <script>
   window.FPConfig = {
     delay: 0,
@@ -300,18 +334,25 @@
   };
 
   function initializeSearch() {
-    console.log(SimpleJekyllSearch);
-    const searchInput = document.getElementById("search-input") || null;
+    const searchInput = document.querySelector("#search-input") || null;
+    const searchResults = document.querySelector("#search-results") || null;
+    console.log("search:", searchInput);
+
     if (!searchInput) return;
     var sjs = SimpleJekyllSearch({
       searchInput: searchInput,
-      resultsContainer: document.getElementById("search-results"),
+      resultsContainer: searchResults,
       json: ["/search.json"],
     });
+    console.log(sjs);
+
+    // searchInput.onblur();
   }
   document.addEventListener("DOMContentLoaded", initializeSearch);
 </script>
+
 <script src="https://cdn.jsdelivr.net/npm/simple-jekyll-search@latest/dest/simple-jekyll-search.min.js"></script>
+
 <script
   defer
   src="https://cdn.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"
