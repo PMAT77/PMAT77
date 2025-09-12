@@ -1,9 +1,7 @@
-
-
 <!DOCTYPE html>
 <html lang="zh">
-<head>
-  
+  <head>
+    
 
 
 <meta charset="UTF-8">
@@ -30,7 +28,7 @@
     <link rel="stylesheet" href="/PMAT77/css/main.css">
   
 
-<meta name="generator" content="Hexo 7.3.0"></head>
+  <meta name="generator" content="Hexo 7.3.0"></head>
   <body data-theme="light" class="notransition">
     <script>
       const body = document.body;
@@ -44,12 +42,12 @@
           localStorage.setItem("theme", data);
         }
       };
-   
+
       initTheme(localStorage.getItem("theme"));
-      
+
       setTimeout(() => body.classList.remove("notransition"), 75);
     </script>
-  <div class="navbar" role="navigation">
+    <div class="navbar" role="navigation">
     <nav class="menu">
       <input type="checkbox" id="menu-trigger" class="menu-trigger" />
       <label for="menu-trigger">
@@ -227,13 +225,20 @@
             
             
             
+            <a class="menu-link " href="/PMAT77/categories/"> Category</a>
+          
+            
+            
+            
+            
+            
+            
             <a class="menu-link " href="/PMAT77/archives/"> Archives</a>
           
         </div>
       </div>
     </nav>
-  </div>
-  <div class="wrapper">
+  </div> <div class="wrapper">
   <div class="author">
     <div class="author-avatar-wrapper">
       <img
@@ -244,11 +249,25 @@
       />
     </div>
     <h2 class="author-name">Paolos</h2>
-    <p class="author-bio">🪁河堤上的风筝拉长自由...</p>
+    <p class="author-bio">河堤上的风筝拉长自由...🪁</p>
   </div>
   <main aria-label="Content">
 
     <h3 class="posts-item-note" aria-label="Recent Posts">Recent Posts</h3>
+    
+      <article class="post-item">
+        <span class="post-item-date" datetime="2025-09-12T05:58:15.000Z">Sep 12, 2025</span>
+        <h4 class="post-item-title">
+          <a href="/PMAT77/2025/09/12/%E6%A5%94%E5%AD%90-%E4%B8%8A/">楔子 - 上</a>
+        </h4>
+      </article>
+    
+      <article class="post-item">
+        <span class="post-item-date" datetime="2025-05-13T05:14:08.120Z">May 13, 2025</span>
+        <h4 class="post-item-title">
+          <a href="/PMAT77/2025/05/13/Godot%20%E6%A8%A1%E5%9D%97%E5%8C%96%E7%8A%B6%E6%80%81%E6%9C%BA/">Godot3D - 实现简易状态机</a>
+        </h4>
+      </article>
     
       <article class="post-item">
         <span class="post-item-date" datetime="2025-05-05T14:27:10.000Z">May 05, 2025</span>
@@ -306,25 +325,10 @@
         </h4>
       </article>
     
-      <article class="post-item">
-        <span class="post-item-date" datetime="2021-03-14T14:48:00.000Z">Mar 14, 2021</span>
-        <h4 class="post-item-title">
-          <a href="/PMAT77/2021/03/14/%E6%B0%B4%E9%BE%99%E5%90%9F%C2%B7%E9%97%BE%E4%B8%98%E5%A4%A7%E5%A4%AB%E5%AD%9D%E7%BB%88%E5%85%AC%E6%98%BE%E5%B0%9D%E5%AE%88%E9%BB%84%E5%B7%9E/">水龙吟·闾丘大夫孝终公显尝守黄州</a>
-        </h4>
-      </article>
-    
-      <article class="post-item">
-        <span class="post-item-date" datetime="2019-11-10T09:32:29.000Z">Nov 10, 2019</span>
-        <h4 class="post-item-title">
-          <a href="/PMAT77/2019/11/10/%E5%AF%B9%E7%99%BD/">对白</a>
-        </h4>
-      </article>
-    
 
 </main>
 </div>
-
-  <footer class="footer">
+ <footer class="footer">
     <small class="footer_copyright">
       <div id="bottom-inner">
         © 2021 Site by Paolos using
@@ -336,42 +340,14 @@
   </footer>
   
    
-<script src="/PMAT77/js/main.js"></script>
-
 <script src="/PMAT77/js/search.js"></script>
- 
 
-<!-- 微信 JS-SDK -->
-<script src="https://res2.wx.qq.com/open/js/jweixin-1.6.0.js"></script>
+<script src="/PMAT77/js/main.js"></script>
+ 
 
 <script>
   // 当前页面完整 URL（去除#后部分）
   const url = window.location.href.split("#")[0];
-
-  fetch(`https://your-scf-domain.com?url=${encodeURIComponent(url)}`)
-    .then((res) => res.json())
-    .then((config) => {
-      wx.config({
-        debug: false,
-        appId: config.appId,
-        timestamp: config.timestamp,
-        nonceStr: config.noncestr,
-        signature: config.signature,
-        jsApiList: ["updateAppMessageShareData"],
-      });
-
-      wx.ready(() => {
-        wx.updateAppMessageShareData({
-          title: "文章标题",
-          link: url,
-          imgUrl: "封面图URL",
-        });
-      });
-
-      wx.error((err) => {
-        console.error("微信 SDK 错误:", err);
-      });
-    });
 </script>
 
 <script>
@@ -393,7 +369,7 @@
       resultsContainer: searchResults,
       json: ["/search.json"],
     });
-    console.log(sjs);
+    console.log("sjs", sjs);
 
     // searchInput.onblur();
   }
@@ -407,5 +383,5 @@
   src="https://cdn.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"
 ></script>
 
-</body>
+  </body>
 </html>

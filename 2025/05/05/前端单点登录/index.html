@@ -1,9 +1,7 @@
-
-
 <!DOCTYPE html>
 <html lang="zh">
-<head>
-  
+  <head>
+    
 
 
 <meta charset="UTF-8">
@@ -30,7 +28,7 @@
     <link rel="stylesheet" href="/PMAT77/css/main.css">
   
 
-<meta name="generator" content="Hexo 7.3.0"></head>
+  <meta name="generator" content="Hexo 7.3.0"></head>
   <body data-theme="light" class="notransition">
     <script>
       const body = document.body;
@@ -44,12 +42,12 @@
           localStorage.setItem("theme", data);
         }
       };
-   
+
       initTheme(localStorage.getItem("theme"));
-      
+
       setTimeout(() => body.classList.remove("notransition"), 75);
     </script>
-  <div class="navbar" role="navigation">
+    <div class="navbar" role="navigation">
     <nav class="menu">
       <input type="checkbox" id="menu-trigger" class="menu-trigger" />
       <label for="menu-trigger">
@@ -227,43 +225,60 @@
             
             
             
+            <a class="menu-link " href="/PMAT77/categories/"> Category</a>
+          
+            
+            
+            
+            
+            
+            
             <a class="menu-link " href="/PMAT77/archives/"> Archives</a>
           
         </div>
       </div>
     </nav>
-  </div>
-  <div class="wrapper post">
+  </div> <div class="wrapper post">
   <main class="page-content" aria-label="Content">
-      <header class="header">
-        
-          <div class="tags">
-            <a href="/PMAT77/tags/%E6%8A%80%E6%9C%AF%E6%B2%89%E6%B7%80/" class="tag"># 技术沉淀</a>
-          </div>
-        
-        <h1 class="header-title" itemprop="headline">单点登录的模式</h1>
-          <div class="post-meta">
-            <time>May 05, 2025</time>
-            <span itemprop="author">
-              <span itemprop="name">Paolos</span>
-            </span>
-          </div>
-        </header>
+    <header class="header">
+      
+      <div class="tags">
+        <a
+          href="/PMAT77/tags/%E5%8D%95%E7%82%B9%E7%99%BB%E5%BD%95/"
+          class="tag"
+          ># 单点登录</a
+        >
+      </div>
+      
+      <h1 class="header-title" itemprop="headline">单点登录的模式</h1>
+      <div class="post-meta">
+        <time>May 05, 2025</time>
+        <span itemprop="author">
+          <span itemprop="name">Paolos</span>
+        </span>
+      </div>
+    </header>
 
-          <div class="page-content "><p>一、单点登录的定义<br>随着公司规模扩大，当业务线中存在多个服务，多个服务之间需要共享用户信息，那么可以使用<strong>单点登录模式</strong>，即用户只需要登录一次，后续其他子系统都无需登录。</p>
-<p>二、Session + Cookie 模式</p>
-<p>基本思路：<br>所有子系统的登录请求由同一个<strong>认证中心服务</strong>统一处理，用户登录成功时，认证中心会生成一个<strong>唯一</strong>且<strong>定时过期</strong>的键值对——该键值对由 <code>sessionID</code> 和 <code>用户身份信息</code> 构成。存储在服务器 Session 列表中，并通过 <code>Cookie</code> 将 <code>sessionID</code> 返回给用户。当用户访问子系统时，同样通过 <code>Cookie</code> 将 <code>sessionID</code> 传递过去，子系统接受请求后，用接收到的 <code>sessionID</code> 去询问认证中心，该 <code>sessionID</code> 是否存在，如果存在则表示登录有效返回用户身份信息，如果不存在则表示登录失效。</p>
+    <div
+      class="page-content "
+    >
+      <h2 id="一、单点登录的定义"><a href="#一、单点登录的定义" class="headerlink" title="一、单点登录的定义"></a>一、单点登录的定义</h2><p>随着公司规模扩大，当业务线中存在多个服务，多个服务之间需要共享用户信息，那么可以使用<strong>单点登录模式</strong>，即用户只需要登录一次，后续其他子系统都无需登录。</p>
+<h2 id="二、Session-Cookie-模式"><a href="#二、Session-Cookie-模式" class="headerlink" title="二、Session + Cookie 模式"></a>二、Session + Cookie 模式</h2><p><strong>基本思路：</strong><br>所有子系统的登录请求由同一个<strong>认证中心服务</strong>统一处理，用户登录成功时，认证中心会生成一个<strong>唯一</strong>且<strong>定时过期</strong>的键值对——该键值对由 <code>sessionID</code> 和 <code>用户身份信息</code> 构成。存储在服务器 Session 列表中，并通过 <code>Cookie</code> 将 <code>sessionID</code> 返回给用户。当用户访问子系统时，同样通过 <code>Cookie</code> 将 <code>sessionID</code> 传递过去，子系统接受请求后，用接收到的 <code>sessionID</code> 去询问认证中心，该 <code>sessionID</code> 是否存在，如果存在则表示登录有效返回用户身份信息，如果不存在则表示登录失效。</p>
 <p>优势：对用户登录状态的强控制力，无需单独控制每个子系统，直接通过删除认证中心的 <code>sessionID</code>，达到强制用户下线的目的。</p>
 <p>缺点：很明显，该模式下所有子系统需要对认证中心进行网络请求，增加了网络请求的开销，对于认证中心服务的压力很大，当子系统扩容时，认证中心服务同样需要扩容。因此该模式成本大，几乎只适合大型企业，对中小企业来说得不偿失。</p>
-<p>三、Token 模式（分布式认证模式）</p>
-<p>基本思路：<br>在上述架构不变的情况下，取消 <code>Session列表</code> 的存储，改为生成一个不可篡改的字符串，即称 <code>Token</code> 令牌（一般用 Jwt 生成）。当用户在认证中心登录成功时，将 token 返回给用户，用户访问子系统时，通过 <code>Cookie</code> 将 token 传递过去，子系统接受请求后，会通过提前约定的密钥，将 token 解密，并验证 token 是否有效，如果有效则返回用户身份信息，否则返回登录失败。</p>
+<h2 id="三、Token-模式（分布式认证模式）"><a href="#三、Token-模式（分布式认证模式）" class="headerlink" title="三、Token 模式（分布式认证模式）"></a>三、Token 模式（分布式认证模式）</h2><p><strong>基本思路：</strong><br>在上述架构不变的情况下，取消 <code>Session列表</code> 的存储，改为生成一个不可篡改的字符串，即称 <code>Token</code> 令牌（一般用 Jwt 生成）。当用户在认证中心登录成功时，将 token 返回给用户，用户访问子系统时，通过 <code>Cookie</code> 将 token 传递过去，子系统接受请求后，会通过提前约定的密钥，将 token 解密，并验证 token 是否有效，如果有效则返回用户身份信息，否则返回登录失败。</p>
 <p>优势：子系统无需访问认证中心，极大减小了认证中心的压力。</p>
 <p>缺点：对用户登录状态的控制力很弱，无法控制用户下线。</p>
-<p>四、双 Token 优化</p>
-<p>基本思路：<br>在 Token 模式中，当用户登录成功时，在认证中心生成两个 token，一个用于登录（有效期短），一个用于刷新（有效期长）。当用户访问子系统时，通过 <code>Cookie</code> 将 token 传递过去，子系统接受请求后，先验证登录 token 是否有效，如果有效则返回用户身份信息，否则通过刷新 token 进行刷新，如果刷新成功则返回用户身份信息，否则返回登录失败。</p>
+<h2 id="四、双-Token-优化"><a href="#四、双-Token-优化" class="headerlink" title="四、双 Token 优化"></a>四、双 Token 优化</h2><p><strong>基本思路：</strong><br>在 Token 模式中，当用户登录成功时，在认证中心生成两个 token，一个用于登录（有效期短），一个用于刷新（有效期长）。当用户访问子系统时，通过 <code>Cookie</code> 将 token 传递过去，子系统接受请求后，先验证登录 token 是否有效，如果有效则返回用户身份信息，否则通过刷新 token 进行刷新，如果刷新成功则返回用户身份信息，否则返回登录失败。</p>
 <p>该方案优化了普通 Token 模式无法控制用户登录的缺陷，利用 <code>长token</code> 刷新的机制变相控制用户登录状态。该模式适合绝大多数中小型企业的登录场景需求。</p>
-</div>
-          <nav class="post-nav">
+
+    </div>
+    <nav class="post-nav">
+    
+    <a class="post-nav-item post-nav-prev" href="/PMAT77/2025/05/13/Godot%20%E6%A8%A1%E5%9D%97%E5%8C%96%E7%8A%B6%E6%80%81%E6%9C%BA/">
+      <div class="nav-arrow">&lt;&nbsp;NEWER</div>
+      <span class="post-title">Godot3D - 实现简易状态机</span>
+    </a>
     
     
     <a class="post-nav-item post-nav-next" href="/PMAT77/2025/02/02/DeepSeek/">
@@ -272,11 +287,9 @@
     </a>
     
   </nav>
-
-   </main>
+  </main>
 </div>
-
-  <footer class="footer">
+ <footer class="footer">
     <small class="footer_copyright">
       <div id="bottom-inner">
         © 2021 Site by Paolos using
@@ -288,42 +301,14 @@
   </footer>
   
    
-<script src="/PMAT77/js/main.js"></script>
-
 <script src="/PMAT77/js/search.js"></script>
- 
 
-<!-- 微信 JS-SDK -->
-<script src="https://res2.wx.qq.com/open/js/jweixin-1.6.0.js"></script>
+<script src="/PMAT77/js/main.js"></script>
+ 
 
 <script>
   // 当前页面完整 URL（去除#后部分）
   const url = window.location.href.split("#")[0];
-
-  fetch(`https://your-scf-domain.com?url=${encodeURIComponent(url)}`)
-    .then((res) => res.json())
-    .then((config) => {
-      wx.config({
-        debug: false,
-        appId: config.appId,
-        timestamp: config.timestamp,
-        nonceStr: config.noncestr,
-        signature: config.signature,
-        jsApiList: ["updateAppMessageShareData"],
-      });
-
-      wx.ready(() => {
-        wx.updateAppMessageShareData({
-          title: "文章标题",
-          link: url,
-          imgUrl: "封面图URL",
-        });
-      });
-
-      wx.error((err) => {
-        console.error("微信 SDK 错误:", err);
-      });
-    });
 </script>
 
 <script>
@@ -345,7 +330,7 @@
       resultsContainer: searchResults,
       json: ["/search.json"],
     });
-    console.log(sjs);
+    console.log("sjs", sjs);
 
     // searchInput.onblur();
   }
@@ -359,5 +344,5 @@
   src="https://cdn.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"
 ></script>
 
-</body>
+  </body>
 </html>

@@ -255,7 +255,7 @@ em {
 
 blockquote {
   color: #6b7886;
-  text-align: center;
+  text-align: left;
   opacity: 0.9;
   border-top: 1px solid #ececec;
   border-bottom: 1px solid #ececec;
@@ -329,7 +329,7 @@ table tr {
   padding: 2px 7px;
 }
 
-.post-item:after, .navbar:after, .wrapper:after {
+.navbar:after, .post-item:after, .wrapper:after {
   content: "";
   display: table;
   clear: both;
@@ -886,7 +886,6 @@ pre .xml .cdata {
   font-size: 17px;
   font-style: italic;
   line-height: 1.8em;
-  color: #999;
 }
 
 .post .highlight:before {

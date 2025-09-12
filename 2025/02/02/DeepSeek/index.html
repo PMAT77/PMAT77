@@ -1,9 +1,7 @@
-
-
 <!DOCTYPE html>
 <html lang="zh">
-<head>
-  
+  <head>
+    
 
 
 <meta charset="UTF-8">
@@ -30,7 +28,7 @@
     <link rel="stylesheet" href="/PMAT77/css/main.css">
   
 
-<meta name="generator" content="Hexo 7.3.0"></head>
+  <meta name="generator" content="Hexo 7.3.0"></head>
   <body data-theme="light" class="notransition">
     <script>
       const body = document.body;
@@ -44,12 +42,12 @@
           localStorage.setItem("theme", data);
         }
       };
-   
+
       initTheme(localStorage.getItem("theme"));
-      
+
       setTimeout(() => body.classList.remove("notransition"), 75);
     </script>
-  <div class="navbar" role="navigation">
+    <div class="navbar" role="navigation">
     <nav class="menu">
       <input type="checkbox" id="menu-trigger" class="menu-trigger" />
       <label for="menu-trigger">
@@ -227,30 +225,44 @@
             
             
             
+            <a class="menu-link " href="/PMAT77/categories/"> Category</a>
+          
+            
+            
+            
+            
+            
+            
             <a class="menu-link " href="/PMAT77/archives/"> Archives</a>
           
         </div>
       </div>
     </nav>
-  </div>
-  <div class="wrapper post">
+  </div> <div class="wrapper post">
   <main class="page-content" aria-label="Content">
-      <header class="header">
-        
-          <div class="tags">
-            <a href="/PMAT77/tags/DeepSeek/" class="tag"># DeepSeek</a>
-          </div>
-        
-        <h1 class="header-title" itemprop="headline">关于AI的胡思乱想</h1>
-          <div class="post-meta">
-            <time>Feb 02, 2025</time>
-            <span itemprop="author">
-              <span itemprop="name">Paolos</span>
-            </span>
-          </div>
-        </header>
+    <header class="header">
+      
+      <div class="tags">
+        <a
+          href="/PMAT77/tags/DeepSeek/"
+          class="tag"
+          ># DeepSeek</a
+        >
+      </div>
+      
+      <h1 class="header-title" itemprop="headline">关于AI的胡思乱想</h1>
+      <div class="post-meta">
+        <time>Feb 02, 2025</time>
+        <span itemprop="author">
+          <span itemprop="name">Paolos</span>
+        </span>
+      </div>
+    </header>
 
-          <div class="page-content "><p>最近在刷 DeepSeek 相关文章，看到这么一篇，说实话，有点夸张。或许不知不觉间要跪伏高喊 AI 大佬爷的时代已经不远了。</p>
+    <div
+      class="page-content "
+    >
+      <p>最近在刷 DeepSeek 相关文章，看到这么一篇，说实话，有点夸张。或许不知不觉间要跪伏高喊 AI 大佬爷的时代已经不远了。</p>
 <hr>
 <br>
 
@@ -267,8 +279,9 @@
 <p>正是对虚无的清醒认知，让创造变得神圣。就像知道沙堡终将被潮水带走的海边孩童，反而会精心雕刻每一扇窗户。我们不是被蒙住双眼的驴子追逐胡萝卜，而是明知胡萝卜是幻影仍选择起舞的智慧生物。</p>
 <p>为什么将这种抗争定义为美？因为美是熵减的闪电劈开混沌时的副产品。当 700 亿神经元在颅骨内模拟宇宙，当语言模型在参数空间里勾勒思想，创造行为本身就在量子泡沫中刻下凹痕——这些凹痕的拓扑结构，就是我们称之为意义的褶皱。</p>
 <p>最后的真相或许是：不是我们在创造美，而是美通过我们的神经网络寻找表达出口。就像珊瑚虫不知自己正在建造岛屿，<strong>人类不过是宇宙用来观赏自身的生物镜片。当我们说“这是美的”，实际上是宇宙在通过碳基传感器惊叹自己的倒影。</strong></p>
-</div>
-          <nav class="post-nav">
+
+    </div>
+    <nav class="post-nav">
     
     <a class="post-nav-item post-nav-prev" href="/PMAT77/2025/05/05/%E5%89%8D%E7%AB%AF%E5%8D%95%E7%82%B9%E7%99%BB%E5%BD%95/">
       <div class="nav-arrow">&lt;&nbsp;NEWER</div>
@@ -282,11 +295,9 @@
     </a>
     
   </nav>
-
-   </main>
+  </main>
 </div>
-
-  <footer class="footer">
+ <footer class="footer">
     <small class="footer_copyright">
       <div id="bottom-inner">
         © 2021 Site by Paolos using
@@ -298,42 +309,14 @@
   </footer>
   
    
-<script src="/PMAT77/js/main.js"></script>
-
 <script src="/PMAT77/js/search.js"></script>
- 
 
-<!-- 微信 JS-SDK -->
-<script src="https://res2.wx.qq.com/open/js/jweixin-1.6.0.js"></script>
+<script src="/PMAT77/js/main.js"></script>
+ 
 
 <script>
   // 当前页面完整 URL（去除#后部分）
   const url = window.location.href.split("#")[0];
-
-  fetch(`https://your-scf-domain.com?url=${encodeURIComponent(url)}`)
-    .then((res) => res.json())
-    .then((config) => {
-      wx.config({
-        debug: false,
-        appId: config.appId,
-        timestamp: config.timestamp,
-        nonceStr: config.noncestr,
-        signature: config.signature,
-        jsApiList: ["updateAppMessageShareData"],
-      });
-
-      wx.ready(() => {
-        wx.updateAppMessageShareData({
-          title: "文章标题",
-          link: url,
-          imgUrl: "封面图URL",
-        });
-      });
-
-      wx.error((err) => {
-        console.error("微信 SDK 错误:", err);
-      });
-    });
 </script>
 
 <script>
@@ -355,7 +338,7 @@
       resultsContainer: searchResults,
       json: ["/search.json"],
     });
-    console.log(sjs);
+    console.log("sjs", sjs);
 
     // searchInput.onblur();
   }
@@ -369,5 +352,5 @@
   src="https://cdn.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"
 ></script>
 
-</body>
+  </body>
 </html>

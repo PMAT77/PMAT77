@@ -194,14 +194,14 @@
       json: [],
       success: Function.prototype,
       searchResultTemplate:
-        '<li><a href="{url}" title="{desc}">{title}</a></li>',
+        '<li><a href="{url}" title="标签：{tags}">{title}</a></li>',
       templateMiddleware: Function.prototype,
       sortMiddleware: function () {
         return 0;
       },
       noResultsText: "No results found",
       limit: 10,
-      fuzzy: !1,
+      fuzzy: true,
       exclude: [],
     }),
     (w = (function j(t) {

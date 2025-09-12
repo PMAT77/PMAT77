@@ -1,9 +1,7 @@
-
-
 <!DOCTYPE html>
 <html lang="zh">
-<head>
-  
+  <head>
+    
 
 
 <meta charset="UTF-8">
@@ -30,7 +28,7 @@
     <link rel="stylesheet" href="/PMAT77/css/main.css">
   
 
-<meta name="generator" content="Hexo 7.3.0"></head>
+  <meta name="generator" content="Hexo 7.3.0"></head>
   <body data-theme="light" class="notransition">
     <script>
       const body = document.body;
@@ -44,12 +42,12 @@
           localStorage.setItem("theme", data);
         }
       };
-   
+
       initTheme(localStorage.getItem("theme"));
-      
+
       setTimeout(() => body.classList.remove("notransition"), 75);
     </script>
-  <div class="navbar" role="navigation">
+    <div class="navbar" role="navigation">
     <nav class="menu">
       <input type="checkbox" id="menu-trigger" class="menu-trigger" />
       <label for="menu-trigger">
@@ -227,13 +225,20 @@
             
             
             
+            <a class="menu-link " href="/PMAT77/categories/"> Category</a>
+          
+            
+            
+            
+            
+            
+            
             <a class="menu-link " href="/PMAT77/archives/"> Archives</a>
           
         </div>
       </div>
     </nav>
-  </div>
-  
+  </div> 
 <div class="wrapper">
   <div class="page-content">
       <header class="header">
@@ -272,8 +277,7 @@
         </div>
       
     </div>
-</div>
-  <footer class="footer">
+</div> <footer class="footer">
     <small class="footer_copyright">
       <div id="bottom-inner">
         © 2021 Site by Paolos using
@@ -285,42 +289,14 @@
   </footer>
   
    
-<script src="/PMAT77/js/main.js"></script>
-
 <script src="/PMAT77/js/search.js"></script>
- 
 
-<!-- 微信 JS-SDK -->
-<script src="https://res2.wx.qq.com/open/js/jweixin-1.6.0.js"></script>
+<script src="/PMAT77/js/main.js"></script>
+ 
 
 <script>
   // 当前页面完整 URL（去除#后部分）
   const url = window.location.href.split("#")[0];
-
-  fetch(`https://your-scf-domain.com?url=${encodeURIComponent(url)}`)
-    .then((res) => res.json())
-    .then((config) => {
-      wx.config({
-        debug: false,
-        appId: config.appId,
-        timestamp: config.timestamp,
-        nonceStr: config.noncestr,
-        signature: config.signature,
-        jsApiList: ["updateAppMessageShareData"],
-      });
-
-      wx.ready(() => {
-        wx.updateAppMessageShareData({
-          title: "文章标题",
-          link: url,
-          imgUrl: "封面图URL",
-        });
-      });
-
-      wx.error((err) => {
-        console.error("微信 SDK 错误:", err);
-      });
-    });
 </script>
 
 <script>
@@ -342,7 +318,7 @@
       resultsContainer: searchResults,
       json: ["/search.json"],
     });
-    console.log(sjs);
+    console.log("sjs", sjs);
 
     // searchInput.onblur();
   }
@@ -356,5 +332,5 @@
   src="https://cdn.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"
 ></script>
 
-</body>
+  </body>
 </html>

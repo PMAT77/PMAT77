@@ -1,9 +1,7 @@
-
-
 <!DOCTYPE html>
 <html lang="zh">
-<head>
-  
+  <head>
+    
 
 
 <meta charset="UTF-8">
@@ -30,7 +28,7 @@
     <link rel="stylesheet" href="/PMAT77/css/main.css">
   
 
-<meta name="generator" content="Hexo 7.3.0"></head>
+  <meta name="generator" content="Hexo 7.3.0"></head>
   <body data-theme="light" class="notransition">
     <script>
       const body = document.body;
@@ -44,12 +42,12 @@
           localStorage.setItem("theme", data);
         }
       };
-   
+
       initTheme(localStorage.getItem("theme"));
-      
+
       setTimeout(() => body.classList.remove("notransition"), 75);
     </script>
-  <div class="navbar" role="navigation">
+    <div class="navbar" role="navigation">
     <nav class="menu">
       <input type="checkbox" id="menu-trigger" class="menu-trigger" />
       <label for="menu-trigger">
@@ -227,32 +225,43 @@
             
             
             
+            <a class="menu-link " href="/PMAT77/categories/"> Category</a>
+          
+            
+            
+            
+            
+            
+            
             <a class="menu-link " href="/PMAT77/archives/"> Archives</a>
           
         </div>
       </div>
     </nav>
-  </div>
-  <div class="wrapper post">
+  </div> <div class="wrapper post">
   <main class="page-content" aria-label="Content">
-      <header class="header">
-        
-        <h1 class="header-title" itemprop="headline">围墙、影子和世界尽头</h1>
-          <div class="post-meta">
-            <time>Apr 12, 2021</time>
-            <span itemprop="author">
-              <span itemprop="name">Paolos</span>
-            </span>
-          </div>
-        </header>
+    <header class="header">
+      
+      <h1 class="header-title" itemprop="headline">围墙、影子和世界尽头</h1>
+      <div class="post-meta">
+        <time>Apr 12, 2021</time>
+        <span itemprop="author">
+          <span itemprop="name">Paolos</span>
+        </span>
+      </div>
+    </header>
 
-          <div class="page-content "><p>断断续续读完了《世界尽头和冷酷仙境》，为此不惜牺牲了数个小周末和午睡时间，不得不承认，村上的小说确实存在某种特殊的吸引我的东西。</p>
+    <div
+      class="page-content "
+    >
+      <p>断断续续读完了《世界尽头和冷酷仙境》，为此不惜牺牲了数个小周末和午睡时间，不得不承认，村上的小说确实存在某种特殊的吸引我的东西。</p>
 <p>17年因《挪》入坑而开始接触村上的作品。从《卡夫卡》、《寻羊》到《国境以南，太阳以西》，《奇鸟行状录》到《刺杀骑士团长》。记忆里那几年仓促缺憾的大学时光，读的差不多都是村上春树。</p>
 <p>晃眼过去四年。毕业，实习，工作，入伍。时间仿佛在某刻悄然快进，眼底的所有事物，以不可撼动的姿态光速逼近，旋即倏然远离。</p>
 <p>罗曼罗兰曾说，大多数人在二十或三十岁就死了，他们变成了自己的影子，往后的生命只是不断的一天天重复自己。</p>
 <p>我是在什么时候变成影子的呢？现在无从想起了。但成为影子的事实，确已无可辩驳。</p>
-</div>
-          <nav class="post-nav">
+
+    </div>
+    <nav class="post-nav">
     
     <a class="post-nav-item post-nav-prev" href="/PMAT77/2022/05/08/%E5%A4%9C%E9%A3%8E%E4%B8%8D%E6%97%B6%E6%83%B3%E8%B5%B7%E4%BC%BC%E7%9A%84%E5%90%B9%E6%9D%A5/">
       <div class="nav-arrow">&lt;&nbsp;NEWER</div>
@@ -266,11 +275,9 @@
     </a>
     
   </nav>
-
-   </main>
+  </main>
 </div>
-
-  <footer class="footer">
+ <footer class="footer">
     <small class="footer_copyright">
       <div id="bottom-inner">
         © 2021 Site by Paolos using
@@ -282,42 +289,14 @@
   </footer>
   
    
-<script src="/PMAT77/js/main.js"></script>
-
 <script src="/PMAT77/js/search.js"></script>
- 
 
-<!-- 微信 JS-SDK -->
-<script src="https://res2.wx.qq.com/open/js/jweixin-1.6.0.js"></script>
+<script src="/PMAT77/js/main.js"></script>
+ 
 
 <script>
   // 当前页面完整 URL（去除#后部分）
   const url = window.location.href.split("#")[0];
-
-  fetch(`https://your-scf-domain.com?url=${encodeURIComponent(url)}`)
-    .then((res) => res.json())
-    .then((config) => {
-      wx.config({
-        debug: false,
-        appId: config.appId,
-        timestamp: config.timestamp,
-        nonceStr: config.noncestr,
-        signature: config.signature,
-        jsApiList: ["updateAppMessageShareData"],
-      });
-
-      wx.ready(() => {
-        wx.updateAppMessageShareData({
-          title: "文章标题",
-          link: url,
-          imgUrl: "封面图URL",
-        });
-      });
-
-      wx.error((err) => {
-        console.error("微信 SDK 错误:", err);
-      });
-    });
 </script>
 
 <script>
@@ -339,7 +318,7 @@
       resultsContainer: searchResults,
       json: ["/search.json"],
     });
-    console.log(sjs);
+    console.log("sjs", sjs);
 
     // searchInput.onblur();
   }
@@ -353,5 +332,5 @@
   src="https://cdn.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"
 ></script>
 
-</body>
+  </body>
 </html>

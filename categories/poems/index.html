@@ -1,9 +1,7 @@
-
-
 <!DOCTYPE html>
 <html lang="zh">
-<head>
-  
+  <head>
+    
 
 
 <meta charset="UTF-8">
@@ -30,7 +28,7 @@
     <link rel="stylesheet" href="/PMAT77/css/main.css">
   
 
-<meta name="generator" content="Hexo 7.3.0"></head>
+  <meta name="generator" content="Hexo 7.3.0"></head>
   <body data-theme="light" class="notransition">
     <script>
       const body = document.body;
@@ -44,12 +42,12 @@
           localStorage.setItem("theme", data);
         }
       };
-   
+
       initTheme(localStorage.getItem("theme"));
-      
+
       setTimeout(() => body.classList.remove("notransition"), 75);
     </script>
-  <div class="navbar" role="navigation">
+    <div class="navbar" role="navigation">
     <nav class="menu">
       <input type="checkbox" id="menu-trigger" class="menu-trigger" />
       <label for="menu-trigger">
@@ -227,50 +225,49 @@
             
             
             
+            <a class="menu-link " href="/PMAT77/categories/"> Category</a>
+          
+            
+            
+            
+            
+            
+            
             <a class="menu-link " href="/PMAT77/archives/"> Archives</a>
           
         </div>
       </div>
     </nav>
-  </div>
-  
+  </div> 
+
 <div id="category">
   <h1>poems</h1>
   
-    <div class="category-item">
-      <a href="/PMAT77/2024/12/18/%E8%A1%8C%E9%A6%99%E5%AD%90%C2%B7%E4%B8%B9%E9%98%B3%E5%AF%84%E8%BF%B0%E5%8F%A4/">
-        行香子·丹阳寄述古
-      </a>
-      <time datetime="2024-12-18T07:59:54.000Z">
-        2024-12-18
-      </time>
-    </div>
+  <div class="category-item">
+    <a href="/PMAT77/2024/12/18/%E8%A1%8C%E9%A6%99%E5%AD%90%C2%B7%E4%B8%B9%E9%98%B3%E5%AF%84%E8%BF%B0%E5%8F%A4/"> 行香子·丹阳寄述古 </a>
+    <time datetime="2024-12-18T07:59:54.000Z">
+      2024-12-18
+    </time>
+  </div>
   
-    <div class="category-item">
-      <a href="/PMAT77/2023/05/22/%E6%B1%9F%E9%A3%8E%E5%BE%AE%E9%9B%A8%EF%BC%8C%E5%87%A0%E5%A4%84%E9%97%B2%E9%92%93/">
-        江风微雨，几处闲钓
-      </a>
-      <time datetime="2023-05-22T11:21:18.000Z">
-        2023-05-22
-      </time>
-    </div>
+  <div class="category-item">
+    <a href="/PMAT77/2023/05/22/%E6%B1%9F%E9%A3%8E%E5%BE%AE%E9%9B%A8%EF%BC%8C%E5%87%A0%E5%A4%84%E9%97%B2%E9%92%93/"> 江风微雨，几处闲钓 </a>
+    <time datetime="2023-05-22T11:21:18.000Z">
+      2023-05-22
+    </time>
+  </div>
   
-    <div class="category-item">
-      <a href="/PMAT77/2021/03/14/%E6%B0%B4%E9%BE%99%E5%90%9F%C2%B7%E9%97%BE%E4%B8%98%E5%A4%A7%E5%A4%AB%E5%AD%9D%E7%BB%88%E5%85%AC%E6%98%BE%E5%B0%9D%E5%AE%88%E9%BB%84%E5%B7%9E/">
-        水龙吟·闾丘大夫孝终公显尝守黄州
-      </a>
-      <time datetime="2021-03-14T14:48:00.000Z">
-        2021-03-14
-      </time>
-    </div>
+  <div class="category-item">
+    <a href="/PMAT77/2021/03/14/%E6%B0%B4%E9%BE%99%E5%90%9F%C2%B7%E9%97%BE%E4%B8%98%E5%A4%A7%E5%A4%AB%E5%AD%9D%E7%BB%88%E5%85%AC%E6%98%BE%E5%B0%9D%E5%AE%88%E9%BB%84%E5%B7%9E/"> 水龙吟·闾丘大夫孝终公显尝守黄州 </a>
+    <time datetime="2021-03-14T14:48:00.000Z">
+      2021-03-14
+    </time>
+  </div>
   
 </div>
 
-<div id="paginator">
-  <span class="page-number current">1</span>
-</div>
-
-  <footer class="footer">
+<div id="paginator"><span class="page-number current">1</span></div>
+ <footer class="footer">
     <small class="footer_copyright">
       <div id="bottom-inner">
         © 2021 Site by Paolos using
@@ -282,42 +279,14 @@
   </footer>
   
    
-<script src="/PMAT77/js/main.js"></script>
-
 <script src="/PMAT77/js/search.js"></script>
- 
 
-<!-- 微信 JS-SDK -->
-<script src="https://res2.wx.qq.com/open/js/jweixin-1.6.0.js"></script>
+<script src="/PMAT77/js/main.js"></script>
+ 
 
 <script>
   // 当前页面完整 URL（去除#后部分）
   const url = window.location.href.split("#")[0];
-
-  fetch(`https://your-scf-domain.com?url=${encodeURIComponent(url)}`)
-    .then((res) => res.json())
-    .then((config) => {
-      wx.config({
-        debug: false,
-        appId: config.appId,
-        timestamp: config.timestamp,
-        nonceStr: config.noncestr,
-        signature: config.signature,
-        jsApiList: ["updateAppMessageShareData"],
-      });
-
-      wx.ready(() => {
-        wx.updateAppMessageShareData({
-          title: "文章标题",
-          link: url,
-          imgUrl: "封面图URL",
-        });
-      });
-
-      wx.error((err) => {
-        console.error("微信 SDK 错误:", err);
-      });
-    });
 </script>
 
 <script>
@@ -339,7 +308,7 @@
       resultsContainer: searchResults,
       json: ["/search.json"],
     });
-    console.log(sjs);
+    console.log("sjs", sjs);
 
     // searchInput.onblur();
   }
@@ -353,5 +322,5 @@
   src="https://cdn.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"
 ></script>
 
-</body>
+  </body>
 </html>

@@ -1,9 +1,7 @@
-
-
 <!DOCTYPE html>
 <html lang="zh">
-<head>
-  
+  <head>
+    
 
 
 <meta charset="UTF-8">
@@ -30,7 +28,7 @@
     <link rel="stylesheet" href="/PMAT77/css/main.css">
   
 
-<meta name="generator" content="Hexo 7.3.0"></head>
+  <meta name="generator" content="Hexo 7.3.0"></head>
   <body data-theme="light" class="notransition">
     <script>
       const body = document.body;
@@ -44,12 +42,12 @@
           localStorage.setItem("theme", data);
         }
       };
-   
+
       initTheme(localStorage.getItem("theme"));
-      
+
       setTimeout(() => body.classList.remove("notransition"), 75);
     </script>
-  <div class="navbar" role="navigation">
+    <div class="navbar" role="navigation">
     <nav class="menu">
       <input type="checkbox" id="menu-trigger" class="menu-trigger" />
       <label for="menu-trigger">
@@ -227,38 +225,53 @@
             
             
             
+            <a class="menu-link " href="/PMAT77/categories/"> Category</a>
+          
+            
+            
+            
+            
+            
+            
             <a class="menu-link " href="/PMAT77/archives/"> Archives</a>
           
         </div>
       </div>
     </nav>
-  </div>
-  <div class="wrapper post">
+  </div> <div class="wrapper post">
   <main class="page-content" aria-label="Content">
-      <header class="header">
-        
-          <div class="tags">
-            <a href="/PMAT77/tags/%E5%9B%B4%E5%A2%99%E3%80%81%E5%BD%B1%E5%AD%90%E5%92%8C%E4%B8%96%E7%95%8C%E5%B0%BD%E5%A4%B4/" class="tag"># 围墙、影子和世界尽头</a>
-          </div>
-        
-        <h1 class="header-title" itemprop="headline">514路</h1>
-          <div class="post-meta">
-            <time>Feb 07, 2019</time>
-            <span itemprop="author">
-              <span itemprop="name">Paolos</span>
-            </span>
-          </div>
-        </header>
+    <header class="header">
+      
+      <div class="tags">
+        <a
+          href="/PMAT77/tags/%E5%9B%B4%E5%A2%99%E3%80%81%E5%BD%B1%E5%AD%90%E5%92%8C%E4%B8%96%E7%95%8C%E5%B0%BD%E5%A4%B4/"
+          class="tag"
+          ># 围墙、影子和世界尽头</a
+        >
+      </div>
+      
+      <h1 class="header-title" itemprop="headline">514路</h1>
+      <div class="post-meta">
+        <time>Feb 07, 2019</time>
+        <span itemprop="author">
+          <span itemprop="name">Paolos</span>
+        </span>
+      </div>
+    </header>
 
-          <div class="page-content "><p>下午回富阳拿点东西，坐在514上，光线从侧边车窗懒懒的照进来，连月不见的太阳难得出了次全勤。</p>
+    <div
+      class="page-content "
+    >
+      <p>下午回富阳拿点东西，坐在514上，光线从侧边车窗懒懒的照进来，连月不见的太阳难得出了次全勤。</p>
 <p>车厢里以外有些闷热。</p>
 <p>菩提寺到富阳公交站正在修地铁，车多路窄，幽灵堵车。车流行的很慢，加上道路坑洼，一路上颠簸不止。</p>
 <p>我趴在前座靠椅上，双臂枕着下巴，昏昏沉沉地犯困。</p>
 <p>车行至受降，猛地来了个颠簸，屁股不受控制的腾飞，差点没磕掉牙。</p>
 <p>司机嘀咕着抱怨，有乘客窃窃私语。</p>
 <p>抬起头，车流仍是缓慢。</p>
-</div>
-          <nav class="post-nav">
+
+    </div>
+    <nav class="post-nav">
     
     <a class="post-nav-item post-nav-prev" href="/PMAT77/2019/02/25/%E5%A4%B8%E4%BD%A0%E5%8F%AF%E7%88%B1/">
       <div class="nav-arrow">&lt;&nbsp;NEWER</div>
@@ -272,11 +285,9 @@
     </a>
     
   </nav>
-
-   </main>
+  </main>
 </div>
-
-  <footer class="footer">
+ <footer class="footer">
     <small class="footer_copyright">
       <div id="bottom-inner">
         © 2021 Site by Paolos using
@@ -288,42 +299,14 @@
   </footer>
   
    
-<script src="/PMAT77/js/main.js"></script>
-
 <script src="/PMAT77/js/search.js"></script>
- 
 
-<!-- 微信 JS-SDK -->
-<script src="https://res2.wx.qq.com/open/js/jweixin-1.6.0.js"></script>
+<script src="/PMAT77/js/main.js"></script>
+ 
 
 <script>
   // 当前页面完整 URL（去除#后部分）
   const url = window.location.href.split("#")[0];
-
-  fetch(`https://your-scf-domain.com?url=${encodeURIComponent(url)}`)
-    .then((res) => res.json())
-    .then((config) => {
-      wx.config({
-        debug: false,
-        appId: config.appId,
-        timestamp: config.timestamp,
-        nonceStr: config.noncestr,
-        signature: config.signature,
-        jsApiList: ["updateAppMessageShareData"],
-      });
-
-      wx.ready(() => {
-        wx.updateAppMessageShareData({
-          title: "文章标题",
-          link: url,
-          imgUrl: "封面图URL",
-        });
-      });
-
-      wx.error((err) => {
-        console.error("微信 SDK 错误:", err);
-      });
-    });
 </script>
 
 <script>
@@ -345,7 +328,7 @@
       resultsContainer: searchResults,
       json: ["/search.json"],
     });
-    console.log(sjs);
+    console.log("sjs", sjs);
 
     // searchInput.onblur();
   }
@@ -359,5 +342,5 @@
   src="https://cdn.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"
 ></script>
 
-</body>
+  </body>
 </html>
