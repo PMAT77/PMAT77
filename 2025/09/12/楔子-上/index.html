@@ -406,19 +406,45 @@
   function initializeSearch() {
     const searchInput = document.querySelector("#search-input") || null;
     const searchResults = document.querySelector("#search-results") || null;
-    console.log("search:", searchInput);
 
     if (!searchInput) return;
-    var sjs = SimpleJekyllSearch({
-      searchInput: searchInput,
-      resultsContainer: searchResults,
-      json: ["/search.json"],
-    });
-    console.log("sjs", sjs);
 
-    // searchInput.onblur();
+    // 检查SimpleJekyllSearch是否已加载
+    if (typeof SimpleJekyllSearch === "undefined") {
+      console.error("SimpleJekyllSearch library not loaded");
+      return;
+    }
+
+    try {
+      var sjs = SimpleJekyllSearch({
+        searchInput: searchInput,
+        resultsContainer: searchResults,
+        json: ["search.json"],
+        noResultsText: "未找到相关文章",
+        template: '<li><a href="{url}" title="标签：{tags}">{title}</a></li>',
+      });
+    } catch (error) {
+      console.error("Search initialization failed:", error);
+    }
   }
-  document.addEventListener("DOMContentLoaded", initializeSearch);
+
+  // 添加CDN加载失败时的本地fallback
+  function loadSearchLibrary() {
+    if (typeof SimpleJekyllSearch === "undefined") {
+      // 如果CDN加载失败，尝试从本地加载
+      const script = document.createElement("script");
+      script.src = "/PMAT77/js/search.js";
+      script.onload = initializeSearch;
+      script.onerror = function () {
+        console.error("Failed to load search library from CDN and local");
+      };
+      document.head.appendChild(script);
+    } else {
+      initializeSearch();
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", loadSearchLibrary);
 </script>
 
 <script src="https://cdn.jsdelivr.net/npm/simple-jekyll-search@latest/dest/simple-jekyll-search.min.js"></script>

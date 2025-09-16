@@ -240,16 +240,25 @@
     </nav>
   </div> 
 
-<div id="category">
-  <h1>技术</h1>
-  
-  <div class="category-item">
-    <a href="/PMAT77/2025/05/05/%E5%89%8D%E7%AB%AF%E5%8D%95%E7%82%B9%E7%99%BB%E5%BD%95/"> 单点登录的模式 </a>
-    <time datetime="2025-05-05T14:27:10.000Z">
-      2025-05-05
-    </time>
-  </div>
-  
+<div class="wrapper">
+  <main class="page-content">
+    <header class="header">
+      <h1 class="header-title center">
+         技术 
+      </h1>
+    </header>
+
+     
+    <article class="post-item">
+      <time class="post-item-date" datetime="2025-05-05T14:27:10.000Z">
+        May 5
+      </time>
+      <h3 class="post-item-title">
+        <a href="/PMAT77/2025/05/05/%E5%89%8D%E7%AB%AF%E5%8D%95%E7%82%B9%E7%99%BB%E5%BD%95/">单点登录的模式</a>
+      </h3>
+    </article>
+     
+  </main>
 </div>
 
 <div id="paginator"><span class="page-number current">1</span></div>
@@ -286,19 +295,45 @@
   function initializeSearch() {
     const searchInput = document.querySelector("#search-input") || null;
     const searchResults = document.querySelector("#search-results") || null;
-    console.log("search:", searchInput);
 
     if (!searchInput) return;
-    var sjs = SimpleJekyllSearch({
-      searchInput: searchInput,
-      resultsContainer: searchResults,
-      json: ["/search.json"],
-    });
-    console.log("sjs", sjs);
 
-    // searchInput.onblur();
+    // 检查SimpleJekyllSearch是否已加载
+    if (typeof SimpleJekyllSearch === "undefined") {
+      console.error("SimpleJekyllSearch library not loaded");
+      return;
+    }
+
+    try {
+      var sjs = SimpleJekyllSearch({
+        searchInput: searchInput,
+        resultsContainer: searchResults,
+        json: ["search.json"],
+        noResultsText: "未找到相关文章",
+        template: '<li><a href="{url}" title="标签：{tags}">{title}</a></li>',
+      });
+    } catch (error) {
+      console.error("Search initialization failed:", error);
+    }
   }
-  document.addEventListener("DOMContentLoaded", initializeSearch);
+
+  // 添加CDN加载失败时的本地fallback
+  function loadSearchLibrary() {
+    if (typeof SimpleJekyllSearch === "undefined") {
+      // 如果CDN加载失败，尝试从本地加载
+      const script = document.createElement("script");
+      script.src = "/PMAT77/js/search.js";
+      script.onload = initializeSearch;
+      script.onerror = function () {
+        console.error("Failed to load search library from CDN and local");
+      };
+      document.head.appendChild(script);
+    } else {
+      initializeSearch();
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", loadSearchLibrary);
 </script>
 
 <script src="https://cdn.jsdelivr.net/npm/simple-jekyll-search@latest/dest/simple-jekyll-search.min.js"></script>
