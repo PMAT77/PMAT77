@@ -4,6 +4,29 @@
   
     
     <entry>
+      <title>测试文章-OpenClaw自动化部署</title>
+      <link href="/PMAT77/2026/03/10/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0-OpenClaw%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2/"/>
+      <url>/PMAT77/2026/03/10/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0-OpenClaw%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2/</url>
+      
+        <content type="html"><![CDATA[<h1 id="测试文章"><a href="#测试文章" class="headerlink" title="测试文章"></a>测试文章</h1><p>这是一篇由 <strong>OpenClaw</strong> 自动生成的测试文章。</p><h2 id="生成时间"><a href="#生成时间" class="headerlink" title="生成时间"></a>生成时间</h2><ul><li>日期：2026年3月10日</li><li>时间：13:18</li></ul><h2 id="测试内容"><a href="#测试内容" class="headerlink" title="测试内容"></a>测试内容</h2><blockquote><p>这是blockquote测试</p></blockquote><p><strong>粗体文字</strong> 和 <em>斜体文字</em></p><h3 id="列表测试"><a href="#列表测试" class="headerlink" title="列表测试"></a>列表测试</h3><ol><li>第一项</li><li>第二项</li><li>第三项</li></ol><h3 id="代码块测试"><a href="#代码块测试" class="headerlink" title="代码块测试"></a>代码块测试</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo new post <span class="string">&quot;测试文章&quot;</span></span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure><hr><p><em>由 AI 助手自动生成</em></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 测试 </tag>
+            
+            <tag> OpenClaw </tag>
+            
+            <tag> 自动化 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>新年快乐</title>
       <link href="/PMAT77/2026/02/13/%E6%96%B0%E5%B9%B4%E5%BF%AB%E4%B9%90/"/>
       <url>/PMAT77/2026/02/13/%E6%96%B0%E5%B9%B4%E5%BF%AB%E4%B9%90/</url>
