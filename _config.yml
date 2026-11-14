@@ -1,0 +1,111 @@
+# Hexo 配置文件
+## 文档: https://hexo.io/docs/configuration.html
+## 源码: https://github.com/hexojs/hexo/
+
+# 站点
+title: Paolos
+subtitle: ""
+description: Paolos - 个人博客
+keywords: blog
+author: Paolos
+language: zh # 语言设置为中文
+timezone: ""
+
+# URL
+## 在这里设置你的站点 URL。例如，如果你使用GitHub Page，设置url为 'https://username.github.io/project'
+url: https://pmat77.github.io/PMAT77
+permalink: :year/:month/:day/:title/
+permalink_defaults:
+pretty_urls:
+  trailing_index: false # 将其设置为 false 来移除永久链接中的尾部 'index.html'
+  trailing_html: false # 将其设置为 false 来移除永久链接中的尾部 '.html'
+
+# 目录
+source_dir: source # 源文件目录
+public_dir: public # 公共（生成的）文件目录
+tag_dir: tags # 标签目录
+archive_dir: archives # 归档目录
+category_dir: categories # 分类目录
+code_dir: downloads/code # 代码目录
+i18n_dir: :lang # 国际化目录
+skip_render:
+
+# 写作
+new_post_name: :title.md # 新文章的文件名
+default_layout: post # 默认布局
+titlecase: false # 标题是否转换为标题格式
+external_link:
+  enable: true # 在新标签页中打开外部链接
+  field: site # 应用于整个站点
+  exclude: ""
+filename_case: 0
+render_drafts: false # 是否渲染草稿
+post_asset_folder: false # 是否为每篇文章创建一个资源文件夹
+relative_link: false
+future: true
+syntax_highlighter: highlight.js # 语法高亮器
+highlight:
+  line_number: true # 显示行号
+  auto_detect: false
+  tab_replace: ""
+  wrap: true
+  hljs: false
+prismjs:
+  preprocess: true
+  line_number: true
+  tab_replace: ""
+
+# 首页设置
+# path: 博客首页的根路径。 (默认 = '')
+# per_page: 每页显示的文章数。 (0 = 禁用分页)
+# order_by: 文章排序方式。 (默认按日期降序排列)
+index_generator:
+  path: ""
+  per_page: 0
+  order_by: -date
+
+# 分类和标签
+default_category: uncategorized
+category_map:
+tag_map:
+
+# 元数据元素
+## https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta
+meta_generator: true
+
+# 日期/时间格式
+## Hexo 使用 Moment.js 来解析和显示日期
+## 你可以自定义日期格式，参考
+## http://momentjs.com/docs/#/displaying/format/
+date_format: YYYY-MM-DD
+time_format: HH:mm:ss
+## updated_option 支持 'mtime', 'date', 'empty'
+updated_option: "mtime"
+
+# 分页
+## 将 per_page 设置为 0 来禁用分页
+per_page: 0
+pagination_dir: page
+
+# 包含/排除文件
+## include:/exclude: 选项只应用于 'source/' 文件夹
+include:
+exclude:
+ignore:
+
+# 扩展
+## 插件: https://hexo.io/plugins/
+## 主题: https://hexo.io/themes/
+theme: Klise
+
+# 部署
+## 文档: https://hexo.io/docs/one-command-deployment
+deploy:
+  type: git
+  repository: git@github.com:PMAT77/PMAT77.git
+  branch: main
+
+search:
+  path: search.xml
+  field: post
+  content: true # 搜索内容

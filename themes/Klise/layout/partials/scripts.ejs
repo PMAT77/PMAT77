@@ -1,0 +1,72 @@
+<% if (theme.scripts !== undefined && theme.scripts.length > 0) { %> <%
+theme.scripts.forEach(url => { %>
+<script src="<%=url_for(url)%>"></script>
+<% }); %> <% } %>
+
+<script>
+  // 当前页面完整 URL（去除#后部分）
+  const url = window.location.href.split("#")[0];
+</script>
+
+<script>
+  window.FPConfig = {
+    delay: 0,
+    ignoreKeywords: [],
+    maxRPS: 3,
+    hoverDelay: 50,
+  };
+
+  function initializeSearch() {
+    const searchInput = document.querySelector("#search-input") || null;
+    const searchResults = document.querySelector("#search-results") || null;
+
+    if (!searchInput) return;
+
+    // 检查SimpleJekyllSearch是否已加载
+    if (typeof SimpleJekyllSearch === "undefined") {
+      console.error("SimpleJekyllSearch library not loaded");
+      return;
+    }
+
+    try {
+      var sjs = SimpleJekyllSearch({
+        searchInput: searchInput,
+        resultsContainer: searchResults,
+        json: searchInput.dataset.searchType === 'tech'
+          ? <%- JSON.stringify(url_for('/tech-search.json')) %>
+          : <%- JSON.stringify(url_for('/search.json')) %>,
+        templateMiddleware: function (key, value) {
+          return String(value == null ? '' : value).replace(/[&<>"']/g, function (character) {
+            return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[character];
+          });
+        },
+        noResultsText: "未找到相关文章",
+        searchResultTemplate: '<li><a href="{url}" title="标签：{tags}">{title}</a></li>',
+      });
+    } catch (error) {
+      console.error("Search initialization failed:", error);
+    }
+  }
+
+  // 主题未配置搜索脚本时，从站点根路径加载
+  function loadSearchLibrary() {
+    if (typeof SimpleJekyllSearch === "undefined") {
+      const script = document.createElement("script");
+      script.src = <%- JSON.stringify(url_for('/js/search.js')) %>;
+      script.onload = initializeSearch;
+      script.onerror = function () {
+        console.error("Failed to load search library");
+      };
+      document.head.appendChild(script);
+    } else {
+      initializeSearch();
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", loadSearchLibrary);
+</script>
+
+<script
+  defer
+  src="https://cdn.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"
+></script>

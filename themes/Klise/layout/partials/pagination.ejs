@@ -1,0 +1,22 @@
+<% if (page.content_type === 'novel') { const reading = novel_navigation(page); if (reading) { %>
+  <nav class="novel-navigation" aria-label="小说阅读导航">
+    <% if (reading.prev) { %><a rel="prev" href="<%= url_for(reading.prev.path) %>"><span>← 上一章</span><small><%= reading.prev.title %></small></a><% } else { %><span></span><% } %>
+    <a class="novel-directory" href="<%= url_for(reading.book.path) %>">目录<small><%= reading.book.title %></small></a>
+    <% if (reading.next) { %><a rel="next" href="<%= url_for(reading.next.path) %>"><span>下一章 →</span><small><%= reading.next.title %></small></a><% } else { %><span></span><% } %>
+  </nav>
+<% } } else { %>
+<nav class="post-nav" aria-label="文章翻页">
+    <% if (page.prev){ %>
+    <a class="post-nav-item post-nav-prev" href="<%- url_for(page.prev.path) %>">
+      <div class="nav-arrow">&lt;&nbsp;NEWER</div>
+      <span class="post-title"><%= page.prev.title %></span>
+    </a>
+    <% } %>
+    <% if (page.next){ %>
+    <a class="post-nav-item post-nav-next" href="<%- url_for(page.next.path) %>">
+      <div class="nav-arrow">OLDER&nbsp;&gt;</div>
+      <span class="post-title"><%= page.next.title %></span>
+    </a>
+    <% } %>
+  </nav>
+<% } %>

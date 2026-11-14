@@ -1,0 +1,83 @@
+<div class="wrapper collection-page <%= page.section === 'projects' ? 'projects-page' : '' %>">
+  <main aria-label="<%= page.title %>">
+    <header class="collection-header">
+      <% if (page.book) { %><a class="collection-back" href="<%= url_for('/novels/') %>">← 连载小说</a><% } %>
+      <h1><%= page.title %></h1>
+    </header>
+
+    <% if (page.section === 'essays') { %>
+      <div class="essay-stream">
+        <% page.entries.forEach(post => { %>
+          <article class="essay-entry">
+            <a class="entry-date" href="<%= url_for(post.path) %>" aria-label="阅读：<%= post.title %>"><time datetime="<%= date_xml(post.date) %>"><%= date(post.date, 'YYYY-MM-DD') %></time></a>
+            <% if (!post.untitled_essay) { %><h2 class="essay-title"><%= post.title %></h2><% } %>
+            <div class="post essay-body"><div class="page-content"><%- post.has_more ? post.excerpt : post.content %></div></div>
+            <% if (post.has_more) { %><a class="read-more" href="<%= url_for(post.path) %>">阅读全文 <span aria-hidden="true">→</span></a><% } %>
+          </article>
+        <% }); %>
+        <% if (!page.entries.length) { %><p class="collection-empty">还没有随笔。</p><% } %>
+      </div>
+    <% } else if (page.section === 'tech') { %>
+      <div class="collection-search">
+        <label class="visually-hidden" for="search-input">搜索文章</label>
+        <input type="search" id="search-input" data-search-type="tech" placeholder="搜索标题或标签" autocomplete="off" aria-controls="search-results">
+        <a href="<%= url_for('/archives/') %>">全部归档 <span aria-hidden="true">↗</span></a>
+      </div>
+      <ul id="search-results" aria-live="polite"></ul>
+      <% page.entries.forEach(post => { %>
+        <article class="tech-entry">
+          <time class="entry-date" datetime="<%= date_xml(post.date) %>"><%= date(post.date, 'YYYY-MM-DD') %></time>
+          <h2><a href="<%= url_for(post.path) %>"><%= post.title %></a></h2>
+          <% const summary = article_summary(post); if (summary) { %><p class="article-summary"><%= summary %></p><% } %>
+          <% if (post.tags.length) { %><div class="entry-tags"><% post.tags.each(tag => { %><a href="<%= url_for(tag.path) %>">#<%= tag.name %></a><% }); %></div><% } %>
+        </article>
+      <% }); %>
+      <% if (!page.entries.length) { %><p class="collection-empty">还没有技术文章。</p><% } %>
+    <% } else if (page.section === 'novels' && !page.book) { %>
+      <% page.books.forEach(book => { %>
+        <article class="book-entry">
+          <div class="book-heading"><h2><a href="<%= url_for(book.path) %>"><%= book.title %></a></h2><span class="book-status"><%= book.status %></span></div>
+          <% if (book.intro) { %><p class="book-intro"><%= book.intro %></p><% } %>
+          <div class="book-meta"><span><%= book.chapters.length %> 章</span><% if (book.updated) { %><time datetime="<%= date_xml(book.updated) %>">更新于 <%= date(book.updated, 'YYYY-MM-DD') %></time><% } %></div>
+          <% if (book.latest) { %><a class="book-latest" href="<%= url_for(book.latest.path) %>">最新章节：<%= book.latest.title %> <span aria-hidden="true">→</span></a><% } %>
+        </article>
+      <% }); %>
+      <% if (!page.books.length) { %><p class="collection-empty">作品整理中。</p><% } %>
+    <% } else if (page.book) { const book = page.book; %>
+      <div class="book-overview">
+        <span class="book-status"><%= book.status %></span>
+        <% if (book.intro) { %><p class="book-intro"><%= book.intro %></p><% } %>
+        <% if (book.first) { %><div class="book-actions"><a href="<%= url_for(book.first.path) %>">开始阅读 <span aria-hidden="true">→</span></a><a href="<%= url_for(book.latest.path) %>">最新章节</a></div><% } %>
+      </div>
+      <section class="book-section" aria-labelledby="chapters-title">
+        <h2 id="chapters-title">正文 <span class="section-count"><%= book.chapters.length %></span></h2>
+        <% if (!book.chapters.length) { %><p class="collection-empty">正文尚未发布。</p><% } %>
+        <ol class="chapter-list"><% book.chapters.forEach(post => { %><li><a href="<%= url_for(post.path) %>"><span><%= post.title %></span><time datetime="<%= date_xml(post.date) %>"><%= date(post.date, 'YYYY-MM-DD') %></time></a></li><% }); %></ol>
+      </section>
+      <% if (book.lore.length) { %>
+        <section class="book-section" aria-labelledby="lore-title">
+          <h2 id="lore-title">设定 <span class="section-count"><%= book.lore.length %></span></h2>
+          <ul class="lore-list"><% book.lore.forEach(post => { %><li><a href="<%= url_for(post.path) %>"><%= post.title %></a></li><% }); %></ul>
+        </section>
+      <% } %>
+    <% } else if (page.section === 'projects') { %>
+      <div class="project-grid">
+        <% page.projects.forEach(project => { %>
+          <a class="project-card" href="<%= project.github %>" target="_blank" rel="noopener noreferrer" aria-label="<%= project.title %>（在新标签页打开 GitHub）">
+            <div class="project-cover"><img src="<%= url_for(project.cover) %>" alt="" loading="lazy" width="640" height="360"></div>
+            <h2><%= project.title %><span aria-hidden="true">↗</span></h2>
+          </a>
+        <% }); %>
+      </div>
+      <% if (!page.projects.length) { %><p class="collection-empty">项目整理中。</p><% } %>
+    <% } %>
+
+    <% if (page.pagination && page.pagination.count > 1) { const paging = page.pagination; %>
+      <nav class="collection-pagination" aria-label="分页">
+        <% if (paging.prev) { %><a href="<%= url_for(paging.prev) %>" rel="prev">← 上一页</a><% } else { %><span></span><% } %>
+        <span><%= paging.number %> / <%= paging.count %></span>
+        <% if (paging.next) { %><a href="<%= url_for(paging.next) %>" rel="next">下一页 →</a><% } else { %><span></span><% } %>
+      </nav>
+    <% } %>
+  </main>
+</div>

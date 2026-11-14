@@ -1,0 +1,54 @@
+# 网站图标
+favicon: /img/favicon.jpeg
+
+# RSS订阅
+rss: /atom.xml
+
+# 主菜单导航
+menu:
+  首页: / || 首页
+  随笔: /essays/ || 随笔
+  连载小说: /novels/ || 连载小说
+  技术文章: /tech/ || 技术文章
+  项目展示: /projects/ || 项目展示
+
+bio: 河堤上的风筝拉长自由...🪁
+
+page_404:
+  enable: true
+  subtitle: "哎呀！页面没找到。"
+
+comments:
+  enable: true
+  type: waline # 评论系统类型：waline | valine
+  button: true
+
+# Waline配置，详见 https://waline.js.org
+waline:
+  serverURL: # 你的Waline服务器URL
+  avatarCDN: # 默认头像CDN是 https://sdn.geekzu.org/avatar/
+  avatar: monsterid # Gravatar头像样式，详见 https://zh-tw.gravatar.com/site/implement/images/#default-image
+  placeholder: "告诉我你的想法！"
+
+valine:
+  appid: # 你的LeanCloud应用ID
+  appkey: # 你的LeanCloud应用密钥
+  notify: false # 邮件通知，详见 https://github.com/xCss/Valine/wiki
+  verify: false # 验证码
+  placeholder: 随便说说吧 # 评论框提示文字
+  avatar: mm # Gravatar头像样式
+  guest_info: nick,mail,link # 自定义评论头信息
+  pageSize: 10 # 分页大小
+  recordIP: false # 记录IP
+  serverURLs: # 你的服务器URL
+  emojiCDN: # 表情包CDN
+  enableQQ: true
+
+# 在<head>中加载的样式表
+stylesheets:
+  - /css/main.css
+
+# 在<body>末尾加载的脚本
+scripts:
+  - /js/search.js
+  - /js/main.js

@@ -1,0 +1,33 @@
+<div class="wrapper post <%= page.content_type === 'novel' ? 'novel-reading' : '' %> <%= page.untitled_essay ? 'untitled-essay' : '' %>">
+  <main class="page-content" aria-label="Content">
+    <header class="header">
+      <% if(page.tags.length > 0 && !page.untitled_essay){ %>
+      <div class="tags">
+        <% (page.tags || []).forEach(function(item) { %><a
+          href="<%= url_for(item.path) %>"
+          class="tag"
+          ># <%= item.name %></a
+        ><% }); %>
+      </div>
+      <% } %>
+      <h1 class="<%= page.untitled_essay ? 'visually-hidden' : 'header-title' %>" itemprop="headline"><%=page.title%></h1>
+      <div class="post-meta">
+        <time datetime="<%= date_xml(page.date) %>"><%- date(page.date, 'MMM DD, YYYY') %></time>
+        <span itemprop="author">
+          <span itemprop="name"><%=config.author%></span>
+        </span>
+      </div>
+    </header>
+
+    <% if (page.content_type === 'tech') { const contents = toc(page.content); if (contents) { %>
+      <details class="article-toc"><summary>目录</summary><%- contents %></details>
+    <% } } %>
+
+    <div
+      class="page-content <% if (page.categories && page.categories.some(cat => cat.name === 'poems')) { %>poems<% } %>"
+    >
+      <%-page.content%>
+    </div>
+    <%-partial('partials/pagination')%>
+  </main>
+</div>

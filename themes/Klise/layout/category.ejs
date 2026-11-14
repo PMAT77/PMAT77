@@ -1,0 +1,41 @@
+<% const categoriesList = list_categories({ show_count: false }); const tagsList
+= list_tags({ show_count: false }); const archivesList = list_archives({
+show_count: false }); %>
+
+<div class="wrapper">
+  <main class="page-content">
+    <header class="header">
+      <h1 class="header-title center">
+        <% if (page.category) { %> <%=page.category%> <% } else { %> Category <%
+        } %>
+      </h1>
+    </header>
+
+    <% if (page.category) { %> <% page.posts.each(function (article) { %>
+    <article class="post-item">
+      <time class="post-item-date" datetime="<%=date_xml(article.date)%>">
+        <%=date(article.date, 'MMM D')%>
+      </time>
+      <h3 class="post-item-title">
+        <a href="<%=url_for(article.path)%>"><%=article.title%></a>
+      </h3>
+    </article>
+    <% }); %> <% } else { %> <% site.categories.each(function (category) { %>
+    <h2 class="list-year">
+      <a href="<%=url_for(category.path)%>"><%=category.name%></a>
+      <small>(<%=category.length%>篇文章)</small>
+    </h2>
+    <% category.posts.each(function (article) { %>
+    <article class="post-item">
+      <time class="post-item-date" datetime="<%=date_xml(article.date)%>">
+        <%=date(article.date, 'MMM D')%>
+      </time>
+      <h3 class="post-item-title">
+        <a href="<%=url_for(article.path)%>"><%=article.title%></a>
+      </h3>
+    </article>
+    <% }); %> <% }); %> <% } %>
+  </main>
+</div>
+
+<div id="paginator"><%-paginator()%></div>

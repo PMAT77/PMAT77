@@ -1,0 +1,16 @@
+@use "./variables" as *;
+
+// 诗词排版
+.wrapper.post {
+  .page-content.poems {
+    blockquote {
+      font-family: "楷体", "KaiTi", "STKaiti", "华文楷体", serif;
+      font-size: 18px;
+      font-weight: 550;
+      text-align: left;
+      p {
+        font-style: normal;
+      }
+    }
+  }
+}
