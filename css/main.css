@@ -1663,6 +1663,114 @@ body[data-theme=dark] .search-article input[type=search]::-webkit-input-placehol
 .collection-page .project-card:hover img {
   transform: scale(1.025);
 }
+.collection-page .project-cover-name {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 28px;
+  text-align: center;
+  color: var(--collection-heading);
+  font-size: clamp(20px, 3vw, 30px);
+  line-height: 1.4;
+}
+.collection-page .project-description {
+  margin: 10px 0 0;
+  color: var(--collection-muted);
+  font-size: 14px;
+  line-height: 1.8;
+}
+.collection-page.project-detail {
+  max-width: 830px;
+}
+.collection-page .project-intro {
+  margin: 24px 0 16px;
+  line-height: 1.8;
+}
+.collection-page .project-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  color: var(--collection-muted);
+  font-size: 13px;
+}
+.collection-page .project-github {
+  display: inline-block;
+  margin-top: 20px;
+  color: var(--collection-accent);
+  font-size: 14px;
+}
+.collection-page .project-readme {
+  word-break: normal;
+  overflow-wrap: anywhere;
+  line-height: 1.85;
+}
+.collection-page .project-readme .page-content {
+  min-width: 0;
+}
+.collection-page .project-readme h1, .collection-page .project-readme h2, .collection-page .project-readme h3, .collection-page .project-readme h4, .collection-page .project-readme h5, .collection-page .project-readme h6 {
+  scroll-margin-top: 80px;
+}
+.collection-page .project-readme h1 {
+  font-size: 27px;
+  line-height: 1.5;
+}
+.collection-page .project-readme h2 {
+  margin: 32px 0 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--collection-line);
+}
+.collection-page .project-readme h3 {
+  margin-top: 26px;
+}
+.collection-page .project-readme img {
+  max-width: 100%;
+  height: auto;
+}
+.collection-page .project-readme pre {
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow-x: auto;
+  word-break: normal;
+  color: inherit;
+  background: var(--collection-fill);
+}
+.collection-page .project-readme code {
+  background: var(--collection-fill);
+}
+.collection-page .project-readme pre code {
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  white-space: pre;
+}
+.collection-page .project-readme table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  border-collapse: collapse;
+  margin: 24px 0;
+}
+.collection-page .project-readme th, .collection-page .project-readme td {
+  padding: 8px 12px;
+  border: 1px solid var(--collection-line);
+}
+.collection-page .project-readme .anchor {
+  display: block;
+  height: 0;
+  border: 0;
+  scroll-margin-top: 80px;
+}
+.collection-page .project-readme .task-list-item::before {
+  content: none;
+}
+.collection-page .project-readme details {
+  margin: 20px 0;
+}
+.collection-page .project-readme summary {
+  cursor: pointer;
+}
 .collection-page .collection-pagination {
   display: grid;
   grid-template-columns: 1fr auto 1fr;

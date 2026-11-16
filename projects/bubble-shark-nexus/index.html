@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    
+
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BubbleShark 社区 [ Paolos ]</title>
+
+  <link rel="icon" href="/PMAT77/img/favicon.jpeg">
+
+
+    <meta name="author" content="Paolos">
+
+
+
+    <meta name="Description" content="Paolos - 个人博客">
+
+
+    <meta name="keywords" content=",blog">
+
+
+  <link rel="alternate" href="/PMAT77/atom.xml " title="Paolos" type="application/atom+xml">
+
+
+  
+    <link rel="stylesheet" href="/PMAT77/css/main.css">
+  
+
+  <meta name="generator" content="Hexo 7.3.0"></head>
+  <body data-theme="light" class="notransition">
+    <script>
+      const body = document.body;
+      const data = body.getAttribute("data-theme");
+      const initTheme = (state) => {
+        if (state === "dark") {
+          body.setAttribute("data-theme", "dark");
+        } else if (state === "light") {
+          body.removeAttribute("data-theme");
+        } else {
+          localStorage.setItem("theme", data);
+        }
+      };
+
+      initTheme(localStorage.getItem("theme"));
+
+      setTimeout(() => body.classList.remove("notransition"), 75);
+    </script>
+    <div class="navbar" role="navigation">
+    <nav class="menu">
+      <input type="checkbox" id="menu-trigger" class="menu-trigger" aria-label="展开导航" aria-controls="site-menu" aria-expanded="false" />
+      <label for="menu-trigger">
+        <span class="menu-icon">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 512 512"
+          >
+            <path
+              d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z"
+            />
+          </svg>
+        </span>
+      </label>
+      <button id="mode" type="button" aria-label="切换明暗主题" aria-pressed="false">
+        <svg
+          class="mode-sunny"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 512 512"
+        >
+          <title>LIGHT</title>
+          <line
+            x1="256"
+            y1="48"
+            x2="256"
+            y2="96"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="256"
+            y1="416"
+            x2="256"
+            y2="464"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="403.08"
+            y1="108.92"
+            x2="369.14"
+            y2="142.86"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="142.86"
+            y1="369.14"
+            x2="108.92"
+            y2="403.08"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="464"
+            y1="256"
+            x2="416"
+            y2="256"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="96"
+            y1="256"
+            x2="48"
+            y2="256"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="403.08"
+            y1="403.08"
+            x2="369.14"
+            y2="369.14"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="142.86"
+            y1="142.86"
+            x2="108.92"
+            y2="108.92"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <circle
+            cx="256"
+            cy="256"
+            r="80"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+        </svg>
+        <svg
+          class="mode-moon"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 512 512"
+        >
+          <title>DARK</title>
+          <line
+            x1="256"
+            y1="48"
+            x2="256"
+            y2="96"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="256"
+            y1="416"
+            x2="256"
+            y2="464"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="403.08"
+            y1="108.92"
+            x2="369.14"
+            y2="142.86"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="142.86"
+            y1="369.14"
+            x2="108.92"
+            y2="403.08"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="464"
+            y1="256"
+            x2="416"
+            y2="256"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="96"
+            y1="256"
+            x2="48"
+            y2="256"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="403.08"
+            y1="403.08"
+            x2="369.14"
+            y2="369.14"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="142.86"
+            y1="142.86"
+            x2="108.92"
+            y2="108.92"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <circle
+            cx="256"
+            cy="256"
+            r="80"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+        </svg>
+      </button>
+      <div class="trigger">
+        <div class="trigger-container" id="site-menu">
+          
+            
+            
+            
+            
+            <a class="menu-link " href="/PMAT77/">首页</a>
+          
+            
+            
+            
+            
+            <a class="menu-link " href="/PMAT77/essays/">随笔</a>
+          
+            
+            
+            
+            
+            <a class="menu-link " href="/PMAT77/novels/">连载小说</a>
+          
+            
+            
+            
+            
+            <a class="menu-link " href="/PMAT77/tech/">技术文章</a>
+          
+            
+            
+            
+            
+            <a class="menu-link active" href="/PMAT77/projects/" aria-current="page">项目展示</a>
+          
+        </div>
+      </div>
+    </nav>
+  </div>
+ 
+<div class="wrapper collection-page project-detail">
+  <main aria-label="BubbleShark 社区">
+    <header class="collection-header">
+      <a class="collection-back" href="/PMAT77/projects/">← 项目展示</a>
+      <h1>BubbleShark 社区</h1>
+      <p class="project-intro">BubbleSharkPanel 社区</p>
+      <div class="project-meta">
+        <span>Shell</span>
+        <span>Star 1</span>
+        <time datetime="2026-10-29T10:15:06Z">更新于 2026-10-29</time>
+      </div>
+      <a class="project-github" href="https://github.com/PMAT77/bubble-shark-nexus" target="_blank" rel="noopener noreferrer">查看 GitHub <span aria-hidden="true">↗</span></a>
+    </header>
+    
+      <div class="post project-readme"><div class="page-content"><div id="readme" class="md" data-path="README.md"><article class="markdown-body entry-content container-lg"><div class="markdown-heading" dir="auto"><h1 class="heading-element" dir="auto" id="bubbleshark-nexus">BubbleShark Nexus</h1></div>
+<p dir="auto">BubbleSharkPanel 的产品入口、安装中心与常见问题站点。面向《饥荒联机版》自托管服务器服主，使用 Nuxt 4、Nuxt Content 3、Tailwind CSS 4、Vue 3 与 TypeScript。</p>
+<p dir="auto">当前为项目初始化版本：已建立三个页面、安装配置器、9 条来源可追溯的 FAQ、静态构建和 Release 同步基础。完整 V1 交付清单见 <a href="https://github.com/PMAT77/bubble-shark-nexus/blob/main/docs/plan-review.md" target="_blank" rel="noopener noreferrer">计划审查</a>。</p>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto" id="本地运行">本地运行</h2></div>
+<p dir="auto">需要 Node.js 24+ 与 pnpm 10.33.0。Nuxt Content 使用 Node 内置 SQLite。</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="pnpm install
+pnpm dev"><pre>pnpm install
+pnpm dev</pre></div>
+<p dir="auto">开发地址：<code>http://127.0.0.1:3000</code>。</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="pnpm check:baseline
+pnpm test
+pnpm typecheck
+pnpm generate
+pnpm preview"><pre>pnpm check:baseline
+pnpm <span class="pl-c1">test</span>
+pnpm typecheck
+pnpm generate
+pnpm preview</pre></div>
+<p dir="auto">静态产物位于 <code>.output/public</code>。<code>pnpm preview</code> 使用 Nuxt 的静态预览命令，首次运行可能下载 <code>serve</code>。</p>
+<p dir="auto">部署到全新 Debian 12 服务器见 <a href="https://github.com/PMAT77/bubble-shark-nexus/blob/main/docs/debian-deployment.md" target="_blank" rel="noopener noreferrer">静态网站部署步骤</a>，配套 Nginx 配置位于 <code>deploy/nginx-nexus.conf</code>。</p>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto" id="页面">页面</h2></div>
+<table>
+<thead>
+<tr>
+<th>路由</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/</code></td>
+<td>产品介绍、开服步骤、核心能力、部署方式与社区入口</td>
+</tr>
+<tr>
+<td><code>/install</code></td>
+<td>Docker / Native、国内 / 海外、可选防火墙配置、体检命令、首次登录与端口</td>
+</tr>
+<tr>
+<td><code>/faq</code></td>
+<td>按分类、标题、正文、关键词和错误提示搜索；问题锚点与原文出处</td>
+</tr>
+</tbody>
+</table>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto" id="panel-内容基线">Panel 内容基线</h2></div>
+<p dir="auto">Panel 本地参考目录为 <code>../bubble-shark-panel</code>，官方仓库为 <a href="https://github.com/PMAT77/bubble-shark-panel" target="_blank" rel="noopener noreferrer">PMAT77/bubble-shark-panel</a>。</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="# 从 GitHub 最新非预发布 Release 同步
+pnpm sync:panel
+
+# 同步指定正式版本，可核对完整 commit SHA
+pnpm sync:panel --tag v0.15.4 --expected-sha 24a9a42dacd3708f7219b29fb0d46ba928225c71
+
+# 从本地仓库读取该 Release 的精确 git blob
+pnpm sync:panel --local ../bubble-shark-panel"><pre><span class="pl-c"><span class="pl-c">#</span> 从 GitHub 最新非预发布 Release 同步</span>
+pnpm sync:panel
+
+<span class="pl-c"><span class="pl-c">#</span> 同步指定正式版本，可核对完整 commit SHA</span>
+pnpm sync:panel --tag v0.15.4 --expected-sha 24a9a42dacd3708f7219b29fb0d46ba928225c71
+
+<span class="pl-c"><span class="pl-c">#</span> 从本地仓库读取该 Release 的精确 git blob</span>
+pnpm sync:panel --local ../bubble-shark-panel</pre></div>
+<p dir="auto">同步查询 GitHub Release 元数据并将 tag 解析为 commit；本地方式还会校验 tag 与远端 commit 相同。同步不会读取 Panel 工作区中的未发布修改。草稿、预发布、非法版本及 SHA 不一致会中止同步；低于已提交基线的版本会跳过。</p>
+<p dir="auto">同步输出：</p>
+<ul dir="auto">
+<li><code>data/release.json</code>：版本、安装器 URL 与 SHA-256、端口、环境要求、资源与来源摘要。</li>
+<li><code>data/panel/</code>：对应 commit 的 README、安装器、部署、迁移、内存、安全、变更记录与品牌素材原文。</li>
+<li><code>content/faq/</code>：依据原文章节生成的 FAQ 种子内容；同步时覆盖，请在 <code>scripts/panel-baseline.mjs</code> 中维护生成规则。</li>
+<li><code>public/logo/shark.png</code>、<code>public/favicon.png</code>：Panel 品牌素材。</li>
+</ul>
+<p dir="auto">安装命令先下载并校验安装器，再执行。下载失败或校验失败时不会继续安装。<code>--check</code> 不修改目标系统；下载步骤会在当前目录保存脚本。</p>
+<p dir="auto"><code>pnpm check:baseline</code> 检查来源哈希、提取事实与生成 FAQ 的一致性。常规开发和构建使用已提交的快照，无需访问 GitHub。</p>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto" id="发布与-github-pages">发布与 GitHub Pages</h2></div>
+<p dir="auto">将 <code>.env.example</code> 复制为 <code>.env</code>，可为本地静态构建配置站点地址：</p>
+<div class="highlight highlight-source-dotenv notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="NUXT_PUBLIC_SITE_URL=https://your-domain.example"><pre><span class="pl-v">NUXT_PUBLIC_SITE_URL</span><span class="pl-k">=</span><span class="pl-s">https://your-domain.example</span></pre></div>
+<p dir="auto">配置后重新生成静态站点，生成正式 canonical、OpenGraph URL、sitemap 与 robots。未配置域名时，robots 默认禁止索引且不会生成虚构的 canonical。</p>
+<p dir="auto">推送到 <code>main</code> 后，<code>.github/workflows/deploy-pages.yml</code> 会执行同一组检查、生成 <code>.output/public</code> 并发布到 GitHub Pages。首次发布默认使用 <code>https://pmat77.github.io/bubble-shark-nexus/</code>，无需配置仓库变量。</p>
+<p dir="auto">在仓库 <strong>Settings → Pages</strong> 中将发布源设为 <strong>GitHub Actions</strong>。若以后迁移到根域名 <code>https://bubble-shark.online</code>，在域名通过 Pages 验证并完成 DNS 切换后，添加以下仓库变量并重新运行部署工作流：</p>
+<div class="snippet-clipboard-content notranslate position-relative overflow-auto" data-snippet-clipboard-copy-content="NEXUS_APP_BASE_URL=/
+NEXUS_SITE_URL=https://bubble-shark.online"><pre lang="text" class="notranslate"><code>NEXUS_APP_BASE_URL=/
+NEXUS_SITE_URL=https://bubble-shark.online
+</code></pre></div>
+<p dir="auto">根域名需要改为 GitHub Pages 的四条 A 记录：<code>185.199.108.153</code>、<code>185.199.109.153</code>、<code>185.199.110.153</code>、<code>185.199.111.153</code>；<code>www.bubble-shark.online</code> 使用指向 <code>pmat77.github.io</code> 的 CNAME。使用 Actions 发布时无需提交 <code>CNAME</code> 文件。</p>
+<p dir="auto"><code>.github/workflows/ci.yml</code> 执行常规验证并上传构建 artifact。<code>.github/workflows/sync-panel.yml</code> 接收 <code>panel-release</code> dispatch 或手动触发，检查通过后自动提交生成文件并推送 <code>main</code>，触发 CI 与 GitHub Pages 部署。无文件变化时不提交；同步或检查失败时不推送。</p>
+<p dir="auto">自动同步需要仅授权 <code>bubble-shark-nexus</code>、具有 <code>Contents: Read and write</code> 权限的 fine-grained PAT。在 Panel 仓库的 Actions Secrets 中保存为 <code>NEXUS_DISPATCH_TOKEN</code>，在 Nexus 仓库中保存为 <code>NEXUS_SYNC_TOKEN</code>。<code>main</code> 必须允许自动提交直接推送。默认 <code>GITHUB_TOKEN</code> 推送不会触发后续 push 工作流，不能替代同步推送凭据。</p>
+<p dir="auto">上线顺序为合入 Nexus 接收工作流、配置两个 Secrets、合入 Panel 通知 job。Panel 在 Release 资源上传成功后发送 tag 和 commit SHA。GitHub 上的完整自动链路仍待验收。</p>
+<p dir="auto">补同步可在 Actions → Sync Panel Release → Run workflow 中选择 <code>main</code>，填写正式 tag；留空同步最新正式 Release。通知失败时重跑 Panel 的 Notify Nexus job；同步失败或推送冲突时重新运行 Nexus 同步；Pages 部署失败时重跑 Deploy GitHub Pages。验收需要确认部署成功，以及线上版本与复制出的安装命令对应目标 Release。</p>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto" id="文档与许可">文档与许可</h2></div>
+<ul dir="auto">
+<li><a href="https://github.com/PMAT77/bubble-shark-nexus/blob/main/docs/execution-plan.md" target="_blank" rel="noopener noreferrer">执行计划原文</a></li>
+<li><a href="https://github.com/PMAT77/bubble-shark-nexus/blob/main/docs/plan-review.md" target="_blank" rel="noopener noreferrer">计划审查与后续任务</a></li>
+<li><a href="https://github.com/PMAT77/bubble-shark-nexus/blob/main/docs/initialization.md" target="_blank" rel="noopener noreferrer">初始化与验证记录</a></li>
+</ul>
+<p dir="auto">原创代码使用 <a href="https://github.com/PMAT77/bubble-shark-nexus/blob/main/LICENSE" target="_blank" rel="noopener noreferrer">MIT</a>。Panel 原文与品牌素材保留 <a href="https://github.com/PMAT77/bubble-shark-nexus/blob/main/data/panel/LICENSE" target="_blank" rel="noopener noreferrer">Panel MIT 许可</a>。Vue Bits SpotlightCard 使用独立的 <a href="https://github.com/PMAT77/bubble-shark-nexus/blob/main/licenses/vue-bits.txt" target="_blank" rel="noopener noreferrer">MIT + Commons Clause</a>，出处见 <a href="https://github.com/PMAT77/bubble-shark-nexus/blob/main/NOTICE" target="_blank" rel="noopener noreferrer">NOTICE</a>。</p>
+</article></div></div></div>
+    
+  </main>
+</div>
+ <footer class="footer">
+    <small class="footer_copyright">
+      <div id="bottom-inner">
+        © 2021 Site by Paolos using
+        <a target="_blank" rel="noopener" href="http://hexo.io">hexo blog framework</a>.
+        <br>
+        <p> Theme is <a target="_blank" rel="noopener" href="https://github.com/dewjohn/hexo-theme-klise">Klise</a></p>
+      </div>
+    </small>
+  </footer>
+  
+   
+<script src="/PMAT77/js/search.js"></script>
+
+<script src="/PMAT77/js/main.js"></script>
+ 
+
+<script>
+  // 当前页面完整 URL（去除#后部分）
+  const url = window.location.href.split("#")[0];
+</script>
+
+<script>
+  window.FPConfig = {
+    delay: 0,
+    ignoreKeywords: [],
+    maxRPS: 3,
+    hoverDelay: 50,
+  };
+
+  function initializeSearch() {
+    const searchInput = document.querySelector("#search-input") || null;
+    const searchResults = document.querySelector("#search-results") || null;
+
+    if (!searchInput) return;
+
+    // 检查SimpleJekyllSearch是否已加载
+    if (typeof SimpleJekyllSearch === "undefined") {
+      console.error("SimpleJekyllSearch library not loaded");
+      return;
+    }
+
+    try {
+      var sjs = SimpleJekyllSearch({
+        searchInput: searchInput,
+        resultsContainer: searchResults,
+        json: searchInput.dataset.searchType === 'tech'
+          ? "/PMAT77/tech-search.json"
+          : "/PMAT77/search.json",
+        templateMiddleware: function (key, value) {
+          return String(value == null ? '' : value).replace(/[&<>"']/g, function (character) {
+            return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[character];
+          });
+        },
+        noResultsText: "未找到相关文章",
+        searchResultTemplate: '<li><a href="{url}" title="标签：{tags}">{title}</a></li>',
+      });
+    } catch (error) {
+      console.error("Search initialization failed:", error);
+    }
+  }
+
+  // 主题未配置搜索脚本时，从站点根路径加载
+  function loadSearchLibrary() {
+    if (typeof SimpleJekyllSearch === "undefined") {
+      const script = document.createElement("script");
+      script.src = "/PMAT77/js/search.js";
+      script.onload = initializeSearch;
+      script.onerror = function () {
+        console.error("Failed to load search library");
+      };
+      document.head.appendChild(script);
+    } else {
+      initializeSearch();
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", loadSearchLibrary);
+</script>
+
+<script
+  defer
+  src="https://cdn.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"
+></script>
+
+  </body>
+</html>

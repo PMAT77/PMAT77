@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    
+
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BubbleSharkPanel [ Paolos ]</title>
+
+  <link rel="icon" href="/PMAT77/img/favicon.jpeg">
+
+
+    <meta name="author" content="Paolos">
+
+
+
+    <meta name="Description" content="Paolos - 个人博客">
+
+
+    <meta name="keywords" content=",blog">
+
+
+  <link rel="alternate" href="/PMAT77/atom.xml " title="Paolos" type="application/atom+xml">
+
+
+  
+    <link rel="stylesheet" href="/PMAT77/css/main.css">
+  
+
+  <meta name="generator" content="Hexo 7.3.0"></head>
+  <body data-theme="light" class="notransition">
+    <script>
+      const body = document.body;
+      const data = body.getAttribute("data-theme");
+      const initTheme = (state) => {
+        if (state === "dark") {
+          body.setAttribute("data-theme", "dark");
+        } else if (state === "light") {
+          body.removeAttribute("data-theme");
+        } else {
+          localStorage.setItem("theme", data);
+        }
+      };
+
+      initTheme(localStorage.getItem("theme"));
+
+      setTimeout(() => body.classList.remove("notransition"), 75);
+    </script>
+    <div class="navbar" role="navigation">
+    <nav class="menu">
+      <input type="checkbox" id="menu-trigger" class="menu-trigger" aria-label="展开导航" aria-controls="site-menu" aria-expanded="false" />
+      <label for="menu-trigger">
+        <span class="menu-icon">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 512 512"
+          >
+            <path
+              d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z"
+            />
+          </svg>
+        </span>
+      </label>
+      <button id="mode" type="button" aria-label="切换明暗主题" aria-pressed="false">
+        <svg
+          class="mode-sunny"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 512 512"
+        >
+          <title>LIGHT</title>
+          <line
+            x1="256"
+            y1="48"
+            x2="256"
+            y2="96"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="256"
+            y1="416"
+            x2="256"
+            y2="464"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="403.08"
+            y1="108.92"
+            x2="369.14"
+            y2="142.86"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="142.86"
+            y1="369.14"
+            x2="108.92"
+            y2="403.08"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="464"
+            y1="256"
+            x2="416"
+            y2="256"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="96"
+            y1="256"
+            x2="48"
+            y2="256"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="403.08"
+            y1="403.08"
+            x2="369.14"
+            y2="369.14"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="142.86"
+            y1="142.86"
+            x2="108.92"
+            y2="108.92"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <circle
+            cx="256"
+            cy="256"
+            r="80"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+        </svg>
+        <svg
+          class="mode-moon"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 512 512"
+        >
+          <title>DARK</title>
+          <line
+            x1="256"
+            y1="48"
+            x2="256"
+            y2="96"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="256"
+            y1="416"
+            x2="256"
+            y2="464"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="403.08"
+            y1="108.92"
+            x2="369.14"
+            y2="142.86"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="142.86"
+            y1="369.14"
+            x2="108.92"
+            y2="403.08"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="464"
+            y1="256"
+            x2="416"
+            y2="256"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="96"
+            y1="256"
+            x2="48"
+            y2="256"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="403.08"
+            y1="403.08"
+            x2="369.14"
+            y2="369.14"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="142.86"
+            y1="142.86"
+            x2="108.92"
+            y2="108.92"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <circle
+            cx="256"
+            cy="256"
+            r="80"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+        </svg>
+      </button>
+      <div class="trigger">
+        <div class="trigger-container" id="site-menu">
+          
+            
+            
+            
+            
+            <a class="menu-link " href="/PMAT77/">首页</a>
+          
+            
+            
+            
+            
+            <a class="menu-link " href="/PMAT77/essays/">随笔</a>
+          
+            
+            
+            
+            
+            <a class="menu-link " href="/PMAT77/novels/">连载小说</a>
+          
+            
+            
+            
+            
+            <a class="menu-link " href="/PMAT77/tech/">技术文章</a>
+          
+            
+            
+            
+            
+            <a class="menu-link active" href="/PMAT77/projects/" aria-current="page">项目展示</a>
+          
+        </div>
+      </div>
+    </nav>
+  </div>
+ 
+<div class="wrapper collection-page project-detail">
+  <main aria-label="BubbleSharkPanel">
+    <header class="collection-header">
+      <a class="collection-back" href="/PMAT77/projects/">← 项目展示</a>
+      <h1>BubbleSharkPanel</h1>
+      <p class="project-intro">饥荒联机版（DST）及其它 Steam 专用服务器的开源运维面板：一键开服、世界与 Mod 管理、实时日志控制台、玩家管理与定时备份。Docker / 裸机 systemd 双模式，面向国内服务器优化。</p>
+      <div class="project-meta">
+        <span>TypeScript</span>
+        <span>Star 1</span>
+        <time datetime="2026-10-29T10:04:18Z">更新于 2026-10-29</time>
+      </div>
+      <a class="project-github" href="https://github.com/PMAT77/bubble-shark-panel" target="_blank" rel="noopener noreferrer">查看 GitHub <span aria-hidden="true">↗</span></a>
+    </header>
+    
+      <div class="post project-readme"><div class="page-content"><div id="readme" class="md" data-path="README.md"><article class="markdown-body entry-content container-lg"><div class="markdown-heading" dir="auto"><h1 class="heading-element" dir="auto" id="bubblesharkpanel--饥荒联机版专用服务器管理面板">BubbleSharkPanel · 饥荒联机版专用服务器管理面板</h1></div>
+<p dir="auto"><a href="https://github.com/PMAT77/bubble-shark-panel/blob/main/LICENSE" target="_blank" rel="noopener noreferrer"><img src="https://camo.githubusercontent.com/3f66e5c1e948d61ed1824c4de00ca0cfdf12d13a6e274045433807519130c96e/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f6c6963656e73652d4d49542d626c75652e737667" alt="License: MIT" data-canonical-src="https://img.shields.io/badge/license-MIT-blue.svg"></a>
+<a href="https://github.com/PMAT77/bubble-shark-panel/actions/workflows/ci.yml" target="_blank" rel="noopener noreferrer"><img src="https://github.com/PMAT77/bubble-shark-panel/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
+<a href="https://camo.githubusercontent.com/9839faafafa5aea0d8011d0a879f6adce3c5872911812c0483d5635c490c3b55/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f7374617475732d5075626c6963253230426574612d6f72616e6765" target="_blank" rel="noopener noreferrer"><img src="https://camo.githubusercontent.com/9839faafafa5aea0d8011d0a879f6adce3c5872911812c0483d5635c490c3b55/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f7374617475732d5075626c6963253230426574612d6f72616e6765" alt="Public Beta" data-canonical-src="https://img.shields.io/badge/status-Public%20Beta-orange"></a></p>
+<p dir="auto"><strong>在浏览器里管理你的饥荒联机版专用服务器。</strong></p>
+<p dir="auto">创建实例、安装游戏、管理世界与 Mod、查看控制台、管理玩家和备份，都可以在一个面板里完成。</p>
+<p dir="auto">支持 Docker 与 Native（裸机）systemd 两种部署方式。</p>
+<p dir="auto"><strong>开始使用： <a href="https://bubble-shark.online/" target="_blank" rel="noopener noreferrer">官方社区</a> · <a href="#%E5%9C%A8%E7%BA%BF%E4%BD%93%E9%AA%8C">在线体验</a> · <a href="#%E5%BF%AB%E9%80%9F%E5%AE%89%E8%A3%85">立即安装</a> · <a href="#%E5%AD%98%E6%A1%A3%E5%AF%BC%E5%85%A5">存档导入</a></strong></p>
+<p dir="auto"><a href="https://camo.githubusercontent.com/fcd3ef0d7ee16afd39a26216e5cb10778a48b4ed104db8b7d17703907d8e6c8a/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f504d415437372f504d4154373743444e406d61696e2f696d67732f67616d652d7365727665722d6875622f47616d655365727665725f425f313030352e706e67" target="_blank" rel="noopener noreferrer"><img src="https://camo.githubusercontent.com/fcd3ef0d7ee16afd39a26216e5cb10778a48b4ed104db8b7d17703907d8e6c8a/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f504d415437372f504d4154373743444e406d61696e2f696d67732f67616d652d7365727665722d6875622f47616d655365727665725f425f313030352e706e67" alt="BubbleSharkPanel 面板预览" data-canonical-src="https://cdn.jsdelivr.net/gh/PMAT77/PMAT77CDN@main/imgs/game-server-hub/GameServer_B_1005.png"></a></p>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto" id="在线体验">在线体验</h2></div>
+<p dir="auto">不用安装，也不用注册。</p>
+<p dir="auto">打开<a href="http://111.170.172.120:50155/" target="_blank" rel="noopener noreferrer">在线预览</a>，直接查看真实面板中的实例、世界配置、Mod、玩家和备份。</p>
+<p dir="auto">预览环境为只读模式，不会对真实服务器执行操作。</p>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto" id="为什么用-bubblesharkpanel">为什么用 BubbleSharkPanel</h2></div>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto" id="浏览器管理服务器">浏览器管理服务器</h3></div>
+<p dir="auto">创建实例、安装游戏、启动世界、查看日志，都可以直接在面板中完成。</p>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto" id="存档和面板备份">存档和面板备份</h3></div>
+<p dir="auto">修改世界、导入存档、回档或重置世界前自动创建备份；面板数据库支持独立快照与恢复。</p>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto" id="多人维护服务器">多人维护服务器</h3></div>
+<p dir="auto">可以为不同运维成员创建独立账号，分别控制功能权限和实例范围，并记录操作账号。</p>
+<p dir="auto">角色决定能做什么，实例授权决定能管理哪些实例。</p>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto" id="国内服务器支持">国内服务器支持</h3></div>
+<p dir="auto">Steam 与 Mod 请求支持代理和缓存；镜像下载失败时，安装器会尝试使用 Release 离线镜像包完成部署。</p>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto" id="docker-与-native-双模式支持">Docker 与 Native 双模式支持</h3></div>
+<p dir="auto">Docker 模式运行面板与游戏容器；Native 模式使用 systemd 管理面板和游戏进程。</p>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto" id="已经在用其他-dst-面板">已经在用其他 DST 面板？</h2></div>
+<p dir="auto">可以从下面这些使用场景判断 BubbleSharkPanel 是否适合你：</p>
+<table>
+<thead>
+<tr>
+<th>你需要什么</th>
+<th>BubbleSharkPanel</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>快速创建 DST 服务器</td>
+<td>图形化创建实例，SteamCMD 自动安装与更新</td>
+</tr>
+<tr>
+<td>担心改错世界或丢存档</td>
+<td>操作前自动备份，支持数据库快照与恢复</td>
+</tr>
+<tr>
+<td>多人一起维护服务器</td>
+<td>角色权限与实例授权分开管理</td>
+</tr>
+<tr>
+<td>国内服务器访问 Steam / Mod 不稳定</td>
+<td>支持代理、缓存、镜像回退与离线部署</td>
+</tr>
+<tr>
+<td>希望服务器完全由自己掌控</td>
+<td>自托管，运行在自己的服务器上</td>
+</tr>
+<tr>
+<td>想选择 Docker 或裸机部署</td>
+<td>提供 Docker 与 Native systemd 两种方式</td>
+</tr>
+<tr>
+<td>已经有 DST 存档</td>
+<td>支持导入既有存档</td>
+</tr>
+</tbody>
+</table>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto" id="存档导入">存档导入</h2></div>
+<p dir="auto">已有 DST 存档可以导入现有实例继续使用。</p>
+<p dir="auto">面板支持导入既有集群数据，并在导入过程中处理实例所需的配置。</p>
+<p dir="auto">支持分片端口重写、玩家名单与 Mod 清单带入，可选包含 Mod 文件供离线恢复；安全组需手工放行 6 个 UDP 端口。支持范围与手工步骤见<a href="https://github.com/PMAT77/bubble-shark-panel/blob/main/docs/migrate-from-other-panel.md" target="_blank" rel="noopener noreferrer">从其他面板或裸机迁入</a>。</p>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto" id="快速安装">快速安装</h2></div>
+<p dir="auto"><strong>强烈建议使用：<a href="https://bubble-shark.online/install" target="_blank" rel="noopener noreferrer">安装指南</a></strong></p>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto" id="docker">Docker</h3></div>
+<p dir="auto">海外或网络正常的 Linux 服务器，一条命令即可开始安装：</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="curl -fsSL &quot;https://raw.githubusercontent.com/PMAT77/bubble-shark-panel/v0.22.5/scripts/install.linux.sh&quot; \
+  | sudo bash -s -- --mode docker"><pre>curl -fsSL <span class="pl-s"><span class="pl-pds">"</span>https://raw.githubusercontent.com/PMAT77/bubble-shark-panel/v0.22.5/scripts/install.linux.sh<span class="pl-pds">"</span></span> \
+  <span class="pl-k">|</span> sudo bash -s -- --mode docker</pre></div>
+<p dir="auto">安装完成后：</p>
+<div class="snippet-clipboard-content notranslate position-relative overflow-auto" data-snippet-clipboard-copy-content="打开浏览器
+→
+首次登录并修改密码
+→
+进入「实例管理」
+→
+创建第一个 DST 实例"><pre lang="text" class="notranslate"><code>打开浏览器
+→
+首次登录并修改密码
+→
+进入「实例管理」
+→
+创建第一个 DST 实例
+</code></pre></div>
+<p dir="auto">安装器会自动安装 Docker 与 Compose 插件，并启动面板。</p>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto" id="国内服务器或网络受限环境">国内服务器或网络受限环境</h3></div>
+<p dir="auto">先加上国内档位安装：</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="curl -fsSL &quot;https://raw.githubusercontent.com/PMAT77/bubble-shark-panel/v0.22.5/scripts/install.linux.sh&quot; \
+  | sudo bash -s -- --mode docker --network cn"><pre>curl -fsSL <span class="pl-s"><span class="pl-pds">"</span>https://raw.githubusercontent.com/PMAT77/bubble-shark-panel/v0.22.5/scripts/install.linux.sh<span class="pl-pds">"</span></span> \
+  <span class="pl-k">|</span> sudo bash -s -- --mode docker --network cn</pre></div>
+<details>
+<summary>只想看这台机器能不能装，先不安装</summary>
+<p dir="auto">加 <code>--check</code> 只打印体检报告就退出：不装依赖、不建目录、不写安装状态文件、不拉镜像。</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="curl -fsSL &quot;https://raw.githubusercontent.com/PMAT77/bubble-shark-panel/v0.22.5/scripts/install.linux.sh&quot; \
+  | sudo bash -s -- --check"><pre>curl -fsSL <span class="pl-s"><span class="pl-pds">"</span>https://raw.githubusercontent.com/PMAT77/bubble-shark-panel/v0.22.5/scripts/install.linux.sh<span class="pl-pds">"</span></span> \
+  <span class="pl-k">|</span> sudo bash -s -- --check</pre></div>
+<p dir="auto">体检有阻塞项时返回退出码 1，也能直接串进自动化脚本。</p>
+</details>
+<p dir="auto">详细说明见：</p>
+<ul dir="auto">
+<li><a href="https://github.com/PMAT77/bubble-shark-panel/blob/main/docs/install-docker.md" target="_blank" rel="noopener noreferrer">Docker 模式安装</a></li>
+<li><a href="https://github.com/PMAT77/bubble-shark-panel/blob/main/docs/reference.md" target="_blank" rel="noopener noreferrer">参数速查</a></li>
+</ul>
+<p dir="auto">遇到安装问题可以运行：</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="sudo bsp doctor"><pre>sudo bsp doctor</pre></div>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto" id="裸机-systemd">裸机 systemd</h3></div>
+<p dir="auto">不使用 Docker 时：</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="curl -fsSL &quot;https://raw.githubusercontent.com/PMAT77/bubble-shark-panel/v0.22.5/scripts/install.linux.sh&quot; \
+  | sudo bash -s -- --mode native"><pre>curl -fsSL <span class="pl-s"><span class="pl-pds">"</span>https://raw.githubusercontent.com/PMAT77/bubble-shark-panel/v0.22.5/scripts/install.linux.sh<span class="pl-pds">"</span></span> \
+  <span class="pl-k">|</span> sudo bash -s -- --mode native</pre></div>
+<p dir="auto">详细说明见：</p>
+<ul dir="auto">
+<li><a href="https://github.com/PMAT77/bubble-shark-panel/blob/main/docs/install-native.md" target="_blank" rel="noopener noreferrer">裸机 systemd 模式安装</a></li>
+</ul>
+<p dir="auto">当前版本：</p>
+<div class="snippet-clipboard-content notranslate position-relative overflow-auto" data-snippet-clipboard-copy-content="v0.22.5 · Public Beta"><pre lang="text" class="notranslate"><code>v0.22.5 · Public Beta
+</code></pre></div>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto" id="能做什么">能做什么</h2></div>
+<ul dir="auto">
+<li><strong>开服</strong> —— 创建实例并安装 DST，之后在面板里更新和启动。</li>
+<li><strong>世界管理</strong> —— 修改房间与世界配置，管理现有存档。</li>
+<li><strong>Mod 管理</strong> —— 搜索、订阅、启停创意工坊 Mod，支持单 Mod ZIP 本地导入。</li>
+<li><strong>玩家管理</strong> —— 管理管理员、白名单和黑名单，查看、踢出或封禁在线玩家。</li>
+<li><strong>备份</strong> —— 定时备份，并在重要操作前创建安全备份。</li>
+<li><strong>控制台</strong> —— 实时查看日志，直接向游戏下发命令。</li>
+<li><strong>多实例</strong> —— 一台服务器同时运行多个独立实例。</li>
+<li><strong>权限管理</strong> —— 角色控制操作权限，实例授权控制可管理范围。</li>
+<li><strong>服务器监控</strong> —— 查看 CPU、内存、磁盘和网络状态。</li>
+<li><strong>环境自检</strong> —— 检查运行环境、存储空间、实例状态和相关服务。</li>
+<li><strong>世界地形图</strong> —— 从游戏地形数据导出世界地图。</li>
+<li><strong>面板快照</strong> —— 备份、下载、恢复面板数据库。</li>
+</ul>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto" id="部署方式">部署方式</h2></div>
+<table>
+<thead>
+<tr>
+<th>部署方式</th>
+<th>适合场景</th>
+<th>运行方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Docker</td>
+<td>游戏社区、希望使用容器的服务器</td>
+<td>面板与游戏运行在 Docker 容器中</td>
+</tr>
+<tr>
+<td>Native systemd</td>
+<td>个人服务器、不希望使用 Docker</td>
+<td>面板与游戏直接由 systemd 管理</td>
+</tr>
+</tbody>
+</table>
+<p dir="auto">两种方式使用不同的运行环境，安装时选择一种即可。</p>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto" id="适合谁">适合谁</h2></div>
+<ul dir="auto">
+<li>有自己的 Linux 服务器，希望用浏览器管理 DST。</li>
+<li>不想频繁 SSH、修改配置文件和手动重启服务器。</li>
+<li>需要多人一起维护服务器，并希望分别控制操作权限。</li>
+<li>已经有 DST 存档，希望继续使用现有数据。</li>
+</ul>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto" id="当前限制">当前限制</h2></div>
+<ul dir="auto">
+<li><strong>Windows</strong>：目前不支持 Windows 部署，当前部署目标为 Debian 12、Ubuntu 22.04 / 24.04 等 apt 系 Linux。</li>
+<li><strong>更多游戏</strong>：目前完整适配的首个游戏是《饥荒联机版》。</li>
+<li><strong>多节点与租户能力</strong>：多节点统一管理、组织 / 租户隔离和 SSO 仍在规划中。</li>
+</ul>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto" id="安全">安全</h2></div>
+<p dir="auto">Docker 模式需要访问 Docker Socket 才能管理游戏容器，因此面板具有较高的宿主机控制能力。</p>
+<p dir="auto">使用 Docker 部署时：</p>
+<ul dir="auto">
+<li>请为面板设置强密码。</li>
+<li>不建议将面板直接暴露在公网。</li>
+<li>建议限制面板访问来源，并在反向代理层增加访问控制。</li>
+<li>面板中的权限控制只限制面板操作，不等于宿主机隔离。</li>
+</ul>
+<p dir="auto">完整说明见 <a href="https://github.com/PMAT77/bubble-shark-panel/blob/main/SECURITY.md" target="_blank" rel="noopener noreferrer">SECURITY.md</a>。</p>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto" id="常见问题">常见问题</h2></div>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto" id="可以导入现有-dst-存档吗">可以导入现有 DST 存档吗？</h3></div>
+<p dir="auto">可以。</p>
+<p dir="auto">把源机器的集群目录打成压缩包，用面板「备份与恢复 → 导入外部存档」导入即可；支持范围与手工步骤见<a href="https://github.com/PMAT77/bubble-shark-panel/blob/main/docs/migrate-from-other-panel.md" target="_blank" rel="noopener noreferrer">从其他面板或裸机迁入</a>。</p>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto" id="会不会丢存档">会不会丢存档？</h3></div>
+<p dir="auto">重要操作前会自动创建备份，面板数据库还支持独立快照与恢复。</p>
+<p dir="auto">涉及存档迁移、回档和恢复时，建议先保留一份额外备份。</p>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto" id="支持-windows-吗">支持 Windows 吗？</h3></div>
+<p dir="auto">目前不支持 Windows 部署。</p>
+<p dir="auto">当前支持 Debian 12、Ubuntu 22.04 / 24.04 等 apt 系 Linux。</p>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto" id="docker-和裸机有什么区别">Docker 和裸机有什么区别？</h3></div>
+<p dir="auto">Docker 模式通过容器运行面板和游戏。</p>
+<p dir="auto">Native 模式直接使用 systemd 管理面板和游戏进程。</p>
+<p dir="auto">根据你的服务器环境选择即可。</p>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto" id="国内服务器可以安装吗">国内服务器可以安装吗？</h3></div>
+<p dir="auto">可以。</p>
+<p dir="auto">安装器支持国内网络环境下的安装路径，并在镜像下载失败时尝试使用 Release 离线镜像包。</p>
+<p dir="auto">详细步骤见<a href="https://github.com/PMAT77/bubble-shark-panel/blob/main/docs/install-docker.md#%E5%AE%89%E8%A3%85%E5%9B%BD%E5%86%85%E6%9C%8D%E5%8A%A1%E5%99%A8" target="_blank" rel="noopener noreferrer">国内服务器安装说明</a>。</p>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto" id="为什么-docker-模式需要-docker-socket">为什么 Docker 模式需要 Docker Socket？</h3></div>
+<p dir="auto">面板需要通过 Docker 管理游戏容器，因此必须访问 Docker Socket。</p>
+<p dir="auto">这也是 Docker 部署需要特别注意宿主机安全的原因。</p>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto" id="为什么现在只支持-dst">为什么现在只支持 DST？</h3></div>
+<p dir="auto">当前先把《饥荒联机版》的开服与日常运维体验做好，之后再逐步增加其他 Steam 专用服务器。</p>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto" id="升级会不会删除实例和存档">升级会不会删除实例和存档？</h3></div>
+<p dir="auto">正常升级会保留现有实例、存档和配置，并在升级前自动备份面板数据库。</p>
+<p dir="auto">具体升级行为见对应部署方式的安装文档。</p>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto" id="roadmap">Roadmap</h2></div>
+<p dir="auto">当前阶段重点：</p>
+<ul dir="auto">
+<li>完善 DST 开服体验</li>
+<li>完善 DST 日常运维能力</li>
+<li>提升安装与升级稳定性</li>
+<li>持续优化国内网络环境下的部署体验</li>
+</ul>
+<p dir="auto">后续方向：</p>
+<ul dir="auto">
+<li>更多 Steam 专用服务器适配</li>
+<li>多节点管理</li>
+<li>组织 / 租户隔离</li>
+<li>SSO</li>
+<li>插件在线分发</li>
+</ul>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto" id="参与贡献">参与贡献</h2></div>
+<p dir="auto">欢迎提交 <a href="https://github.com/PMAT77/bubble-shark-panel/issues" target="_blank" rel="noopener noreferrer">Issue</a> 与 <a href="https://github.com/PMAT77/bubble-shark-panel/pulls" target="_blank" rel="noopener noreferrer">Pull Request</a>。</p>
+<p dir="auto">开发流程见 <a href="https://github.com/PMAT77/bubble-shark-panel/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer">CONTRIBUTING.md</a>。</p>
+<p dir="auto">安全问题见 <a href="https://github.com/PMAT77/bubble-shark-panel/blob/main/SECURITY.md" target="_blank" rel="noopener noreferrer">SECURITY.md</a>。</p>
+<p dir="auto">版本变更见 <a href="https://github.com/PMAT77/bubble-shark-panel/blob/main/CHANGELOG.md" target="_blank" rel="noopener noreferrer">CHANGELOG.md</a>。</p>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto" id="技术栈">技术栈</h3></div>
+<ul dir="auto">
+<li>前端：Vue 3、Vite、Fantastic-admin</li>
+<li>后端：Fastify、Drizzle ORM</li>
+<li>数据库：SQLite</li>
+<li>包管理：pnpm</li>
+</ul>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto" id="交流与反馈">交流与反馈</h2></div>
+<p dir="auto"><a href="https://camo.githubusercontent.com/e3928ba11bfd13f79399537e457cb75a26d91422239f295e164ba6c4434a7af4/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f51512545372542452541342d313035353639343736332d3132423746353f6c6f676f3d74656e63656e747171266c6f676f436f6c6f723d7768697465" target="_blank" rel="noopener noreferrer"><img src="https://camo.githubusercontent.com/e3928ba11bfd13f79399537e457cb75a26d91422239f295e164ba6c4434a7af4/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f51512545372542452541342d313035353639343736332d3132423746353f6c6f676f3d74656e63656e747171266c6f676f436f6c6f723d7768697465" alt="QQ 群：1055694763" data-canonical-src="https://img.shields.io/badge/QQ%E7%BE%A4-1055694763-12B7F5?logo=tencentqq&amp;logoColor=white"></a></p>
+<p dir="auto">公测版本、安装部署、使用问题和功能建议都可以在群里交流。</p>
+<ul dir="auto">
+<li>部署 / 配置 / 使用问题 → QQ 群</li>
+<li>可复现 Bug / 功能请求 → <a href="https://github.com/PMAT77/bubble-shark-panel/issues" target="_blank" rel="noopener noreferrer">提交 Issue</a></li>
+</ul>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto" id="赞助与商业服务">赞助与商业服务</h2></div>
+<p dir="auto"><strong>Community 核心功能永久免费开源。</strong></p>
+<p dir="auto">如果项目帮你节省了服务器运维时间，可以通过微信支持项目。</p>
+<table>
+  <tbody><tr>
+    <td align="center"><a href="https://camo.githubusercontent.com/e65d64f43799248d192f789409e349483d39aab779c95698509f77b1adade032/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f504d415437372f504d4154373743444e406d61696e2f696d67732f636f6d6d6f6e2f636f6c6c656374696f6e5f7765636861742e6a7067" target="_blank" rel="noopener noreferrer"><img src="https://camo.githubusercontent.com/e65d64f43799248d192f789409e349483d39aab779c95698509f77b1adade032/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f504d415437372f504d4154373743444e406d61696e2f696d67732f636f6d6d6f6e2f636f6c6c656374696f6e5f7765636861742e6a7067" alt="微信赞助" width="200" data-canonical-src="https://cdn.jsdelivr.net/gh/PMAT77/PMAT77CDN@main/imgs/common/collection_wechat.jpg"></a><br>微信赞赏</td>
+    <td align="center"><a href="https://camo.githubusercontent.com/1601c28cf1127c801d00ec5a6cb04837f95a73bb549b881801c5d9f18abf02c4/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f504d415437372f504d4154373743444e406d61696e2f696d67732f636f6d6d6f6e2f5765436861742e6a7067" target="_blank" rel="noopener noreferrer"><img src="https://camo.githubusercontent.com/1601c28cf1127c801d00ec5a6cb04837f95a73bb549b881801c5d9f18abf02c4/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f504d415437372f504d4154373743444e406d61696e2f696d67732f636f6d6d6f6e2f5765436861742e6a7067" alt="微信联系：PMAT77" width="195" data-canonical-src="https://cdn.jsdelivr.net/gh/PMAT77/PMAT77CDN@main/imgs/common/WeChat.jpg"></a><br>微信联系</td>
+  </tr>
+</tbody></table>
+<p dir="auto">同时提供：</p>
+<ul dir="auto">
+<li>服务器代搭建</li>
+<li>存档与面板迁移</li>
+<li>私有化部署</li>
+<li>其他 Steam 专用服务器适配</li>
+<li>功能定制开发</li>
+</ul>
+<p dir="auto">商务联系：微信 <code>PMAT77</code></p>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto" id="许可证">许可证</h2></div>
+<p dir="auto">Community 源代码采用 <a href="https://github.com/PMAT77/bubble-shark-panel/blob/main/LICENSE" target="_blank" rel="noopener noreferrer">MIT License</a>。</p>
+<div class="snippet-clipboard-content notranslate position-relative overflow-auto" data-snippet-clipboard-copy-content="Copyright (c) 2026 BubbleSharkPanel
+SPDX-License-Identifier: MIT"><pre lang="text" class="notranslate"><code>Copyright (c) 2026 BubbleSharkPanel
+SPDX-License-Identifier: MIT
+</code></pre></div>
+<p dir="auto"><strong>BubbleSharkPanel</strong> — 让开服像点一下那么简单。</p>
+</article></div></div></div>
+    
+  </main>
+</div>
+ <footer class="footer">
+    <small class="footer_copyright">
+      <div id="bottom-inner">
+        © 2021 Site by Paolos using
+        <a target="_blank" rel="noopener" href="http://hexo.io">hexo blog framework</a>.
+        <br>
+        <p> Theme is <a target="_blank" rel="noopener" href="https://github.com/dewjohn/hexo-theme-klise">Klise</a></p>
+      </div>
+    </small>
+  </footer>
+  
+   
+<script src="/PMAT77/js/search.js"></script>
+
+<script src="/PMAT77/js/main.js"></script>
+ 
+
+<script>
+  // 当前页面完整 URL（去除#后部分）
+  const url = window.location.href.split("#")[0];
+</script>
+
+<script>
+  window.FPConfig = {
+    delay: 0,
+    ignoreKeywords: [],
+    maxRPS: 3,
+    hoverDelay: 50,
+  };
+
+  function initializeSearch() {
+    const searchInput = document.querySelector("#search-input") || null;
+    const searchResults = document.querySelector("#search-results") || null;
+
+    if (!searchInput) return;
+
+    // 检查SimpleJekyllSearch是否已加载
+    if (typeof SimpleJekyllSearch === "undefined") {
+      console.error("SimpleJekyllSearch library not loaded");
+      return;
+    }
+
+    try {
+      var sjs = SimpleJekyllSearch({
+        searchInput: searchInput,
+        resultsContainer: searchResults,
+        json: searchInput.dataset.searchType === 'tech'
+          ? "/PMAT77/tech-search.json"
+          : "/PMAT77/search.json",
+        templateMiddleware: function (key, value) {
+          return String(value == null ? '' : value).replace(/[&<>"']/g, function (character) {
+            return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[character];
+          });
+        },
+        noResultsText: "未找到相关文章",
+        searchResultTemplate: '<li><a href="{url}" title="标签：{tags}">{title}</a></li>',
+      });
+    } catch (error) {
+      console.error("Search initialization failed:", error);
+    }
+  }
+
+  // 主题未配置搜索脚本时，从站点根路径加载
+  function loadSearchLibrary() {
+    if (typeof SimpleJekyllSearch === "undefined") {
+      const script = document.createElement("script");
+      script.src = "/PMAT77/js/search.js";
+      script.onload = initializeSearch;
+      script.onerror = function () {
+        console.error("Failed to load search library");
+      };
+      document.head.appendChild(script);
+    } else {
+      initializeSearch();
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", loadSearchLibrary);
+</script>
+
+<script
+  defer
+  src="https://cdn.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"
+></script>
+
+  </body>
+</html>
