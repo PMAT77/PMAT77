@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    
+
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>随笔 [ Paolos ]</title>
+
+  <link rel="icon" href="/PMAT77/img/favicon.jpeg">
+
+
+    <meta name="author" content="Paolos">
+
+
+
+    <meta name="Description" content="Paolos - 个人博客">
+
+
+    <meta name="keywords" content=",blog">
+
+
+  <link rel="alternate" href="/PMAT77/atom.xml " title="Paolos" type="application/atom+xml">
+
+
+  
+    <link rel="stylesheet" href="/PMAT77/css/main.css">
+  
+
+  <meta name="generator" content="Hexo 7.3.0"></head>
+  <body data-theme="light" class="notransition">
+    <script>
+      const body = document.body;
+      const data = body.getAttribute("data-theme");
+      const initTheme = (state) => {
+        if (state === "dark") {
+          body.setAttribute("data-theme", "dark");
+        } else if (state === "light") {
+          body.removeAttribute("data-theme");
+        } else {
+          localStorage.setItem("theme", data);
+        }
+      };
+
+      initTheme(localStorage.getItem("theme"));
+
+      setTimeout(() => body.classList.remove("notransition"), 75);
+    </script>
+    <div class="navbar" role="navigation">
+    <nav class="menu">
+      <input type="checkbox" id="menu-trigger" class="menu-trigger" aria-label="展开导航" aria-controls="site-menu" aria-expanded="false" />
+      <label for="menu-trigger">
+        <span class="menu-icon">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 512 512"
+          >
+            <path
+              d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z"
+            />
+          </svg>
+        </span>
+      </label>
+      <button id="mode" type="button" aria-label="切换明暗主题" aria-pressed="false">
+        <svg
+          class="mode-sunny"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 512 512"
+        >
+          <title>LIGHT</title>
+          <line
+            x1="256"
+            y1="48"
+            x2="256"
+            y2="96"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="256"
+            y1="416"
+            x2="256"
+            y2="464"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="403.08"
+            y1="108.92"
+            x2="369.14"
+            y2="142.86"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="142.86"
+            y1="369.14"
+            x2="108.92"
+            y2="403.08"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="464"
+            y1="256"
+            x2="416"
+            y2="256"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="96"
+            y1="256"
+            x2="48"
+            y2="256"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="403.08"
+            y1="403.08"
+            x2="369.14"
+            y2="369.14"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="142.86"
+            y1="142.86"
+            x2="108.92"
+            y2="108.92"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <circle
+            cx="256"
+            cy="256"
+            r="80"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+        </svg>
+        <svg
+          class="mode-moon"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 512 512"
+        >
+          <title>DARK</title>
+          <line
+            x1="256"
+            y1="48"
+            x2="256"
+            y2="96"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="256"
+            y1="416"
+            x2="256"
+            y2="464"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="403.08"
+            y1="108.92"
+            x2="369.14"
+            y2="142.86"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="142.86"
+            y1="369.14"
+            x2="108.92"
+            y2="403.08"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="464"
+            y1="256"
+            x2="416"
+            y2="256"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="96"
+            y1="256"
+            x2="48"
+            y2="256"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="403.08"
+            y1="403.08"
+            x2="369.14"
+            y2="369.14"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="142.86"
+            y1="142.86"
+            x2="108.92"
+            y2="108.92"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <circle
+            cx="256"
+            cy="256"
+            r="80"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+        </svg>
+      </button>
+      <div class="trigger">
+        <div class="trigger-container" id="site-menu">
+          
+            
+            
+            
+            
+            <a class="menu-link " href="/PMAT77/">首页</a>
+          
+            
+            
+            
+            
+            <a class="menu-link active" href="/PMAT77/essays/" aria-current="page">随笔</a>
+          
+            
+            
+            
+            
+            <a class="menu-link " href="/PMAT77/novels/">连载小说</a>
+          
+            
+            
+            
+            
+            <a class="menu-link " href="/PMAT77/tech/">技术文章</a>
+          
+            
+            
+            
+            
+            <a class="menu-link " href="/PMAT77/projects/">项目展示</a>
+          
+        </div>
+      </div>
+    </nav>
+  </div>
+ <div class="wrapper collection-page ">
+  <main aria-label="随笔">
+    <header class="collection-header">
+      
+      <h1>随笔</h1>
+    </header>
+
+    
+      <div class="essay-stream">
+        
+          <article class="essay-entry">
+            <a class="entry-date" href="/PMAT77/2022/05/08/%E5%A4%9C%E9%A3%8E%E4%B8%8D%E6%97%B6%E6%83%B3%E8%B5%B7%E4%BC%BC%E7%9A%84%E5%90%B9%E6%9D%A5/" aria-label="阅读：我可太喜欢看月亮了。 打扫完卫生，肩抗着竹扫帚回去的路上。不"><time datetime="2022-05-08T14:30:00.000Z">2022-05-08</time></a>
+            
+            <div class="post essay-body"><div class="page-content"><p>我可太喜欢看月亮了。</p>
+<p>打扫完卫生，肩抗着竹扫帚回去的路上。不紧不慢地跟在队列最后。</p>
+<p>浅白色的月就低挂在两棵树间，夜风不时想起似的吹来。</p>
+<p>这是一天最轻松的时刻。</p>
+</div></div>
+            
+          </article>
+        
+          <article class="essay-entry">
+            <a class="entry-date" href="/PMAT77/2021/04/12/%E5%9B%B4%E5%A2%99%E3%80%81%E5%BD%B1%E5%AD%90%E5%92%8C%E4%B8%96%E7%95%8C%E5%B0%BD%E5%A4%B4/" aria-label="阅读：断断续续读完了《世界尽头和冷酷仙境》，为此不惜牺牲了数个小周"><time datetime="2021-04-12T15:16:37.000Z">2021-04-12</time></a>
+            
+            <div class="post essay-body"><div class="page-content"><p>断断续续读完了《世界尽头和冷酷仙境》，为此不惜牺牲了数个小周末和午睡时间，不得不承认，村上的小说确实存在某种特殊的吸引我的东西。</p>
+<p>17年因《挪》入坑而开始接触村上的作品。从《卡夫卡》、《寻羊》到《国境以南，太阳以西》，《奇鸟行状录》到《刺杀骑士团长》。记忆里那几年仓促缺憾的大学时光，读的差不多都是村上春树。</p>
+<p>晃眼过去四年。毕业，实习，工作，入伍。时间仿佛在某刻悄然快进，眼底的所有事物，以不可撼动的姿态光速逼近，旋即倏然远离。</p>
+<p>罗曼罗兰曾说，大多数人在二十或三十岁就死了，他们变成了自己的影子，往后的生命只是不断的一天天重复自己。</p>
+<p>我是在什么时候变成影子的呢？现在无从想起了。但成为影子的事实，确已无可辩驳。</p>
+</div></div>
+            
+          </article>
+        
+          <article class="essay-entry">
+            <a class="entry-date" href="/PMAT77/2021/03/14/%E6%B0%B4%E9%BE%99%E5%90%9F%C2%B7%E9%97%BE%E4%B8%98%E5%A4%A7%E5%A4%AB%E5%AD%9D%E7%BB%88%E5%85%AC%E6%98%BE%E5%B0%9D%E5%AE%88%E9%BB%84%E5%B7%9E/" aria-label="阅读：小舟横截春江，卧看翠壁红楼起。 云间笑语，使君高会，佳人半醉"><time datetime="2021-03-14T14:48:00.000Z">2021-03-14</time></a>
+            
+            <div class="post essay-body"><div class="page-content"><blockquote>
+<p>小舟横截春江，卧看翠壁红楼起。<br>云间笑语，使君高会，佳人半醉。<br>推枕惘然不见，但空江、月明千里。<br>五湖闻道，扁舟归去，仍携西子。</p>
+</blockquote>
+<p>太喜欢了，不愧是大苏。</p>
+</div></div>
+            
+          </article>
+        
+          <article class="essay-entry">
+            <a class="entry-date" href="/PMAT77/2019/11/10/%E5%AF%B9%E7%99%BD/" aria-label="阅读：“还有什么遗言吗？” 没有回答。他一贯如此。 “想起有句话说"><time datetime="2019-11-10T09:32:29.000Z">2019-11-10</time></a>
+            
+            <div class="post essay-body"><div class="page-content"><p>“还有什么遗言吗？”</p>
+<p>没有回答。他一贯如此。</p>
+<p>“想起有句话说，死不是生的对立，而作为生的一部分永存。但愿你能坦然赴死。”</p>
+<p>他依旧沉默。身躯直挺，面如死灰。</p>
+<p>和大多数时候一样，沉默对改变故事结局没有任何帮助。</p>
+<p>火无声地蹿上衣角，外皮焦灼反卷，一同他的缄默，化为了灰烬。</p>
+<p>长久龃龉后终于落得一地苍白。</p>
+<p>起身捻灭烟蒂，宣判它的死亡。</p>
+</div></div>
+            
+          </article>
+        
+          <article class="essay-entry">
+            <a class="entry-date" href="/PMAT77/2019/11/07/%E6%9C%9D%E9%97%BB%E9%81%93/" aria-label="阅读：早年读大刘的《朝闻道》，大致是说物理学家们试图制造创世级高能"><time datetime="2019-11-06T19:22:09.000Z">2019-11-07</time></a>
+            
+            <div class="post essay-body"><div class="page-content"><p>早年读大刘的《朝闻道》，大致是说物理学家们试图制造创世级高能粒子加速器来得到宇宙的大统一模型，却被他们宇宙更高级的文明“排险者”阻止，这种级别加速器的存在会可能导致宇宙的衰变。</p>
+<p>作为补偿，“排险者”许诺可以满足这些屹立科学尽头的可怜们一个获取宇宙任意真相的机会，但因为“知识密封准则”，排险者不能向人类传授超出地球现有文明水平的知识，要想获取真理，就要付出生命的代价。</p>
+<p>为了洞悉宇宙的终极之美，哪怕只有短短一瞬，大批不同领域的顶尖学者们放弃了本该富足的生活、温暖的家庭，欣然成为真理的殉道者，他们一批批走向真理祭坛，在换取真理之后坦然化作火球归于灰烬。</p>
+<p>任何对我们来说所谓的意义在宇宙的宏观角度上都没有意义，现实没有排险者出现，我想这也是那么多科学巨擘在晚年迷信神学的原因，遥遥无期的真相可能比任何存在都要黑暗今人绝望。</p>
+<p>无生的喜悦，无死的恐惧。“朝闻道夕死可矣”。</p>
+<p>其实就是用天文尺度的庞大格局满足一粒沙的毕生追求。</p>
+</div></div>
+            
+          </article>
+        
+          <article class="essay-entry">
+            <a class="entry-date" href="/PMAT77/2019/07/26/%E6%B5%B7%E8%92%82/" aria-label="阅读：总有一天会去到阿尔卑斯连绵巍峨的群山，身边是海蒂般的女孩。"><time datetime="2019-07-25T16:07:36.000Z">2019-07-26</time></a>
+            
+            <div class="post essay-body"><div class="page-content"><p>总有一天会去到阿尔卑斯连绵巍峨的群山，身边是海蒂般的女孩。</p>
+</div></div>
+            
+          </article>
+        
+          <article class="essay-entry">
+            <a class="entry-date" href="/PMAT77/2019/04/08/%E8%B9%B2%E5%9D%91/" aria-label="阅读：阳光猛烈的唯一坏处是， 在厕所蹲坑的时候看不清屏幕上的字。"><time datetime="2019-04-08T06:04:24.000Z">2019-04-08</time></a>
+            
+            <div class="post essay-body"><div class="page-content"><p>阳光猛烈的唯一坏处是，</p>
+<p>在厕所蹲坑的时候看不清屏幕上的字。</p>
+</div></div>
+            
+          </article>
+        
+          <article class="essay-entry">
+            <a class="entry-date" href="/PMAT77/2019/02/25/%E5%A4%B8%E4%BD%A0%E5%8F%AF%E7%88%B1/" aria-label="阅读：夸你可爱，好像骂你怯懦。 所有不合时宜的烂话，终是出于善良。"><time datetime="2019-02-25T10:14:12.000Z">2019-02-25</time></a>
+            
+            <div class="post essay-body"><div class="page-content"><p>夸你可爱，好像骂你怯懦。</p>
+<p>所有不合时宜的烂话，终是出于善良。</p>
+</div></div>
+            
+          </article>
+        
+          <article class="essay-entry">
+            <a class="entry-date" href="/PMAT77/2019/02/07/514%E8%B7%AF/" aria-label="阅读：下午回富阳拿点东西，坐在514上，光线从侧边车窗懒懒的照进来"><time datetime="2019-02-07T13:28:33.000Z">2019-02-07</time></a>
+            
+            <div class="post essay-body"><div class="page-content"><p>下午回富阳拿点东西，坐在514上，光线从侧边车窗懒懒的照进来，连月不见的太阳难得出了次全勤。</p>
+<p>车厢里以外有些闷热。</p>
+<p>菩提寺到富阳公交站正在修地铁，车多路窄，幽灵堵车。车流行的很慢，加上道路坑洼，一路上颠簸不止。</p>
+<p>我趴在前座靠椅上，双臂枕着下巴，昏昏沉沉地犯困。</p>
+<p>车行至受降，猛地来了个颠簸，屁股不受控制的腾飞，差点没磕掉牙。</p>
+<p>司机嘀咕着抱怨，有乘客窃窃私语。</p>
+<p>抬起头，车流仍是缓慢。</p>
+</div></div>
+            
+          </article>
+        
+          <article class="essay-entry">
+            <a class="entry-date" href="/PMAT77/2018/06/12/%E5%AF%BB%E7%BE%8A/" aria-label="阅读：窗外蝉鸣不绝，热夏紧绷绷的空气抑着呼吸。 蓦地醒来，还躺在宿"><time datetime="2018-06-12T09:41:58.000Z">2018-06-12</time></a>
+            
+            <div class="post essay-body"><div class="page-content"><p>窗外蝉鸣不绝，热夏紧绷绷的空气抑着呼吸。</p>
+<p>蓦地醒来，还躺在宿舍的窄床——胸前摊着那本《寻羊》，手边早已熄了的烟头和半截烟灰把凉席一处烫得发黑。</p>
+<p>没滋没味地翻书，或做这夏天该做的梦。</p>
+</div></div>
+            
+          </article>
+        
+        
+      </div>
+    
+
+    
+      <nav class="collection-pagination" aria-label="分页">
+        <a href="/PMAT77/essays/" rel="prev">← 上一页</a>
+        <span>2 / 3</span>
+        <a href="/PMAT77/essays/page/3/" rel="next">下一页 →</a>
+      </nav>
+    
+  </main>
+</div>
+ <footer class="footer">
+    <small class="footer_copyright">
+      <div id="bottom-inner">
+        © 2021 Site by Paolos using
+        <a target="_blank" rel="noopener" href="http://hexo.io">hexo blog framework</a>.
+        <br>
+        <p> Theme is <a target="_blank" rel="noopener" href="https://github.com/dewjohn/hexo-theme-klise">Klise</a></p>
+      </div>
+    </small>
+  </footer>
+  
+   
+<script src="/PMAT77/js/search.js"></script>
+
+<script src="/PMAT77/js/main.js"></script>
+ 
+
+<script>
+  // 当前页面完整 URL（去除#后部分）
+  const url = window.location.href.split("#")[0];
+</script>
+
+<script>
+  window.FPConfig = {
+    delay: 0,
+    ignoreKeywords: [],
+    maxRPS: 3,
+    hoverDelay: 50,
+  };
+
+  function initializeSearch() {
+    const searchInput = document.querySelector("#search-input") || null;
+    const searchResults = document.querySelector("#search-results") || null;
+
+    if (!searchInput) return;
+
+    // 检查SimpleJekyllSearch是否已加载
+    if (typeof SimpleJekyllSearch === "undefined") {
+      console.error("SimpleJekyllSearch library not loaded");
+      return;
+    }
+
+    try {
+      var sjs = SimpleJekyllSearch({
+        searchInput: searchInput,
+        resultsContainer: searchResults,
+        json: searchInput.dataset.searchType === 'tech'
+          ? "/PMAT77/tech-search.json"
+          : "/PMAT77/search.json",
+        templateMiddleware: function (key, value) {
+          return String(value == null ? '' : value).replace(/[&<>"']/g, function (character) {
+            return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[character];
+          });
+        },
+        noResultsText: "未找到相关文章",
+        searchResultTemplate: '<li><a href="{url}" title="标签：{tags}">{title}</a></li>',
+      });
+    } catch (error) {
+      console.error("Search initialization failed:", error);
+    }
+  }
+
+  // 主题未配置搜索脚本时，从站点根路径加载
+  function loadSearchLibrary() {
+    if (typeof SimpleJekyllSearch === "undefined") {
+      const script = document.createElement("script");
+      script.src = "/PMAT77/js/search.js";
+      script.onload = initializeSearch;
+      script.onerror = function () {
+        console.error("Failed to load search library");
+      };
+      document.head.appendChild(script);
+    } else {
+      initializeSearch();
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", loadSearchLibrary);
+</script>
+
+<script
+  defer
+  src="https://cdn.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"
+></script>
+
+  </body>
+</html>

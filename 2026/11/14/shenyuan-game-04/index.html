@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    
+
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第四章 顾宁 [ Paolos ]</title>
+
+  <link rel="icon" href="/PMAT77/img/favicon.jpeg">
+
+
+    <meta name="author" content="Paolos">
+
+
+
+    <meta name="Description" content="Paolos - 个人博客">
+
+
+    <meta name="keywords" content=",blog">
+
+
+  <link rel="alternate" href="/PMAT77/atom.xml " title="Paolos" type="application/atom+xml">
+
+
+  
+    <link rel="stylesheet" href="/PMAT77/css/main.css">
+  
+
+  <meta name="generator" content="Hexo 7.3.0"></head>
+  <body data-theme="light" class="notransition">
+    <script>
+      const body = document.body;
+      const data = body.getAttribute("data-theme");
+      const initTheme = (state) => {
+        if (state === "dark") {
+          body.setAttribute("data-theme", "dark");
+        } else if (state === "light") {
+          body.removeAttribute("data-theme");
+        } else {
+          localStorage.setItem("theme", data);
+        }
+      };
+
+      initTheme(localStorage.getItem("theme"));
+
+      setTimeout(() => body.classList.remove("notransition"), 75);
+    </script>
+    <div class="navbar" role="navigation">
+    <nav class="menu">
+      <input type="checkbox" id="menu-trigger" class="menu-trigger" aria-label="展开导航" aria-controls="site-menu" aria-expanded="false" />
+      <label for="menu-trigger">
+        <span class="menu-icon">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 512 512"
+          >
+            <path
+              d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z"
+            />
+          </svg>
+        </span>
+      </label>
+      <button id="mode" type="button" aria-label="切换明暗主题" aria-pressed="false">
+        <svg
+          class="mode-sunny"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 512 512"
+        >
+          <title>LIGHT</title>
+          <line
+            x1="256"
+            y1="48"
+            x2="256"
+            y2="96"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="256"
+            y1="416"
+            x2="256"
+            y2="464"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="403.08"
+            y1="108.92"
+            x2="369.14"
+            y2="142.86"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="142.86"
+            y1="369.14"
+            x2="108.92"
+            y2="403.08"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="464"
+            y1="256"
+            x2="416"
+            y2="256"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="96"
+            y1="256"
+            x2="48"
+            y2="256"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="403.08"
+            y1="403.08"
+            x2="369.14"
+            y2="369.14"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="142.86"
+            y1="142.86"
+            x2="108.92"
+            y2="108.92"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <circle
+            cx="256"
+            cy="256"
+            r="80"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+        </svg>
+        <svg
+          class="mode-moon"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 512 512"
+        >
+          <title>DARK</title>
+          <line
+            x1="256"
+            y1="48"
+            x2="256"
+            y2="96"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="256"
+            y1="416"
+            x2="256"
+            y2="464"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="403.08"
+            y1="108.92"
+            x2="369.14"
+            y2="142.86"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="142.86"
+            y1="369.14"
+            x2="108.92"
+            y2="403.08"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="464"
+            y1="256"
+            x2="416"
+            y2="256"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="96"
+            y1="256"
+            x2="48"
+            y2="256"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="403.08"
+            y1="403.08"
+            x2="369.14"
+            y2="369.14"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="142.86"
+            y1="142.86"
+            x2="108.92"
+            y2="108.92"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <circle
+            cx="256"
+            cy="256"
+            r="80"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+        </svg>
+      </button>
+      <div class="trigger">
+        <div class="trigger-container" id="site-menu">
+          
+            
+            
+            
+            
+            <a class="menu-link " href="/PMAT77/">首页</a>
+          
+            
+            
+            
+            
+            <a class="menu-link " href="/PMAT77/essays/">随笔</a>
+          
+            
+            
+            
+            
+            <a class="menu-link active" href="/PMAT77/novels/" aria-current="page">连载小说</a>
+          
+            
+            
+            
+            
+            <a class="menu-link " href="/PMAT77/tech/">技术文章</a>
+          
+            
+            
+            
+            
+            <a class="menu-link " href="/PMAT77/projects/">项目展示</a>
+          
+        </div>
+      </div>
+    </nav>
+  </div>
+ <div class="wrapper post novel-reading ">
+  <main class="page-content" aria-label="Content">
+    <header class="header">
+      
+      <div class="tags">
+        <a
+          href="/PMAT77/tags/%E6%B7%B1%E6%B8%8A%E6%B8%B8%E6%88%8F/"
+          class="tag"
+          ># 深渊游戏</a
+        >
+      </div>
+      
+      <h1 class="header-title" itemprop="headline">第四章 顾宁</h1>
+      <div class="post-meta">
+        <time datetime="2026-11-13T16:00:00.000Z">Nov 14, 2026</time>
+        <span itemprop="author">
+          <span itemprop="name">Paolos</span>
+        </span>
+      </div>
+    </header>
+
+    
+
+    <div
+      class="page-content "
+    >
+      <p>第一卷 顾宁篇</p>
+<p>“顾医生？”</p>
+<p>一颗脑袋从车门外探了进来。</p>
+<p>那是个二十出头的姑娘，鼻梁上架着一副厚厚的圆框眼镜，头发用一根发绳低低地扎在脑后，几缕碎发乱糟糟地贴在脸颊上。</p>
+<p>看清夏临的脸，她眼睛一亮。</p>
+<p>“你在这里！”</p>
+<p>姑娘急匆匆地迈上车来，却没留意脚下的踏板，身子登时往前一栽。</p>
+<p>“哎呦！”</p>
+<p>她慌忙扶住车门，鼻梁上的眼镜差点滑了下来。</p>
+<p>一旁正在收拾医疗器械的女医护人员被吓了一跳，连忙伸手扶了她一把：“小心点！”</p>
+<p>“不好意思，不好意思……”</p>
+<p>姑娘尴尬地笑了笑，推了推眼镜，赶紧挪到夏临身旁。</p>
+<p>“总算找到你了！我给你打了好多电话，你一个都没接，吓死我了！”她长舒了口气，将滑到胳膊上的挎包往肩头一提。</p>
+<p>“刚下夜班，医院就打电话给我，说你们的车翻了。急得我家都没回，直接就过来了。”</p>
+<p>她说着说着，目光落在夏临缠着敷料的右手上，声音渐渐小了下去。</p>
+<p>“你的手怎么了？”姑娘俯下身，又看了看他那双满是血污的赤脚，“怎么伤成这样……”</p>
+<p>夏临望着眼前这个自顾自说了半天的姑娘，一时有些发懵。</p>
+<p>“那个……你是？”</p>
+<p>姑娘愣了一下。</p>
+<p>“我？”</p>
+<p>她伸出食指，指了指自己的鼻尖。</p>
+<p>“我啊，祈桐懂。”</p>
+<p>夏临一脸茫然。</p>
+<p>“祈求的祈，梧桐的桐，懂事的懂。”她说完，自己先笑了，“顾医生，你怎么还跟我开这种玩笑……”</p>
+<p>然而，夏临依然没有笑。</p>
+<p>她脸上的笑容慢慢收了起来。</p>
+<p>“顾医生？你真的……不记得我了？”</p>
+<p>“呃……我有些事情想不起来了。”</p>
+<p>“是不是撞到头了？”</p>
+<p>夏临想起刚才脑海里一闪而过的画面，本想摇头，可转念又记起那怪物将他狠狠按倒在地时，后脑磕在水泥地上那一声闷响。他改成了点头。</p>
+<p>“好像……是撞过。”</p>
+<p>“头晕吗？恶不恶心？”</p>
+<p>夏临犹豫了一下，点了点头。</p>
+<p>“有点晕。”</p>
+<p>祈桐懂急忙转头看向一旁的女医护人员。</p>
+<p>“姐，她头上也受了伤，刚才还说有些事情想不起来了。”</p>
+<p>女医护人员闻言，放下手中的东西，重新走了过来。</p>
+<p>“刚才怎么没说？”</p>
+<p>这让他怎么解释？总不能告诉眼前这两个人，自己压根不是她们口中的顾医生，而是莫名其妙穿越过来的。</p>
+<p>“行了，先去医院再说吧。”女医护人员检查了一下他的瞳孔，又朝驾驶室喊了一声，“老周，可以走了。”</p>
+<p>祈桐懂连忙往旁边挪了挪。“姐，我能跟着一起去吗？她是我们医院的医生，我跟她一个科室的。”</p>
+<p>“你坐那边，别挡着就行。”</p>
+<p>“好嘞，谢谢姐。”</p>
+<p>车门缓缓关上，将外头嘈杂的人声隔绝了大半。随着车身轻轻一晃，救护车驶离了事故现场。</p>
+<p>夏临偏过头，透过车窗看向外面。那辆侧翻在路口的箱式运输车正一点点远去，警戒线外的人群散了很多。</p>
+<p>几名警察从人群中穿过，朝着居民巷的方向走去。</p>
+<p>不知道他们找到那东西了没有。</p>
+<p>“姓名？”</p>
+<p>夏临收回目光。</p>
+<p>女医护人员正低头填写一张表格，见他没有回应，又问了一遍。</p>
+<p>“叫什么名字？”</p>
+<p>“我……”</p>
+<p>“顾宁。”一旁的祈桐懂替他答道，“照顾的顾，安宁的宁。”</p>
+<p>顾宁。</p>
+<p>夏临默念了一遍这个名字。</p>
+<p>原来她叫顾宁。</p>
+<p>“你连自己叫什么都不记得了？”祈桐懂小声问道。</p>
+<p>夏临勉强冲她笑了笑。</p>
+<p>祈桐懂盯着他看了好一会儿，最终什么也没说。</p>
+<p>救护车拐过路口，驶入一条宽阔的街道。</p>
+<p>夏临重新望向窗外。</p>
+<p>雨已经停了，街边的商铺大多熄了灯，偶尔还能看见一两家亮着招牌的便利店。一辆出租车从对向车道驶过，车顶亮着红色的空车灯。路口的交通信号灯有条不紊地变换着颜色。</p>
+<p>这地方和他原本生活的城市似乎也没什么两样。</p>
+<p>如果不是脚掌上时不时传来的疼痛，如果不是低头就能看到那具陌生的身体，他甚至有那么一瞬间，觉得自己只是下班途中搭错了车。</p>
+<p>“我们去哪儿？”</p>
+<p>“旧城联合医疗中心啊。”祈桐懂说道。</p>
+<p>夏临回过头。</p>
+<p>“那是……”</p>
+<p>“我们医院。”她的声音轻了几分。</p>
+<p>“你每天上班的地方。”</p>
+<p>……</p>
+<p>从第四大街到医院并没有花费太长时间，但等夏临再次见到祈桐懂，已经是一个多小时之后了。</p>
+<p>脚掌里的玻璃被取了出来，右手也缝了几针。至于脑袋，检查了一通，倒没查出什么明显的问题。</p>
+<p>他现在躺在急诊观察室的病床上，左肩固定着，右手裹着厚厚一层纱布，受伤的那只脚垫得老高。</p>
+<p>他身上那件破破烂烂的白衬衫已经被换了下来，取而代之的是一套宽松的病号服。总算不用穿那条该死的短裙了。</p>
+<p>他长舒了口气，往枕头里靠了靠。</p>
+<p>门外传来一阵轻微的响动。</p>
+<p>“顾医生？”</p>
+<p>祈桐懂从门缝里探出半张脸。“睡了吗？”</p>
+<p>“还没。”</p>
+<p>她这才推开门走了进来，手里还拎着个塑料袋。</p>
+<p>“我给你买了点吃的。这个点食堂早关门了，楼下就只剩这些。”</p>
+<p>她把袋子放在床头柜上，从里面掏出一瓶矿泉水、两袋面包，还有一盒牛奶。</p>
+<p>夏临看着她，忽然想起自己刚才在检查室里遇到的那几个人。</p>
+<p>负责检查的医生、推着轮椅送他回来的护士，甚至走廊里一个抱着资料匆匆经过的女人，都认得他。</p>
+<p>其中有个人还问他，怎么大半夜的把自己弄成这样。</p>
+<p>他一个也不认识。</p>
+<p>好在大部分时候都是眼前这个姑娘在替他回答。</p>
+<p>“那个……”</p>
+<p>“嗯？”</p>
+<p>“咱俩以前很熟吗？”</p>
+<p>祈桐懂正低头拧着矿泉水瓶盖，闻言抬起头来。</p>
+<p>“你说呢？”</p>
+<p>夏临讪讪地笑了笑。</p>
+<p>“我这不是想不起来了吗。”</p>
+<p>“你是我的带教老师啊。”</p>
+<p>“带教老师？”</p>
+<p>“嗯。我去年刚来医院的时候就是你带的我。”</p>
+<p>她拧开瓶盖，将水递给夏临。</p>
+<p>“哼，前两天还被你训了一顿呢。”</p>
+<p>夏临用左手接过水瓶，小心翼翼地喝了一口。</p>
+<p>带教老师？</p>
+<p>他摸了摸自己的额发。</p>
+<p>好家伙，还是个当老师的。</p>
+<p>“那我平时……都教你些什么？”</p>
+<p>“这个可就多了。”</p>
+<p>祈桐懂拉过旁边的椅子坐下。</p>
+<p>“跟你查房、问病史、看化验单，还有写病历……我刚来的时候，连病历都写不好呢。”</p>
+<p>她掰着手指头数了数，忽然想起什么，撇了撇嘴。</p>
+<p>“还有上次我写的观察记录，你拿红笔圈了半页，非得说我写得跟流水账似的。明明最后你自己也说没什么大问题。”</p>
+<p>观察记录。</p>
+<p>夏临握着水瓶的手微微一顿。</p>
+<p>不知为何，那辆运输车里闪烁着黄色指示灯的金属舱再次浮现在脑海中。</p>
+<p>“你是说……C13的观察记录？”</p>
+<p>祈桐懂愣了一下。</p>
+<p>“咦？你还记得这个？”</p>
+<p>夏临没有回答，他将水瓶放回床头柜上，犹豫好一会才终于问出那个问题。</p>
+<p>“C13到底是什么东西？”</p>
+<p>祈桐懂脸上的表情变得有些古怪。</p>
+<p>“你是说，十三号实验体？”</p>
+<p>夏临点了点头。</p>
+<p>原来那东西真是实验体。</p>
+<p>“它跑出来了。”他说。</p>
+<p>“我知道。”</p>
+<p>祈桐懂的声音低了下来，凑近夏临：“刚才院里来电话，说已经找到了。”</p>
+<p>“找到了？”</p>
+<p>“嗯，警察在第四大街附近的巷子里发现了它。”她顿了顿，“已经死了。”</p>
+<p>夏临紧绷的肩膀终于松了下来。</p>
+<p>妈的，可算死透了。</p>
+<p>“顾医生，你碰见它了？”</p>
+<p>“何止碰见了……”</p>
+<p>夏临苦笑一声，低头看了看自己身上大大小小的伤。</p>
+<p>“我这一身伤都是拜它所赐。”</p>
+<p>祈桐懂怔住了。</p>
+<p>“那它……”</p>
+<p>“被我用玻璃刺穿了眼睛。”</p>
+<p>“你？！”</p>
+<p>她下意识提高了声音。夏临被她的反应吓了一跳。</p>
+<p>“怎么了？”</p>
+<p>“没、没什么。”</p>
+<p>祈桐懂瞪大眼睛看着他，像是一时不知道该说些什么。过了好一会儿，她才低下头，摸出手机。</p>
+<p>“这事我得跟科里说一声。”</p>
+<p>夏临没有拦她。他靠在枕头上，回想着那段突然出现在脑海中的记忆。</p>
+<p>三座金属舱。最右边的那座是C13。</p>
+<p>他忽然想起一件事。</p>
+<p>“对了，那车上是不是还有另外两个？”</p>
+<p>祈桐懂停下打字的动作。</p>
+<p>“你连这个也记得？”</p>
+<p>“记得一点。”</p>
+<p>“那两个不是我们负责的，具体我也不太清楚。”</p>
+<p>“它们找到了吗？”</p>
+<p>祈桐懂摇了摇头。</p>
+<p>“事故发生以后，那三个转运舱都是空的。”</p>
+<p>“到现在，找到的只有C13。”</p>
+
+    </div>
+    
+  <nav class="novel-navigation" aria-label="小说阅读导航">
+    <a rel="prev" href="/PMAT77/2026/11/14/shenyuan-game-03/"><span>← 上一章</span><small>第三章 转运车</small></a>
+    <a class="novel-directory" href="/PMAT77/novels/shenyuan-game/">目录<small>深渊游戏</small></a>
+    <a rel="next" href="/PMAT77/2026/11/14/shenyuan-game-05/"><span>下一章 →</span><small>第五章 失约</small></a>
+  </nav>
+
+
+  </main>
+</div>
+ <footer class="footer">
+    <small class="footer_copyright">
+      <div id="bottom-inner">
+        © 2021 Site by Paolos using
+        <a target="_blank" rel="noopener" href="http://hexo.io">hexo blog framework</a>.
+        <br>
+        <p> Theme is <a target="_blank" rel="noopener" href="https://github.com/dewjohn/hexo-theme-klise">Klise</a></p>
+      </div>
+    </small>
+  </footer>
+  
+   
+<script src="/PMAT77/js/search.js"></script>
+
+<script src="/PMAT77/js/main.js"></script>
+ 
+
+<script>
+  // 当前页面完整 URL（去除#后部分）
+  const url = window.location.href.split("#")[0];
+</script>
+
+<script>
+  window.FPConfig = {
+    delay: 0,
+    ignoreKeywords: [],
+    maxRPS: 3,
+    hoverDelay: 50,
+  };
+
+  function initializeSearch() {
+    const searchInput = document.querySelector("#search-input") || null;
+    const searchResults = document.querySelector("#search-results") || null;
+
+    if (!searchInput) return;
+
+    // 检查SimpleJekyllSearch是否已加载
+    if (typeof SimpleJekyllSearch === "undefined") {
+      console.error("SimpleJekyllSearch library not loaded");
+      return;
+    }
+
+    try {
+      var sjs = SimpleJekyllSearch({
+        searchInput: searchInput,
+        resultsContainer: searchResults,
+        json: searchInput.dataset.searchType === 'tech'
+          ? "/PMAT77/tech-search.json"
+          : "/PMAT77/search.json",
+        templateMiddleware: function (key, value) {
+          return String(value == null ? '' : value).replace(/[&<>"']/g, function (character) {
+            return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[character];
+          });
+        },
+        noResultsText: "未找到相关文章",
+        searchResultTemplate: '<li><a href="{url}" title="标签：{tags}">{title}</a></li>',
+      });
+    } catch (error) {
+      console.error("Search initialization failed:", error);
+    }
+  }
+
+  // 主题未配置搜索脚本时，从站点根路径加载
+  function loadSearchLibrary() {
+    if (typeof SimpleJekyllSearch === "undefined") {
+      const script = document.createElement("script");
+      script.src = "/PMAT77/js/search.js";
+      script.onload = initializeSearch;
+      script.onerror = function () {
+        console.error("Failed to load search library");
+      };
+      document.head.appendChild(script);
+    } else {
+      initializeSearch();
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", loadSearchLibrary);
+</script>
+
+<script
+  defer
+  src="https://cdn.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"
+></script>
+
+  </body>
+</html>

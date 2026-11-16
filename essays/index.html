@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    
+
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>随笔 [ Paolos ]</title>
+
+  <link rel="icon" href="/PMAT77/img/favicon.jpeg">
+
+
+    <meta name="author" content="Paolos">
+
+
+
+    <meta name="Description" content="Paolos - 个人博客">
+
+
+    <meta name="keywords" content=",blog">
+
+
+  <link rel="alternate" href="/PMAT77/atom.xml " title="Paolos" type="application/atom+xml">
+
+
+  
+    <link rel="stylesheet" href="/PMAT77/css/main.css">
+  
+
+  <meta name="generator" content="Hexo 7.3.0"></head>
+  <body data-theme="light" class="notransition">
+    <script>
+      const body = document.body;
+      const data = body.getAttribute("data-theme");
+      const initTheme = (state) => {
+        if (state === "dark") {
+          body.setAttribute("data-theme", "dark");
+        } else if (state === "light") {
+          body.removeAttribute("data-theme");
+        } else {
+          localStorage.setItem("theme", data);
+        }
+      };
+
+      initTheme(localStorage.getItem("theme"));
+
+      setTimeout(() => body.classList.remove("notransition"), 75);
+    </script>
+    <div class="navbar" role="navigation">
+    <nav class="menu">
+      <input type="checkbox" id="menu-trigger" class="menu-trigger" aria-label="展开导航" aria-controls="site-menu" aria-expanded="false" />
+      <label for="menu-trigger">
+        <span class="menu-icon">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 512 512"
+          >
+            <path
+              d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z"
+            />
+          </svg>
+        </span>
+      </label>
+      <button id="mode" type="button" aria-label="切换明暗主题" aria-pressed="false">
+        <svg
+          class="mode-sunny"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 512 512"
+        >
+          <title>LIGHT</title>
+          <line
+            x1="256"
+            y1="48"
+            x2="256"
+            y2="96"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="256"
+            y1="416"
+            x2="256"
+            y2="464"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="403.08"
+            y1="108.92"
+            x2="369.14"
+            y2="142.86"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="142.86"
+            y1="369.14"
+            x2="108.92"
+            y2="403.08"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="464"
+            y1="256"
+            x2="416"
+            y2="256"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="96"
+            y1="256"
+            x2="48"
+            y2="256"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="403.08"
+            y1="403.08"
+            x2="369.14"
+            y2="369.14"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="142.86"
+            y1="142.86"
+            x2="108.92"
+            y2="108.92"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <circle
+            cx="256"
+            cy="256"
+            r="80"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+        </svg>
+        <svg
+          class="mode-moon"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 512 512"
+        >
+          <title>DARK</title>
+          <line
+            x1="256"
+            y1="48"
+            x2="256"
+            y2="96"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="256"
+            y1="416"
+            x2="256"
+            y2="464"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="403.08"
+            y1="108.92"
+            x2="369.14"
+            y2="142.86"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="142.86"
+            y1="369.14"
+            x2="108.92"
+            y2="403.08"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="464"
+            y1="256"
+            x2="416"
+            y2="256"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="96"
+            y1="256"
+            x2="48"
+            y2="256"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="403.08"
+            y1="403.08"
+            x2="369.14"
+            y2="369.14"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="142.86"
+            y1="142.86"
+            x2="108.92"
+            y2="108.92"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <circle
+            cx="256"
+            cy="256"
+            r="80"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+        </svg>
+      </button>
+      <div class="trigger">
+        <div class="trigger-container" id="site-menu">
+          
+            
+            
+            
+            
+            <a class="menu-link " href="/PMAT77/">首页</a>
+          
+            
+            
+            
+            
+            <a class="menu-link active" href="/PMAT77/essays/" aria-current="page">随笔</a>
+          
+            
+            
+            
+            
+            <a class="menu-link " href="/PMAT77/novels/">连载小说</a>
+          
+            
+            
+            
+            
+            <a class="menu-link " href="/PMAT77/tech/">技术文章</a>
+          
+            
+            
+            
+            
+            <a class="menu-link " href="/PMAT77/projects/">项目展示</a>
+          
+        </div>
+      </div>
+    </nav>
+  </div>
+ <div class="wrapper collection-page ">
+  <main aria-label="随笔">
+    <header class="collection-header">
+      
+      <h1>随笔</h1>
+    </header>
+
+    
+      <div class="essay-stream">
+        
+          <article class="essay-entry">
+            <a class="entry-date" href="/PMAT77/2026/02/13/%E6%96%B0%E5%B9%B4%E5%BF%AB%E4%B9%90/" aria-label="阅读：读书时，我从没有“人生目标”的概念，大学填什么志愿、学什么专"><time datetime="2026-02-13T03:49:52.000Z">2026-02-13</time></a>
+            
+            <div class="post essay-body"><div class="page-content"><p>读书时，我从没有“人生目标”的概念，大学填什么志愿、学什么专业，全然摸不着头脑。第一次清晰地想成为某类人，是在大二——我想做前端开发。为了这个目标，痛苦过、迷茫过，也觉得自己撑不下去，后来入伍当了两年兵，回来后重新拾起，居然也能这样一步步走到了现在。</p>
+<p>我始终觉得，写作是一件极需要勇气的事。敢于直面自己的阴暗、懦弱、矛盾与不堪，敢写旁人不敢落笔、不愿言说、刻意假装不存在的东西，敢坦诚面对心底真正在乎、真正痛苦、真正热爱的一切，要对自己绝对诚实。虚伪的人写不出好小说，若是刻意装崇高、装深刻、装温柔，读者一眼就能看穿。</p>
+<p>写作也是一场对耐力的漫长考验。仅仅喜欢独处远远不够，更要学会忍受孤独——是即便无人理解、无人认可、无人阅读，也依然愿意坚持写下去的孤独。没人看，我写；没人夸，我写；写得烂、被人否定、情绪崩溃，我依旧写。我想，大多数真正的作家，从不是为了被看见而写作，而是不写便不痛快，如同吃饭喝水一般，是刻在骨子里的生理需求。</p>
+<p>游戏开发亦是如此。我从没想过自己必须达成怎样的成就，只是怀揣着两件“一辈子想要做完的事”，能一边靠手艺安稳谋生，一边偷偷养着自己的热爱，就很不错了。</p>
+<p>前段时间，总在焦虑小说进度太慢、独立游戏入门太难，可静下心细想，其实没什么可纠结的。我不过是，又站在了一段新旅程的起点而已。</p>
+<p>希望多年以后，再回首过来，能轻轻感叹一句：原来，轻舟已过万重山。</p>
+</div></div>
+            
+          </article>
+        
+          <article class="essay-entry">
+            <a class="entry-date" href="/PMAT77/2025/12/08/%E7%90%86%E6%83%B3%E4%B8%BB%E4%B9%89%E8%80%85/" aria-label="阅读：今天才意识到自己是一个理想主义者，总是有不切实际的想法，却缺"><time datetime="2025-12-08T15:48:53.000Z">2025-12-08</time></a>
+            
+            <div class="post essay-body"><div class="page-content"><p>今天才意识到自己是一个理想主义者，总是有不切实际的想法，却缺少落到实处的坚持。</br></br></p>
+<p>总是渴望一次性完美实现宏大构想，反而被其规模吓倒。时常担心现实成果无法匹配心中完美的想象，索性不去开始。沉浸在构想的快感中，误以为思维活动等同于实际行动。</br></br></p>
+<p>我想像我这样的人应该还有很多，理想主义者不是不行，只是没有找对方法。</p>
+</div></div>
+            
+          </article>
+        
+          <article class="essay-entry">
+            <a class="entry-date" href="/PMAT77/2025/06/09/Asshole/" aria-label="阅读：那不过是青春年少这块美玉中附带的小小的一点裂痕——毕竟学生时"><time datetime="2025-06-09T13:37:10.000Z">2025-06-09</time></a>
+            
+            <div class="post essay-body"><div class="page-content"><p>那不过是青春年少这块美玉中附带的小小的一点裂痕——毕竟学生时代的我，也只是个以貌取人、自以为是的混蛋。</p>
+</div></div>
+            
+          </article>
+        
+          <article class="essay-entry">
+            <a class="entry-date" href="/PMAT77/2025/01/30/%E7%A5%9E%E4%B9%8B%E7%9C%BC/" aria-label="阅读：人类不过是宇宙用来观赏自身的生物镜片。 当我们说出“这是美的"><time datetime="2025-01-30T09:12:55.000Z">2025-01-30</time></a>
+            
+            <div class="post essay-body"><div class="page-content"><p>人类不过是宇宙用来观赏自身的生物镜片。</br></br></p>
+<p>当我们说出“这是美的”，实际上是宇宙在通过碳基传感器惊叹自己的倒影。</p>
+</div></div>
+            
+          </article>
+        
+          <article class="essay-entry">
+            <a class="entry-date" href="/PMAT77/2024/12/18/%E8%A1%8C%E9%A6%99%E5%AD%90%C2%B7%E4%B8%B9%E9%98%B3%E5%AF%84%E8%BF%B0%E5%8F%A4/" aria-label="阅读：携手江村，梅雪飘裙。情何限、处处销魂。 故人不见，旧曲重闻。"><time datetime="2024-12-18T07:59:54.000Z">2024-12-18</time></a>
+            
+            <div class="post essay-body"><div class="page-content"><blockquote>
+<p>携手江村，梅雪飘裙。情何限、处处销魂。<br>故人不见，旧曲重闻。向望湖楼，孤山寺，涌金门。<br/><br>寻常行处，题诗千首，绣罗衫、与拂红尘。<br>别来相忆，知是何人。有湖中月，江边柳，陇头云。</p>
+</blockquote>
+</div></div>
+            
+          </article>
+        
+          <article class="essay-entry">
+            <a class="entry-date" href="/PMAT77/2023/09/24/%E9%81%97%E6%86%BE%E5%9D%A6%E7%84%B6/" aria-label="阅读：谁又能真正无憾呢。 知其不可奈何，而安之若命罢。"><time datetime="2023-09-24T10:49:07.000Z">2023-09-24</time></a>
+            
+            <div class="post essay-body"><div class="page-content"><p>谁又能真正无憾呢。</br></br></p>
+<p>知其不可奈何，而安之若命罢。</p>
+</div></div>
+            
+          </article>
+        
+          <article class="essay-entry">
+            <a class="entry-date" href="/PMAT77/2023/08/10/%E7%AB%99%E8%B5%B7%E6%9D%A5/" aria-label="阅读：人一旦迷醉于自身的软弱之中，便会一味的软弱下去，会在众人的目"><time datetime="2023-08-10T14:32:14.000Z">2023-08-10</time></a>
+            
+            <div class="post essay-body"><div class="page-content"><p>人一旦迷醉于自身的软弱之中，便会一味的软弱下去，会在众人的目光中倒在街头，倒在地上，倒在比地面更低的地方。</br></br></p>
+<p>任何时候不要看轻自己，别觉得自己那么渺小。用双手干，有什么大不了的。</p>
+</div></div>
+            
+          </article>
+        
+          <article class="essay-entry">
+            <a class="entry-date" href="/PMAT77/2023/05/22/%E6%B1%9F%E9%A3%8E%E5%BE%AE%E9%9B%A8%EF%BC%8C%E5%87%A0%E5%A4%84%E9%97%B2%E9%92%93/" aria-label="阅读：庐山烟雨浙江潮，未到千般恨不消。 到得还来别无事，庐山烟雨浙"><time datetime="2023-05-22T11:21:18.000Z">2023-05-22</time></a>
+            
+            <div class="post essay-body"><div class="page-content"><blockquote>
+<p>庐山烟雨浙江潮，未到千般恨不消。<br>到得还来别无事，庐山烟雨浙江潮。</p>
+</blockquote>
+<p>苏轼历经宦海风涛、波澜坎坷一生，​​ 晚年当他看清妄念，心境随之豁然超越。<br>烟雨的聚散飘忽，江潮的自来自去，杂念也好，冲动也罢，不过风随幡动尔。</p>
+<p>大苏，我永远的神。</p>
+</div></div>
+            
+          </article>
+        
+          <article class="essay-entry">
+            <a class="entry-date" href="/PMAT77/2022/08/21/%E8%9A%8A/" aria-label="阅读：许久黑点动了一下， 应声糊成朵血花。"><time datetime="2022-08-20T16:47:50.000Z">2022-08-21</time></a>
+            
+            <div class="post essay-body"><div class="page-content"><p>许久黑点动了一下，</p>
+<p>应声糊成朵血花。</p>
+</div></div>
+            
+          </article>
+        
+          <article class="essay-entry">
+            <a class="entry-date" href="/PMAT77/2022/06/20/%E9%9B%B7%E4%BA%91/" aria-label="阅读：干饭回来，暴雨骤至。 顷刻间阴霾的天空好像一台轰鸣的机器，厚"><time datetime="2022-06-20T14:09:33.000Z">2022-06-20</time></a>
+            
+            <div class="post essay-body"><div class="page-content"><p>干饭回来，暴雨骤至。</p>
+<p>顷刻间阴霾的天空好像一台轰鸣的机器，厚重凝滞的云层不时垂下几道千米长的火花。</p>
+<p>简直一派末日景象。</p>
+</div></div>
+            
+          </article>
+        
+        
+      </div>
+    
+
+    
+      <nav class="collection-pagination" aria-label="分页">
+        <span></span>
+        <span>1 / 3</span>
+        <a href="/PMAT77/essays/page/2/" rel="next">下一页 →</a>
+      </nav>
+    
+  </main>
+</div>
+ <footer class="footer">
+    <small class="footer_copyright">
+      <div id="bottom-inner">
+        © 2021 Site by Paolos using
+        <a target="_blank" rel="noopener" href="http://hexo.io">hexo blog framework</a>.
+        <br>
+        <p> Theme is <a target="_blank" rel="noopener" href="https://github.com/dewjohn/hexo-theme-klise">Klise</a></p>
+      </div>
+    </small>
+  </footer>
+  
+   
+<script src="/PMAT77/js/search.js"></script>
+
+<script src="/PMAT77/js/main.js"></script>
+ 
+
+<script>
+  // 当前页面完整 URL（去除#后部分）
+  const url = window.location.href.split("#")[0];
+</script>
+
+<script>
+  window.FPConfig = {
+    delay: 0,
+    ignoreKeywords: [],
+    maxRPS: 3,
+    hoverDelay: 50,
+  };
+
+  function initializeSearch() {
+    const searchInput = document.querySelector("#search-input") || null;
+    const searchResults = document.querySelector("#search-results") || null;
+
+    if (!searchInput) return;
+
+    // 检查SimpleJekyllSearch是否已加载
+    if (typeof SimpleJekyllSearch === "undefined") {
+      console.error("SimpleJekyllSearch library not loaded");
+      return;
+    }
+
+    try {
+      var sjs = SimpleJekyllSearch({
+        searchInput: searchInput,
+        resultsContainer: searchResults,
+        json: searchInput.dataset.searchType === 'tech'
+          ? "/PMAT77/tech-search.json"
+          : "/PMAT77/search.json",
+        templateMiddleware: function (key, value) {
+          return String(value == null ? '' : value).replace(/[&<>"']/g, function (character) {
+            return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[character];
+          });
+        },
+        noResultsText: "未找到相关文章",
+        searchResultTemplate: '<li><a href="{url}" title="标签：{tags}">{title}</a></li>',
+      });
+    } catch (error) {
+      console.error("Search initialization failed:", error);
+    }
+  }
+
+  // 主题未配置搜索脚本时，从站点根路径加载
+  function loadSearchLibrary() {
+    if (typeof SimpleJekyllSearch === "undefined") {
+      const script = document.createElement("script");
+      script.src = "/PMAT77/js/search.js";
+      script.onload = initializeSearch;
+      script.onerror = function () {
+        console.error("Failed to load search library");
+      };
+      document.head.appendChild(script);
+    } else {
+      initializeSearch();
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", loadSearchLibrary);
+</script>
+
+<script
+  defer
+  src="https://cdn.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"
+></script>
+
+  </body>
+</html>
