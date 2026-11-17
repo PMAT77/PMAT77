@@ -260,6 +260,39 @@
 
     
 
+<section class="post-audio" aria-label="文章朗读">
+  <audio class="post-audio__native" preload="none" controls src="/PMAT77/audio/essay/514%E8%B7%AF.mp3">你的浏览器不支持音频播放。</audio>
+  <div class="post-audio__player">
+    <button type="button" class="post-audio__toggle" aria-pressed="false" aria-label="播放朗读">
+      <svg class="post-audio__icon post-audio__play" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 5v14l11-7z" /></svg>
+      <svg class="post-audio__icon post-audio__pause" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 5h4v14H6zM14 5h4v14h-4z" /></svg>
+    </button>
+    <div class="post-audio__details">
+      <div class="post-audio__meta">
+        <span class="post-audio__label">朗读</span>
+        <span class="post-audio__time"><span class="post-audio__elapsed">0:00</span><span aria-hidden="true"> / </span><span class="post-audio__total">1:01</span></span>
+      </div>
+      <input class="post-audio__track" type="range" min="0" max="0" step="0.1" value="0" disabled aria-label="播放进度" />
+    </div>
+    <label class="post-audio__speed">
+      <span class="visually-hidden">播放速度</span>
+      <select class="post-audio__speed-select">
+        <option value="0.75">0.75×</option>
+        <option value="1" selected>1×</option>
+        <option value="1.25">1.25×</option>
+        <option value="1.5">1.5×</option>
+        <option value="1.75">1.75×</option>
+        <option value="2">2×</option>
+      </select>
+    </label>
+  </div>
+</section>
+<script src="/PMAT77/js/audio.js"></script>
+
+
+
+    
+
     <div
       class="page-content "
     >
