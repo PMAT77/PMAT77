@@ -117,7 +117,9 @@ npm run tts -- --only 514路
 
 音频写在 `source/audio/`，清单写在 `tools/tts/manifest.json`，两者都不提交。构建时 `source/audio/` 复制进 `public/audio/`，随 `npm run deploy` 一起发布。
 
-音频按正文与音色指纹增量生成：正文、参考音频、逐字文本、语言或语速变化时才重新合成。正文清洗后少于 60 字的文章跳过。`npm run tts -- --force` 会重做全部选中文章，并清理已删除文章、或已关闭朗读的文章留下的旧文件。
+音频按正文与音色指纹增量生成：正文、参考音频、逐字文本、语言、语速或调参变化时才重新合成。正文清洗后少于 60 字的文章跳过。`npm run tts -- --force` 会重做全部选中文章；文章删除、写了 `audio: false` 或正文过短留下的旧音频，每次运行都会自动清理。
+
+朗读效果需要调整时，先用 `npm run tts:tune` 一次生成 8 组参数对比试听，选定后写进 `voice.tuning`。参考音频可以给 2～3 段（`voice.refAudios`），段落间隔用 `audio.paragraphGapMs` 控制。专有名词的读法用 `tools/tts/lexicon.json` 替换文字，多音字用 `tools/tts/pronunciation.json` 配合 `npm run tts:pronounce` 同步进 GPT-SoVITS 词表。细节见 `tools/tts/README.md`。
 
 单篇关闭朗读，在 YAML 中写 `audio: false`。删除清单会关闭全站播放器。没有清单、音频缺失或清单损坏时，构建照常完成，只是不显示播放器。
 

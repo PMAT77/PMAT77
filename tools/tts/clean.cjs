@@ -22,6 +22,8 @@ const WORD_CHAR = /[0-9A-Za-z\u00C0-\u00FF\u3400-\u4DBF\u4E00-\u9FFF\u{20000}-\u
 const SENTENCE_END = /[。！？!?…]$/;
 const TRAILING_NOISE = /[：:，,；;、\s]+$/;
 const SPACE_BEFORE_PUNCT = /\s+([，。！？；：、…）】」』》])/g;
+// 长破折号（——／――）在朗读里等于一次换气的停顿，统一成逗号，避免模型逐字拖长音。
+const LONG_DASH = /—{2,}|―{2,}|–{2,}/g;
 const SENTENCE_BREAK = new Set(['。', '！', '？', '…', '；', '!', '?', ';']);
 
 function tidyLine(line) {
@@ -30,6 +32,7 @@ function tidyLine(line) {
     .replace(ALLOWED, ' ')
     .replace(/\u00A0/g, ' ')
     .replace(/\s+/g, ' ')
+    .replace(LONG_DASH, '，')
     .replace(SPACE_BEFORE_PUNCT, '$1')
     .trim()
     .replace(TRAILING_NOISE, '');
@@ -85,21 +88,30 @@ function hardSplit(text, max) {
 }
 
 // 按句读累加，单块不超过 max 个字符；超长无标点句按 max 硬切。
-function chunkText(text, max = 900) {
+// 返回每块所在的段落序号：跨段落处要插更长的停顿，段落被硬切开的接缝只留短停顿。
+// 攒到 max 的 60% 后遇到新段落就先收尾，让分块边界尽量落在段落上，朗读时才有段间停顿。
+const PARAGRAPH_FLUSH_RATIO = 0.6;
+
+function chunkTextDetailed(text, max = 900) {
   if (!Number.isInteger(max) || max < 100) throw new Error('max 需要是不小于 100 的整数');
   const chunks = [];
   let buffer = '';
   let bufferChars = 0;
+  let bufferParagraph = 0;
   const flush = () => {
-    if (buffer.trim()) chunks.push(buffer.trim());
+    if (buffer.trim()) chunks.push({ text: buffer.trim(), paragraph: bufferParagraph });
     buffer = '';
     bufferChars = 0;
   };
-  for (const paragraph of normalizeSpeech(text).split(/\n+/)) {
-    for (const sentence of splitSentences(paragraph)) {
+  let paragraph = 0;
+  for (const line of normalizeSpeech(text).split(/\n+/)) {
+    paragraph += 1;
+    for (const sentence of splitSentences(line)) {
       for (const piece of hardSplit(sentence, max)) {
         const size = Array.from(piece).length;
-        if (bufferChars > 0 && bufferChars + size > max) flush();
+        const boundary = bufferChars > 0 && bufferParagraph !== paragraph;
+        if (bufferChars > 0 && (bufferChars + size > max || (boundary && bufferChars >= max * PARAGRAPH_FLUSH_RATIO))) flush();
+        if (bufferChars === 0) bufferParagraph = paragraph;
         buffer += piece;
         bufferChars += size;
       }
@@ -107,6 +119,21 @@ function chunkText(text, max = 900) {
   }
   flush();
   return chunks;
+}
+
+function chunkText(text, max = 900) {
+  return chunkTextDetailed(text, max).map(chunk => chunk.text);
+}
+
+// 文本层多音字/词替换：长词优先，避免“重庆”先被“重”拆掉。
+// 只做同长度或任意长度的字符串替换，读法由用户写的替换文本决定。
+function applyLexicon(text, lexicon = {}) {
+  const entries = Object.entries(lexicon && typeof lexicon === 'object' ? lexicon : {})
+    .filter(([from, to]) => typeof from === 'string' && from && typeof to === 'string' && to)
+    .sort((a, b) => Array.from(b[0]).length - Array.from(a[0]).length);
+  let result = String(text || '');
+  for (const [from, to] of entries) result = result.split(from).join(to);
+  return result;
 }
 
 function textHash(text, voiceKey = '') {
@@ -117,12 +144,15 @@ function voiceKeyFor(voice = {}) {
   return crypto.createHash('sha1').update(JSON.stringify({
     name: voice.name || '',
     refAudio: voice.refAudio || '',
+    refAudios: Array.isArray(voice.refAudios) ? voice.refAudios : [],
     promptText: voice.promptText || '',
     promptLang: voice.promptLang || '',
     textLang: voice.textLang || '',
     speed: Number(voice.speed) || 1,
     gptWeights: voice.gptWeights || '',
-    sovitsWeights: voice.sovitsWeights || ''
+    sovitsWeights: voice.sovitsWeights || '',
+    tuning: voice.tuning || {},
+    paragraphGapMs: Number(voice.paragraphGapMs) || 0
   })).digest('hex');
 }
 
@@ -158,6 +188,8 @@ module.exports = {
   splitSentences,
   hardSplit,
   chunkText,
+  chunkTextDetailed,
+  applyLexicon,
   textHash,
   voiceKeyFor,
   mp3PathFor,

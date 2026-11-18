@@ -12,7 +12,9 @@
     "deploy": "hexo deploy",
     "server": "hexo server",
     "tts": "node tools/tts/cli.cjs",
-    "tts:serve": "node tools/tts/cli.cjs --serve"
+    "tts:serve": "node tools/tts/cli.cjs --serve",
+    "tts:tune": "node tools/tts/tune.cjs",
+    "tts:pronounce": "node tools/tts/pronunciation.cjs"
   },
   "hexo": {
     "version": "7.3.0"

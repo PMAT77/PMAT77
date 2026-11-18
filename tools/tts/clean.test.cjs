@@ -1,8 +1,8 @@
 const assert = require('node:assert/strict');
 const { test } = require('node:test');
 const {
-  buildSpeechText, htmlToSpeech, normalizeSpeech, chunkText, splitSentences,
-  textHash, voiceKeyFor, mp3PathFor, entryStatus, staleSources
+  buildSpeechText, htmlToSpeech, normalizeSpeech, chunkText, chunkTextDetailed, applyLexicon,
+  splitSentences, textHash, voiceKeyFor, mp3PathFor, entryStatus, staleSources
 } = require('./clean.cjs');
 
 test('buildSpeechText 只保留可朗读文本', () => {
@@ -88,6 +88,50 @@ test('mp3PathFor 保留目录与中文文件名，拒绝可疑路径', () => {
   assert.throws(() => mp3PathFor('source/_posts/a.md'), /unexpected post source/);
   assert.throws(() => mp3PathFor('_posts/../a.md'), /unexpected post source/);
   assert.throws(() => mp3PathFor('_posts/'), /unexpected post source/);
+});
+
+test('normalizeSpeech 把长破折号当成停顿改写为逗号', () => {
+  assert.equal(normalizeSpeech('他说——等等——然后走了。'), '他说，等等，然后走了。');
+  assert.equal(normalizeSpeech('甲————乙。'), '甲，乙。');
+  // 单独的破折号整行仍会被丢掉，不会念出符号。
+  assert.equal(normalizeSpeech('——'), '');
+});
+
+test('applyLexicon 按最长词优先替换，且忽略无效词条', () => {
+  assert.equal(applyLexicon('重庆的火锅。', { 重庆: 'chong qing', 火: 'huo' }), 'chong qing的huo锅。');
+  assert.equal(applyLexicon('原文。', {}), '原文。');
+  assert.equal(applyLexicon('原文。', { a: 1, '': 'x', b: null }), '原文。');
+  assert.equal(applyLexicon('', { 甲: 'yi' }), '');
+});
+
+test('chunkTextDetailed 让分块边界尽量落在段落上', () => {
+  const paragraph = number => `第${number}段。`.repeat(10);
+  const text = [1, 2, 3, 4].map(paragraph).join('\n\n');
+  const chunks = chunkTextDetailed(text, 100);
+  assert.ok(chunks.length >= 2);
+  for (const chunk of chunks) assert.ok(Array.from(chunk.text).length <= 100, chunk.text);
+  for (let index = 1; index < chunks.length; index++) {
+    assert.notEqual(chunks[index].paragraph, chunks[index - 1].paragraph, '相邻块应来自不同段落');
+  }
+  assert.deepEqual(chunkText(text, 100), chunks.map(chunk => chunk.text));
+  const single = chunkTextDetailed('短段落。', 100);
+  assert.deepEqual(single, [{ text: '短段落。', paragraph: 1 }]);
+});
+
+test('quote 指纹包含调参、多参考与段间停顿', () => {
+  const base = { refAudio: 'a.wav', tuning: { temperature: 1 } };
+  assert.notEqual(
+    voiceKeyFor({ ...base, tuning: { temperature: 0.6 } }),
+    voiceKeyFor(base)
+  );
+  assert.notEqual(
+    voiceKeyFor({ ...base, refAudios: ['a.wav', 'b.wav'] }),
+    voiceKeyFor({ ...base, refAudios: ['b.wav', 'a.wav'] })
+  );
+  assert.notEqual(
+    voiceKeyFor({ ...base, paragraphGapMs: 400 }),
+    voiceKeyFor({ ...base, paragraphGapMs: 0 })
+  );
 });
 
 test('entryStatus 判定 new/changed/skip', () => {
