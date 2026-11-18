@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>语音调参试听</title>
+<style>
+  body { margin: 0; padding: 28px 20px 60px; font: 15px/1.7 -apple-system, "Segoe UI", "Microsoft YaHei", sans-serif; color: #1c1f26; background: #fafafa; }
+  main { max-width: 980px; margin: 0 auto; }
+  h1 { font-size: 22px; margin: 0 0 6px; }
+  .muted { color: #6b7886; font-size: 13px; }
+  .sample { margin: 16px 0 22px; padding: 12px 16px; border: 1px solid #ececec; border-radius: 6px; background: #fff; color: #434648; }
+  table { width: 100%; border-collapse: collapse; background: #fff; border: 1px solid #ececec; border-radius: 6px; overflow: hidden; }
+  th, td { padding: 10px 12px; border-bottom: 1px solid #f1f1f1; text-align: left; vertical-align: middle; }
+  th { font-size: 13px; color: #6b7886; font-weight: 600; background: #fbfbfb; }
+  audio { width: 240px; height: 34px; }
+  code { background: #f6f6f6; padding: 1px 5px; border-radius: 3px; }
+  @media (max-width: 720px) { table, thead, tbody, tr, td, th { display: block; } thead { display: none; } td { border: 0; padding: 4px 12px; } tr { border-bottom: 1px solid #f1f1f1; padding: 8px 0; } audio { width: 100%; } }
+</style>
+</head>
+<body><main>
+  <h1>语音调参试听</h1>
+  <p class="muted">同一段文本、同一参考音频，只改一个参数。听着有改善的组合，把参数写进 <code>tools/tts/config.json</code> 的 <code>voice.tuning</code>。</p>
+  <div class="sample">_posts/essay/514路.md<br><span class="muted">下午回富阳拿点东西，坐在514上，光线从侧边车窗懒懒的照进来，连月不见的太阳难得出了次全勤。
+
+车厢里以外有些闷热。
+
+菩提寺到富阳公交站正在修地铁，车多路窄，幽灵堵车。车流行的很…</span></div>
+  <table>
+    <thead><tr><th>#</th><th>参数</th><th>取值</th><th>时长</th><th>试听</th></tr></thead>
+    <tbody>
+      <tr>
+        <td>01</td>
+        <td><code>baseline</code><br><span class="muted">当前配置</span></td>
+        <td>temperature 1 · top_k 15 · top_p 1 · rep 1.35 · cut5 · interval 0.3</td>
+        <td>0:58</td>
+        <td><audio controls preload="none" src="01-baseline.mp3"></audio></td>
+      </tr>
+      <tr>
+        <td>02</td>
+        <td><code>temp-06</code><br><span class="muted">temperature 0.6（更稳，起伏更小）</span></td>
+        <td>temperature 0.6 · top_k 15 · top_p 1 · rep 1.35 · cut5 · interval 0.3</td>
+        <td>1:03</td>
+        <td><audio controls preload="none" src="02-temp-06.mp3"></audio></td>
+      </tr>
+      <tr>
+        <td>03</td>
+        <td><code>temp-12</code><br><span class="muted">temperature 1.2（起伏更大）</span></td>
+        <td>temperature 1.2 · top_k 15 · top_p 1 · rep 1.35 · cut5 · interval 0.3</td>
+        <td>0:59</td>
+        <td><audio controls preload="none" src="03-temp-12.mp3"></audio></td>
+      </tr>
+      <tr>
+        <td>04</td>
+        <td><code>rep-12</code><br><span class="muted">repetition_penalty 1.2（更松，可能复读）</span></td>
+        <td>temperature 1 · top_k 15 · top_p 1 · rep 1.2 · cut5 · interval 0.3</td>
+        <td>0:58</td>
+        <td><audio controls preload="none" src="04-rep-12.mp3"></audio></td>
+      </tr>
+      <tr>
+        <td>05</td>
+        <td><code>rep-16</code><br><span class="muted">repetition_penalty 1.6（更积极打断复读）</span></td>
+        <td>temperature 1 · top_k 15 · top_p 1 · rep 1.6 · cut5 · interval 0.3</td>
+        <td>1:01</td>
+        <td><audio controls preload="none" src="05-rep-16.mp3"></audio></td>
+      </tr>
+      <tr>
+        <td>06</td>
+        <td><code>topp-085</code><br><span class="muted">top_p 0.85（更保守的选词）</span></td>
+        <td>temperature 1 · top_k 15 · top_p 0.85 · rep 1.35 · cut5 · interval 0.3</td>
+        <td>1:01</td>
+        <td><audio controls preload="none" src="06-topp-085.mp3"></audio></td>
+      </tr>
+      <tr>
+        <td>07</td>
+        <td><code>cut2</code><br><span class="muted">text_split_method cut2（按中文句号切）</span></td>
+        <td>temperature 1 · top_k 15 · top_p 1 · rep 1.35 · cut2 · interval 0.3</td>
+        <td>0:45</td>
+        <td><audio controls preload="none" src="07-cut2.mp3"></audio></td>
+      </tr>
+      <tr>
+        <td>08</td>
+        <td><code>pause-06</code><br><span class="muted">fragment_interval 0.6（句间停顿更长）</span></td>
+        <td>temperature 1 · top_k 15 · top_p 1 · rep 1.35 · cut5 · interval 0.6</td>
+        <td>1:06</td>
+        <td><audio controls preload="none" src="08-pause-06.mp3"></audio></td>
+      </tr></tbody>
+  </table>
+</main></body></html>
