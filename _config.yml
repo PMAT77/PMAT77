@@ -14,7 +14,8 @@ timezone: ""
 # URL
 ## 在这里设置你的站点 URL。例如，如果你使用GitHub Page，设置url为 'https://username.github.io/project'
 url: https://pmat77.github.io/PMAT77
-permalink: :year/:month/:day/:title/
+# :name 只取文件名，使 _posts 子目录分类不改变文章链接
+permalink: :year/:month/:day/:name/
 permalink_defaults:
 pretty_urls:
   trailing_index: false # 将其设置为 false 来移除永久链接中的尾部 'index.html'
@@ -92,11 +93,23 @@ pagination_dir: page
 include:
 exclude:
 ignore:
+  # 编辑器和自动化工具保存文件时会在同目录生成临时目录（形如 xxx.tmpdir），
+  # hexo server 的文件监听扫到会报 ENOENT/EBUSY，这里统一忽略。
+  - '**/*.tmpdir'
+  - '**/*.tmpdir/**'
 
 # 扩展
 ## 插件: https://hexo.io/plugins/
 ## 主题: https://hexo.io/themes/
 theme: Klise
+
+# 构建时同步 GitHub 公开原创项目；失败时使用 data/github-projects.json
+github_projects:
+  enable: true
+  username: PMAT77
+  exclude:
+    - PMAT77 # 博客自身（也会自动排除 fork 和归档仓库）
+    - PMAT77CDN
 
 # 部署
 ## 文档: https://hexo.io/docs/one-command-deployment

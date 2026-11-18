@@ -6,6 +6,7 @@ const { test } = require('node:test');
 const Hexo = require('hexo');
 const moment = require('moment');
 const { JSDOM } = require('jsdom');
+const yaml = require('js-yaml');
 const { plainText, preparePosts, booksFor, projectsFor } = require('../lib/content.cjs');
 
 const themeDir = path.resolve(__dirname, '..');
@@ -60,9 +61,17 @@ test('Hexo generates collections, feeds, navigation and project links at both de
       fs.symlinkSync(path.join(siteDir, 'node_modules'), path.join(base, 'node_modules'), 'junction');
       fs.cpSync(path.join(siteDir, 'scaffolds'), path.join(base, 'scaffolds'), { recursive: true });
       write('package.json', fs.readFileSync(path.join(siteDir, 'package.json')));
-      write('_config.yml', `title: Test\nauthor: Author\nurl: https://example.test${root}\ntheme: Klise\npermalink: :year/:month/:day/:title/\nindex_generator:\n  per_page: 0\nper_page: 0\nfuture: true\n`);
+      const { permalink } = yaml.load(fs.readFileSync(path.join(siteDir, '_config.yml'), 'utf8'));
+      write('_config.yml', `title: Test\nauthor: Author\nurl: https://example.test${root}\ntheme: Klise\npermalink: ${permalink}\nindex_generator:\n  per_page: 0\nper_page: 0\nfuture: true\ngithub_projects:\n  enable: true\n  username: example\n`);
       write('source/_data/novels.yml', '- id: book-a\n  title: 作品甲\n- id: book-b\n  title: 作品乙\n');
-      write('source/_data/projects.yml', '- title: 项目甲\n  cover: /images/project.svg\n  github: https://github.com/example/project-a\n- title: 项目乙\n  cover: /images/project.svg\n  github: https://github.com/example/project-b\n');
+      write('source/_data/projects.yml', '- title: 项目甲\n  cover: /images/project.svg\n  github: https://github.com/example/project-a\n- title: 项目乙\n  github: https://github.com/example/project-b\n');
+      write('data/github-projects.json', JSON.stringify({ username: 'example', projects: ['project-a', 'project-b'].map((name, i) => ({
+        name, full_name: `example/${name}`, github: `https://github.com/example/${name}`, description: '自动项目简介',
+        language: 'JavaScript', stars: 3, default_branch: 'main', pushed_at: `2026-01-0${2 - i}T00:00:00Z`,
+        readme: i ? null : { path: 'docs/README.md', sha: 'sha',
+          html: '<h2 id="user-content-start">开始</h2><a href="#start">目录</a><a href="guide.md">指南</a><img src="../images/app.png"><pre><code>long code line</code></pre>' }
+      })) }));
+      t.mock.method(globalThis, 'fetch', async () => { throw new Error('offline fixture: tests must not access GitHub'); });
       write('source/images/project.svg', '<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360"><rect fill="#f66" width="640" height="360"/></svg>');
       write('source/categories/index.md', '---\nlayout: category\ntitle: 分类\n---');
       function post(name, header, body) {
@@ -85,10 +94,28 @@ test('Hexo generates collections, feeds, navigation and project links at both de
       });
       await hexo.init();
       await hexo.call('generate');
+      const originalPaths = new Map(hexo.locals.get('posts').toArray().map(p => [p.slug, p.path]));
+      const originalRoutes = hexo.route.list().sort();
+      assert.equal(originalPaths.get('technical'), '2026/01/01/technical/');
+      for (const post of hexo.locals.get('posts').toArray()) {
+        // Keep one legacy root-level post to check both layouts together.
+        if (post.slug === 'empty-note') continue;
+        const target = path.join(base, 'source/_posts', post.content_type, path.basename(post.source));
+        fs.mkdirSync(path.dirname(target), { recursive: true });
+        fs.renameSync(path.join(base, 'source', post.source), target);
+      }
+      write('source/_drafts/unpublished.md', '---\ncontent_type: essay\ndate: 2026-01-01\n---\n未发布草稿');
+      await hexo.call('generate');
+      const migrated = hexo.locals.get('posts').toArray();
+      assert.equal(migrated.length, originalPaths.size, 'nested posts must not be lost or duplicated, and drafts must stay unpublished');
+      for (const post of migrated) {
+        assert.equal(post.path, originalPaths.get(path.posix.basename(post.slug)), `${post.source}: moving directories must preserve the URL`);
+      }
+      assert.deepEqual(hexo.route.list().sort(), originalRoutes, 'migration must preserve all deployment routes');
       const html = name => fs.readFileSync(path.join(base, 'public', name), 'utf8');
       const dom = name => new JSDOM(html(name)).window.document;
       const posts = hexo.locals.get('posts').toArray();
-      const bySlug = slug => posts.find(p => p.slug === slug);
+      const bySlug = slug => posts.find(p => path.posix.basename(p.slug) === slug);
       const detail = slug => dom(`${bySlug(slug).path}index.html`);
       const essay = dom('essays/index.html');
       assert.equal(essay.querySelectorAll('.essay-entry').length, 10);
@@ -121,9 +148,19 @@ test('Hexo generates collections, feeds, navigation and project links at both de
       assert.equal(detail('a-first').querySelector('[aria-current="page"]').textContent.trim(), '连载小说');
       assert.equal(detail('technical').querySelector('[aria-current="page"]').textContent.trim(), '技术文章');
       const projects = dom('projects/index.html');
-      assert.deepEqual([...projects.querySelectorAll('.project-card')].map(a => a.href), ['https://github.com/example/project-a', 'https://github.com/example/project-b']);
-      assert.equal(projects.querySelector('.project-card').target, '_blank');
+      assert.deepEqual([...projects.querySelectorAll('.project-card')].map(a => a.getAttribute('href')), [`${root}projects/project-a/`, `${root}projects/project-b/`]);
+      assert.equal(projects.querySelector('.project-card').target, '');
       assert.equal(projects.querySelector('.project-cover img').getAttribute('src'), `${root}images/project.svg`);
+      assert.equal(projects.querySelector('.project-cover-name').textContent, '项目乙');
+      const project = dom('projects/project-a/index.html');
+      assert.equal(project.querySelector('.project-github').href, 'https://github.com/example/project-a');
+      assert.equal(project.querySelector('.collection-back').getAttribute('href'), `${root}projects/`);
+      assert.equal(project.querySelector('[aria-current="page"]').textContent.trim(), '项目展示');
+      assert.ok(project.querySelector('.project-readme #start'));
+      assert.equal(project.querySelector('.project-readme img').src, 'https://raw.githubusercontent.com/example/project-a/main/images/app.png');
+      assert.ok(dom('projects/project-b/index.html').querySelector('.collection-empty').textContent.includes('README'));
+      assert.ok(!JSON.parse(html('search.json')).some(p => p.url.includes('/projects/')));
+      assert.ok(!html('atom.xml').includes('projects/project-a'));
 
       // Check generated local links and resource paths against actual Hexo output.
       const routes = new Set(hexo.route.list());
@@ -141,9 +178,9 @@ test('Hexo generates collections, feeds, navigation and project links at both de
       }
       await hexo.call('generate');
       assert.ok(detail('stable-untitled').querySelector('h1.visually-hidden'));
-      await hexo.post.create({ title: '20261028-153000', layout: 'essay' });
+      await hexo.call('new', { _: ['essay', '20261028-153000'], path: 'essay/20261028-153000.md' });
       await hexo.call('generate');
-      const created = hexo.locals.get('posts').findOne({ slug: '20261028-153000' });
+      const created = hexo.locals.get('posts').findOne({ source: '_posts/essay/20261028-153000.md' });
       assert.equal(created.content_type, 'essay');
       assert.equal(created.untitled_essay, true);
       assert.equal(created.layout, 'post');

@@ -19,6 +19,8 @@
       </div>
     </header>
 
+    <%- partial('partials/audio-player', { audio: page.audio }) %>
+
     <% if (page.content_type === 'tech') { const contents = toc(page.content); if (contents) { %>
       <details class="article-toc"><summary>目录</summary><%- contents %></details>
     <% } } %>

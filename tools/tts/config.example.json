@@ -1,0 +1,34 @@
+{
+  "api": {
+    "baseUrl": "http://127.0.0.1:9880",
+    "timeoutMs": 300000,
+    "retries": 2
+  },
+  "gptSovits": {
+    "dir": "D:/Tools/GPT-SoVITS",
+    "python": "runtime/python.exe",
+    "host": "127.0.0.1",
+    "port": 9880,
+    "config": "GPT_SoVITS/configs/tts_infer.yaml",
+    "startupTimeoutMs": 240000,
+    "stopOnExit": false
+  },
+  "voice": {
+    "name": "我的声音",
+    "refAudio": "D:/Tools/GPT-SoVITS/ref/ref.wav",
+    "promptText": "参考音频里这句话的逐字文本",
+    "promptLang": "zh",
+    "textLang": "zh",
+    "speed": 1,
+    "parallelInfer": false,
+    "batchSize": 1,
+    "gptWeights": "",
+    "sovitsWeights": ""
+  },
+  "audio": {
+    "bitrateKbps": 48,
+    "maxChunkChars": 900,
+    "chunkGapMs": 250
+  },
+  "ffmpeg": "ffmpeg"
+}

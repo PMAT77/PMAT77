@@ -1,4 +1,5 @@
 const content = require('../lib/content.cjs');
+const { loadProjects } = require('../lib/github-projects.cjs');
 
 // Run after Hexo renders Markdown, before any generator (including feeds/search).
 hexo.extend.filter.register('before_generate', function () {
@@ -10,8 +11,11 @@ hexo.extend.filter.register('before_generate', function () {
   return Promise.all(posts.map(post => post.save()));
 }, 20);
 
-hexo.extend.generator.register('contentCollections', locals =>
-  content.collectionPages(locals.posts.toArray(), locals.data));
+hexo.extend.generator.register('contentCollections', async function (locals) {
+  const projects = await loadProjects({ baseDir: this.base_dir, config: this.config.github_projects,
+    overrides: locals.data.projects, log: this.log });
+  return content.collectionPages(locals.posts.toArray(), locals.data, projects);
+});
 
 hexo.extend.helper.register('article_summary', function (post) {
   const text = content.plainText(post.excerpt || post.content);

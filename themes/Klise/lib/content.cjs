@@ -1,5 +1,6 @@
 const { stripHTML, unescapeHTML } = require('hexo-util');
 const { parse } = require('hexo-front-matter');
+const { projectsFor } = require('./github-projects.cjs');
 
 const sections = { essay: 'essays', novel: 'novels', tech: 'tech' };
 
@@ -71,22 +72,7 @@ function booksFor(posts, definitions = []) {
   return books;
 }
 
-function projectsFor(projects = []) {
-  if (!Array.isArray(projects)) throw new Error('projects.yml 必须是项目列表');
-  for (const project of projects) {
-    let url;
-    try { url = new URL(project.github); } catch { /* Report the entry below. */ }
-    if (!project.title || !project.cover || !url || url.protocol !== 'https:' ||
-        url.hostname !== 'github.com' || url.username || url.password ||
-        url.pathname.split('/').filter(Boolean).length < 2 ||
-        /^(?!https?:\/\/)[a-z][a-z0-9+.-]*:/i.test(project.cover)) {
-      throw new Error(`projects.yml: ${project.title || '项目'} 需要 title、cover 和有效的 HTTPS GitHub 仓库链接`);
-    }
-  }
-  return projects;
-}
-
-function collectionPages(posts, data = {}) {
+function collectionPages(posts, data = {}, projects = projectsFor(data.projects)) {
   const books = booksFor(posts, data.novels);
   const routes = [];
   for (const [type, section, title] of [['essay', 'essays', '随笔'], ['tech', 'tech', '技术文章']]) {
@@ -106,7 +92,11 @@ function collectionPages(posts, data = {}) {
   for (const book of books) {
     routes.push({ path: `${book.path}index.html`, layout: 'collection', data: { title: book.title, section: 'novels', book } });
   }
-  routes.push({ path: 'projects/index.html', layout: 'collection', data: { title: '项目展示', section: 'projects', projects: projectsFor(data.projects) } });
+  routes.push({ path: 'projects/index.html', layout: 'collection', data: { title: '项目展示', section: 'projects', projects } });
+  for (const project of projects) {
+    routes.push({ path: `${project.path}index.html`, layout: 'project',
+      data: { title: project.title, section: 'projects', project } });
+  }
   return routes;
 }
 

@@ -2,17 +2,23 @@
   "name": "hexo-site",
   "version": "0.0.0",
   "private": true,
+  "engines": {
+    "node": ">=20.3.0"
+  },
   "scripts": {
-    "test": "node --test themes/Klise/test/*.test.cjs",
+    "test": "node --test themes/Klise/test/*.test.cjs tools/tts/*.test.cjs",
     "build": "hexo generate --force",
     "clean": "hexo clean",
     "deploy": "hexo deploy",
-    "server": "hexo server"
+    "server": "hexo server",
+    "tts": "node tools/tts/cli.cjs",
+    "tts:serve": "node tools/tts/cli.cjs --serve"
   },
   "hexo": {
     "version": "7.3.0"
   },
   "dependencies": {
+    "dompurify": "^3.0.3",
     "hexo": "^7.3.0",
     "hexo-deployer-git": "^4.0.0",
     "hexo-generator-archive": "^2.0.0",
@@ -26,10 +32,11 @@
     "hexo-renderer-marked": "^6.3.0",
     "hexo-renderer-stylus": "^3.0.1",
     "hexo-server": "^3.0.0",
-    "hexo-theme-landscape": "^1.0.0"
+    "hexo-theme-landscape": "^1.0.0",
+    "jsdom": "20.0.3",
+    "marked": "^4.3.0"
   },
   "devDependencies": {
-    "jsdom": "20.0.3",
     "sass": "^1.83.0"
   }
 }

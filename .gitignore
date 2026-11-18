@@ -9,3 +9,10 @@ _multiconfig.yml
 .history/
 artifacts/
 wx_ticket_cache.json
+# 本地生成的朗读音频与音色配置：部署时由 source/audio 复制进 public，不进版本库
+source/audio/
+tools/tts/config.json
+tools/tts/manifest.json
+tools/tts/ref/
+tools/tts/weights/
+tools/tts/.lock

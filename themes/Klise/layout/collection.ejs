@@ -63,9 +63,13 @@
     <% } else if (page.section === 'projects') { %>
       <div class="project-grid">
         <% page.projects.forEach(project => { %>
-          <a class="project-card" href="<%= project.github %>" target="_blank" rel="noopener noreferrer" aria-label="<%= project.title %>（在新标签页打开 GitHub）">
-            <div class="project-cover"><img src="<%= url_for(project.cover) %>" alt="" loading="lazy" width="640" height="360"></div>
-            <h2><%= project.title %><span aria-hidden="true">↗</span></h2>
+          <a class="project-card" href="<%= url_for(project.path) %>" aria-label="查看项目：<%= project.title %>">
+            <div class="project-cover">
+              <% if (project.cover) { %><img src="<%= url_for(project.cover) %>" alt="" loading="lazy" width="640" height="360">
+              <% } else { %><span class="project-cover-name" aria-hidden="true"><%= project.title %></span><% } %>
+            </div>
+            <h2><%= project.title %><span aria-hidden="true">→</span></h2>
+            <% if (project.description) { %><p class="project-description"><%= project.description %></p><% } %>
           </a>
         <% }); %>
       </div>

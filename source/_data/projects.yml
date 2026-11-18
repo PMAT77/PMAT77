@@ -1,2 +1,9 @@
-# 按填写顺序展示。示例字段见 CONTENT.md；没有项目时保持空列表。
-[]
+# GitHub 自动项目的可选标题、封面覆盖，按 github 地址匹配。无需列出所有仓库。
+# 关闭 github_projects.enable 后，此列表作为手工项目来源。示例见 CONTENT.md。
+- github: https://github.com/PMAT77/bubble-shark-panel
+  title: BubbleSharkPanel
+  cover: https://cdn.jsdelivr.net/gh/PMAT77/PMAT77CDN@main/imgs/game-server-hub/BubbleSharkCover.png
+
+- github: https://github.com/PMAT77/bubble-shark-nexus
+  title: BubbleShark 社区
+  cover: https://cdn.jsdelivr.net/gh/PMAT77/PMAT77CDN@main/imgs/game-server-hub/Snipaste_2026-11-18_00-40-27.png

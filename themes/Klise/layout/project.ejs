@@ -1,0 +1,21 @@
+<% const project = page.project; %>
+<div class="wrapper collection-page project-detail">
+  <main aria-label="<%= project.title %>">
+    <header class="collection-header">
+      <a class="collection-back" href="<%= url_for('/projects/') %>">← 项目展示</a>
+      <h1><%= project.title %></h1>
+      <% if (project.description) { %><p class="project-intro"><%= project.description %></p><% } %>
+      <div class="project-meta">
+        <% if (project.language) { %><span><%= project.language %></span><% } %>
+        <span>Star <%= project.stars %></span>
+        <% if (project.pushed_at) { %><time datetime="<%= project.pushed_at %>">更新于 <%= date(project.pushed_at, 'YYYY-MM-DD') %></time><% } %>
+      </div>
+      <a class="project-github" href="<%= project.github %>" target="_blank" rel="noopener noreferrer">查看 GitHub <span aria-hidden="true">↗</span></a>
+    </header>
+    <% if (project.readme && project.readme.html) { %>
+      <div class="post project-readme"><div class="page-content"><%- project.readme.html %></div></div>
+    <% } else { %>
+      <p class="collection-empty">暂无可展示的 README，可前往 GitHub 查看项目。</p>
+    <% } %>
+  </main>
+</div>

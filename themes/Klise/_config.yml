@@ -52,3 +52,4 @@ stylesheets:
 scripts:
   - /js/search.js
   - /js/main.js
+  - /js/audio.js
