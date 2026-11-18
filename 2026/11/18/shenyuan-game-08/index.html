@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    
+
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第八章 观察笔记 [ Paolos ]</title>
+
+  <link rel="icon" href="/PMAT77/img/favicon.jpeg">
+
+
+    <meta name="author" content="Paolos">
+
+
+
+    <meta name="Description" content="Paolos - 个人博客">
+
+
+    <meta name="keywords" content=",blog">
+
+
+  <link rel="alternate" href="/PMAT77/atom.xml " title="Paolos" type="application/atom+xml">
+
+
+  
+    <link rel="stylesheet" href="/PMAT77/css/main.css">
+  
+
+  <meta name="generator" content="Hexo 7.3.0"></head>
+  <body data-theme="light" class="notransition">
+    <script>
+      const body = document.body;
+      const data = body.getAttribute("data-theme");
+      const initTheme = (state) => {
+        if (state === "dark") {
+          body.setAttribute("data-theme", "dark");
+        } else if (state === "light") {
+          body.removeAttribute("data-theme");
+        } else {
+          localStorage.setItem("theme", data);
+        }
+      };
+
+      initTheme(localStorage.getItem("theme"));
+
+      setTimeout(() => body.classList.remove("notransition"), 75);
+    </script>
+    <div class="navbar" role="navigation">
+    <nav class="menu">
+      <input type="checkbox" id="menu-trigger" class="menu-trigger" aria-label="展开导航" aria-controls="site-menu" aria-expanded="false" />
+      <label for="menu-trigger">
+        <span class="menu-icon">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 512 512"
+          >
+            <path
+              d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z"
+            />
+          </svg>
+        </span>
+      </label>
+      <button id="mode" type="button" aria-label="切换明暗主题" aria-pressed="false">
+        <svg
+          class="mode-sunny"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 512 512"
+        >
+          <title>LIGHT</title>
+          <line
+            x1="256"
+            y1="48"
+            x2="256"
+            y2="96"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="256"
+            y1="416"
+            x2="256"
+            y2="464"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="403.08"
+            y1="108.92"
+            x2="369.14"
+            y2="142.86"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="142.86"
+            y1="369.14"
+            x2="108.92"
+            y2="403.08"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="464"
+            y1="256"
+            x2="416"
+            y2="256"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="96"
+            y1="256"
+            x2="48"
+            y2="256"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="403.08"
+            y1="403.08"
+            x2="369.14"
+            y2="369.14"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="142.86"
+            y1="142.86"
+            x2="108.92"
+            y2="108.92"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <circle
+            cx="256"
+            cy="256"
+            r="80"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+        </svg>
+        <svg
+          class="mode-moon"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 512 512"
+        >
+          <title>DARK</title>
+          <line
+            x1="256"
+            y1="48"
+            x2="256"
+            y2="96"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="256"
+            y1="416"
+            x2="256"
+            y2="464"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="403.08"
+            y1="108.92"
+            x2="369.14"
+            y2="142.86"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="142.86"
+            y1="369.14"
+            x2="108.92"
+            y2="403.08"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="464"
+            y1="256"
+            x2="416"
+            y2="256"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="96"
+            y1="256"
+            x2="48"
+            y2="256"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="403.08"
+            y1="403.08"
+            x2="369.14"
+            y2="369.14"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="142.86"
+            y1="142.86"
+            x2="108.92"
+            y2="108.92"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <circle
+            cx="256"
+            cy="256"
+            r="80"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+        </svg>
+      </button>
+      <div class="trigger">
+        <div class="trigger-container" id="site-menu">
+          
+            
+            
+            
+            
+            <a class="menu-link " href="/PMAT77/">首页</a>
+          
+            
+            
+            
+            
+            <a class="menu-link " href="/PMAT77/essays/">随笔</a>
+          
+            
+            
+            
+            
+            <a class="menu-link active" href="/PMAT77/novels/" aria-current="page">连载小说</a>
+          
+            
+            
+            
+            
+            <a class="menu-link " href="/PMAT77/tech/">技术文章</a>
+          
+            
+            
+            
+            
+            <a class="menu-link " href="/PMAT77/projects/">项目展示</a>
+          
+        </div>
+      </div>
+    </nav>
+  </div>
+ <div class="wrapper post novel-reading ">
+  <main class="page-content" aria-label="Content">
+    <header class="header">
+      
+      <div class="tags">
+        <a
+          href="/PMAT77/tags/%E6%B7%B1%E6%B8%8A%E6%B8%B8%E6%88%8F/"
+          class="tag"
+          ># 深渊游戏</a
+        >
+      </div>
+      
+      <h1 class="header-title" itemprop="headline">第八章 观察笔记</h1>
+      <div class="post-meta">
+        <time datetime="2026-11-17T16:00:00.000Z">Nov 18, 2026</time>
+        <span itemprop="author">
+          <span itemprop="name">Paolos</span>
+        </span>
+      </div>
+    </header>
+
+    
+
+<section class="post-audio" aria-label="文章朗读">
+  <audio class="post-audio__native" preload="none" controls src="/PMAT77/audio/novel/shenyuan-game-08.mp3">你的浏览器不支持音频播放。</audio>
+  <div class="post-audio__player">
+    <button type="button" class="post-audio__toggle" aria-pressed="false" aria-label="播放朗读">
+      <svg class="post-audio__icon post-audio__play" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 5v14l11-7z" /></svg>
+      <svg class="post-audio__icon post-audio__pause" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 5h4v14H6zM14 5h4v14h-4z" /></svg>
+    </button>
+    <div class="post-audio__details">
+      <div class="post-audio__meta">
+        <span class="post-audio__label">朗读</span>
+        <span class="post-audio__time"><span class="post-audio__elapsed">0:00</span><span aria-hidden="true"> / </span><span class="post-audio__total">10:54</span></span>
+      </div>
+      <input class="post-audio__track" type="range" min="0" max="0" step="0.1" value="0" disabled aria-label="播放进度" />
+    </div>
+    <label class="post-audio__speed">
+      <span class="visually-hidden">播放速度</span>
+      <select class="post-audio__speed-select">
+        <option value="0.75">0.75×</option>
+        <option value="1">1×</option>
+        <option value="1.25" selected>1.25×</option>
+        <option value="1.5">1.5×</option>
+        <option value="1.75">1.75×</option>
+        <option value="2">2×</option>
+      </select>
+    </label>
+  </div>
+</section>
+
+
+
+    
+
+    <div
+      class="page-content "
+    >
+      <p>第一卷 顾宁篇</p>
+<p>11月16日晚。</p>
+<p>例行巡检C区收容单元。C-13今天胃口不错，投放的食物基本吃完了。进食后沿着收容舱内壁转了几圈，最后蜷缩在东南角，保持这个姿势近两个小时。期间有过几次无意识的肢体抽动，和前几天没什么区别，一切正常。</p>
+<p>11月19日晚。</p>
+<p>下午交班时，桐懂不小心打翻观察室的一只金属托盘，吓了我一跳。不过，有件事很奇怪。当时C-13正在进食，托盘落地时，它突然停了下来，抬起头，像是朝观察室的方向望了一眼。</p>
+<p>我特意翻了一下早期的观察报告，C系列实验体仅具备微弱的感光能力，并不具备听觉感知。也许只是托盘落地时产生的震动？</p>
+<p>桐懂倒是没注意到。算了，可能是我想多了。</p>
+<p>11月23日午间。</p>
+<p>昨天向科里提交了延长C-13观察时长的申请，今天晨会时又提了一下，沈主任似乎有些心不在焉，只让我先把手头的数据整理好。</p>
+<p>好吧。</p>
+<p>昨晚又翻了一遍之前的观察录像。早在10月28日的光刺激实验中，C-13似乎就已经开始对同等强度的光照有所反应，当时记录员却把它归入了正常自主活动。真是要被桐懂那个笨蛋气死了，这么关键的信息，竟然没告诉我。</p>
+<p>11月27日晚。</p>
+<p>下午又去找了沈主任。我提出增加一组声音辨识实验，尝试观察C-13能否区分不同的人声，以及一些经常在它面前出现的特定词汇。</p>
+<p>他没有同意，说目前这些异常反应的性质尚不明确，在活检结果进一步确认之前，暂停所有计划外的刺激实验。他还问我，最近是不是私下给C-13做过什么测试。</p>
+<p>……早知道昨天就不应该把那几段录像也拿给他看。</p>
+<p>不过，我还是想试一下。明晚桐懂替我值前半夜，后半夜只有我在。实验流程很简单，应该用不了多久。</p>
+<p>我还挺想知道，它能不能听懂自己的编号。</p>
+<p>笔记到这里就没有了。</p>
+<p>夏临捏着那几页纸，反反复复看了几遍，后背不知不觉沁出一层冷汗。</p>
+<p>对上了。</p>
+<p>那晚自己喊出「C13」后，怪物骤然停顿的反应，恐怕不是游戏巧合。按照笔记里的说法，C13原本不具备听觉，视觉也十分微弱，可就在事故发生前的那段时间，它却接连表现出了异常。尤其是最后这篇——顾宁显然已经意识到了什么，甚至打算私下进行声音辨识实验。她后来成功了吗？笔记里没有答案。但至少有一点可以确认：那晚的怪物，的确对自己的喊声产生了反应，也正因如此，才给了他后来侥幸逃生的机会。</p>
+<p>他将笔记放回桌上，脑海中又浮现出那段不属于自己的记忆：临时通知的转运任务，突然报警的转运舱，还有那个撑着黑伞的男人。深更半夜，雨下得那么大，谁会撑着伞站在国道中央？更奇怪的是，那人明明看见了迎面驶来的车，却丝毫没有躲避的意思。</p>
+<p>难道说，那场车祸不是意外？</p>
+<p>这念头让他隐隐有些不安。如果有人故意制造了事故，那对方究竟是冲着车上的实验体去的，还是冲着顾宁去的？顾宁是不是发现了什么不该发现的东西？</p>
+<p>他看了眼桌上的笔记。</p>
+<p>等等。</p>
+<p>夏临忽然意识到，自己似乎把事情想得太复杂了。无论是实验体的异常，还是那场车祸，他掌握的信息都少得可怜。仅凭一本笔记和一段残缺的记忆，根本无法判断两者之间究竟有没有联系。可不怕一万，就怕万一。如果真有人想对顾宁不利，那么现在占据这具身体的自己，岂不是也很危险？</p>
+<p>想到这里，他忽然有些庆幸，自己先前对外一直表现得什么都不记得，至少目前看来，还没人对他的失忆产生什么怀疑。至于那场车祸究竟是怎么回事，自己又为什么会出现在《深渊》的游戏序章里……</p>
+<p>夏临越想越觉得头疼。</p>
+<p>还有浣熊游戏那帮人。游戏里的街道、怪物，甚至那个女人临死前的遭遇，都与自己亲身经历的一模一样。他们到底是怎么知道这些事的？</p>
+<p>他揉了揉眉心，强迫自己不再胡思乱想。眼下最重要的，还是先弄清楚这个世界究竟是怎么回事。</p>
+<p>书房的窗台上摆着一盆绿萝，几根藤蔓沿着窗沿垂了下来，其中一根已经搭在了书桌上。午后的阳光透过玻璃，将几片翠绿的叶子照得近乎透明。夏临伸手拨开那根藤蔓。</p>
+<p>看来顾宁平时把它照顾得不错。</p>
+<p>书桌收拾得很整齐，左侧摆着几本厚厚的专业书籍，右侧是一盏白色台灯，中间放着一台银灰色的笔记本电脑。他拉开椅子坐下，掀开电脑屏幕。屏幕亮起，摄像头旁的指示灯闪烁了两下。</p>
+<p>夏临正琢磨着该怎么解决开机密码的问题，登录界面却已经消失，熟悉的桌面随之映入眼帘。</p>
+<p>他愣了一下，随即反应过来。</p>
+<p>人脸识别。</p>
+<p>顾宁的电脑桌面和书桌一样整洁，除了几个常用软件，剩下的文件几乎都规规矩矩地归在文件夹里。他随手打开一个名为“照片”的文件夹。里面大多是些生活照：有街边的流浪猫、餐厅里摆盘精致的甜点，还有几张医院同事的合影。夏临翻了几张，很快就在其中认出了祈桐懂。</p>
+<p>照片里的女孩穿着白大褂，圆框眼镜歪在鼻梁上，正对着镜头比剪刀手，嘴角还沾着一点奶油。</p>
+<p>他又翻看了几个文件夹，除了一些专业文献和工作资料，倒也没发现什么特别的东西。桌面右下角，一个闪烁的邮件图标引起了他的注意。夏临点开邮箱。</p>
+<p>收件箱里有不少未读邮件，大多是医院发来的工作通知，其中还夹杂着几封学术期刊的投稿邀请。他随意扫了几眼，正准备退出，忽然注意到了一封来自沈明远的邮件。</p>
+<p>邮件是今天早上发来的，标题很简单。</p>
+<p>《关于近期工作安排》</p>
+<p>夏临点开，内容不长，大意是科里已经替顾宁办妥了休假手续，C区的观察工作暂时交由其他同事负责，之前提交的数据也不必急着整理，让她安心养伤，有什么事情可以直接联系他。</p>
+<p>他把邮件看了一遍。他想起病房里那个神情严肃的中年男人，又想起了观察笔记里几次被驳回的实验申请。作为顾宁的直属上级，沈明远应该知道那次转运任务的内情吧？也许可以找个机会问问他。</p>
+<p>不过，想到自己目前的处境，夏临还是暂时打消了这个念头。毕竟自己不是真的顾宁，很多事他自己都还没弄清楚，贸然跑去追问，未免太冒失了些。</p>
+<p>他将邮件关掉，重新看向桌面。工作上的事情暂时没什么头绪，或许可以先从其他地方入手。</p>
+<p>比如，顾宁的手机。</p>
+<p>正想着，门外忽然传来了敲门声。</p>
+<p>咚咚咚。</p>
+
+    </div>
+    
+  <nav class="novel-navigation" aria-label="小说阅读导航">
+    <a rel="prev" href="/PMAT77/2026/11/14/shenyuan-game-07/"><span>← 上一章</span><small>第七章 回家</small></a>
+    <a class="novel-directory" href="/PMAT77/novels/shenyuan-game/">目录<small>深渊游戏</small></a>
+    <span></span>
+  </nav>
+
+
+  </main>
+</div>
+ <footer class="footer">
+    <small class="footer_copyright">
+      <div id="bottom-inner">
+        © 2021 Site by Paolos using
+        <a target="_blank" rel="noopener" href="http://hexo.io">hexo blog framework</a>.
+        <br>
+        <p> Theme is <a target="_blank" rel="noopener" href="https://github.com/dewjohn/hexo-theme-klise">Klise</a></p>
+      </div>
+    </small>
+  </footer>
+  
+   
+<script src="/PMAT77/js/search.js"></script>
+
+<script src="/PMAT77/js/main.js"></script>
+
+<script src="/PMAT77/js/audio.js"></script>
+ 
+
+<script>
+  // 当前页面完整 URL（去除#后部分）
+  const url = window.location.href.split("#")[0];
+</script>
+
+<script>
+  window.FPConfig = {
+    delay: 0,
+    ignoreKeywords: [],
+    maxRPS: 3,
+    hoverDelay: 50,
+  };
+
+  function initializeSearch() {
+    const searchInput = document.querySelector("#search-input") || null;
+    const searchResults = document.querySelector("#search-results") || null;
+
+    if (!searchInput) return;
+
+    // 检查SimpleJekyllSearch是否已加载
+    if (typeof SimpleJekyllSearch === "undefined") {
+      console.error("SimpleJekyllSearch library not loaded");
+      return;
+    }
+
+    try {
+      var sjs = SimpleJekyllSearch({
+        searchInput: searchInput,
+        resultsContainer: searchResults,
+        json: searchInput.dataset.searchType === 'tech'
+          ? "/PMAT77/tech-search.json"
+          : "/PMAT77/search.json",
+        templateMiddleware: function (key, value) {
+          return String(value == null ? '' : value).replace(/[&<>"']/g, function (character) {
+            return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[character];
+          });
+        },
+        noResultsText: "未找到相关文章",
+        searchResultTemplate: '<li><a href="{url}" title="标签：{tags}">{title}</a></li>',
+      });
+    } catch (error) {
+      console.error("Search initialization failed:", error);
+    }
+  }
+
+  // 主题未配置搜索脚本时，从站点根路径加载
+  function loadSearchLibrary() {
+    if (typeof SimpleJekyllSearch === "undefined") {
+      const script = document.createElement("script");
+      script.src = "/PMAT77/js/search.js";
+      script.onload = initializeSearch;
+      script.onerror = function () {
+        console.error("Failed to load search library");
+      };
+      document.head.appendChild(script);
+    } else {
+      initializeSearch();
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", loadSearchLibrary);
+</script>
+
+<script
+  defer
+  src="https://cdn.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"
+></script>
+
+  </body>
+</html>
