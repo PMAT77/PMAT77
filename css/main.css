@@ -1952,6 +1952,7 @@ body[data-theme=dark] .novel-navigation small {
   display: block;
   margin: 0 0 32px;
   padding: 10px 14px;
+  min-height: 66px;
   border: 1px solid var(--ap-line);
   border-radius: 4px;
   color: var(--ap-fg);

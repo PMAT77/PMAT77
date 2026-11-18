@@ -1,5 +1,6 @@
 (() => {
   const SPEEDS = ['0.75', '1', '1.25', '1.5', '1.75', '2'];
+  const DEFAULT_SPEED = '1.25';
   const STORAGE_KEY = 'klise-audio-speed';
   const sections = document.querySelectorAll('.post-audio');
   if (!sections.length) return;
@@ -15,9 +16,9 @@
   const readSpeed = () => {
     try {
       const saved = localStorage.getItem(STORAGE_KEY);
-      return saved && SPEEDS.includes(saved) ? saved : '1';
+      return saved && SPEEDS.includes(saved) ? saved : DEFAULT_SPEED;
     } catch {
-      return '1';
+      return DEFAULT_SPEED;
     }
   };
 
