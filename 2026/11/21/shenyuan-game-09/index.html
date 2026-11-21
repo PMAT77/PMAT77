@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    
+
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第九章 事故调查 [ Paolos ]</title>
+
+  <link rel="icon" href="/PMAT77/img/favicon.jpeg">
+
+
+    <meta name="author" content="Paolos">
+
+
+
+    <meta name="Description" content="Paolos - 个人博客">
+
+
+    <meta name="keywords" content=",blog">
+
+
+  <link rel="alternate" href="/PMAT77/atom.xml " title="Paolos" type="application/atom+xml">
+
+
+  
+    <link rel="stylesheet" href="/PMAT77/css/main.css">
+  
+
+  <meta name="generator" content="Hexo 7.3.0"></head>
+  <body data-theme="light" class="notransition">
+    <script>
+      const body = document.body;
+      const data = body.getAttribute("data-theme");
+      const initTheme = (state) => {
+        if (state === "dark") {
+          body.setAttribute("data-theme", "dark");
+        } else if (state === "light") {
+          body.removeAttribute("data-theme");
+        } else {
+          localStorage.setItem("theme", data);
+        }
+      };
+
+      initTheme(localStorage.getItem("theme"));
+
+      setTimeout(() => body.classList.remove("notransition"), 75);
+    </script>
+    <div class="navbar" role="navigation">
+    <nav class="menu">
+      <input type="checkbox" id="menu-trigger" class="menu-trigger" aria-label="展开导航" aria-controls="site-menu" aria-expanded="false" />
+      <label for="menu-trigger">
+        <span class="menu-icon">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 512 512"
+          >
+            <path
+              d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z"
+            />
+          </svg>
+        </span>
+      </label>
+      <button id="mode" type="button" aria-label="切换明暗主题" aria-pressed="false">
+        <svg
+          class="mode-sunny"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 512 512"
+        >
+          <title>LIGHT</title>
+          <line
+            x1="256"
+            y1="48"
+            x2="256"
+            y2="96"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="256"
+            y1="416"
+            x2="256"
+            y2="464"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="403.08"
+            y1="108.92"
+            x2="369.14"
+            y2="142.86"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="142.86"
+            y1="369.14"
+            x2="108.92"
+            y2="403.08"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="464"
+            y1="256"
+            x2="416"
+            y2="256"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="96"
+            y1="256"
+            x2="48"
+            y2="256"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="403.08"
+            y1="403.08"
+            x2="369.14"
+            y2="369.14"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="142.86"
+            y1="142.86"
+            x2="108.92"
+            y2="108.92"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <circle
+            cx="256"
+            cy="256"
+            r="80"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+        </svg>
+        <svg
+          class="mode-moon"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 512 512"
+        >
+          <title>DARK</title>
+          <line
+            x1="256"
+            y1="48"
+            x2="256"
+            y2="96"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="256"
+            y1="416"
+            x2="256"
+            y2="464"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="403.08"
+            y1="108.92"
+            x2="369.14"
+            y2="142.86"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="142.86"
+            y1="369.14"
+            x2="108.92"
+            y2="403.08"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="464"
+            y1="256"
+            x2="416"
+            y2="256"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="96"
+            y1="256"
+            x2="48"
+            y2="256"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="403.08"
+            y1="403.08"
+            x2="369.14"
+            y2="369.14"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="142.86"
+            y1="142.86"
+            x2="108.92"
+            y2="108.92"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <circle
+            cx="256"
+            cy="256"
+            r="80"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+        </svg>
+      </button>
+      <div class="trigger">
+        <div class="trigger-container" id="site-menu">
+          
+            
+            
+            
+            
+            <a class="menu-link " href="/PMAT77/">首页</a>
+          
+            
+            
+            
+            
+            <a class="menu-link " href="/PMAT77/essays/">随笔</a>
+          
+            
+            
+            
+            
+            <a class="menu-link active" href="/PMAT77/novels/" aria-current="page">连载小说</a>
+          
+            
+            
+            
+            
+            <a class="menu-link " href="/PMAT77/tech/">技术文章</a>
+          
+            
+            
+            
+            
+            <a class="menu-link " href="/PMAT77/projects/">项目展示</a>
+          
+        </div>
+      </div>
+    </nav>
+  </div>
+ <div class="wrapper post novel-reading ">
+  <main class="page-content" aria-label="Content">
+    <header class="header">
+      
+      <div class="tags">
+        <a
+          href="/PMAT77/tags/%E6%B7%B1%E6%B8%8A%E6%B8%B8%E6%88%8F/"
+          class="tag"
+          ># 深渊游戏</a
+        >
+      </div>
+      
+      <h1 class="header-title" itemprop="headline">第九章 事故调查</h1>
+      <div class="post-meta">
+        <time datetime="2026-11-20T16:00:00.000Z">Nov 21, 2026</time>
+        <span itemprop="author">
+          <span itemprop="name">Paolos</span>
+        </span>
+      </div>
+    </header>
+
+    
+
+<section class="post-audio" aria-label="文章朗读">
+  <audio class="post-audio__native" preload="none" controls src="/PMAT77/audio/novel/shenyuan-game-09.mp3">你的浏览器不支持音频播放。</audio>
+  <div class="post-audio__player">
+    <button type="button" class="post-audio__toggle" aria-pressed="false" aria-label="播放朗读">
+      <svg class="post-audio__icon post-audio__play" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 5v14l11-7z" /></svg>
+      <svg class="post-audio__icon post-audio__pause" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 5h4v14H6zM14 5h4v14h-4z" /></svg>
+    </button>
+    <div class="post-audio__details">
+      <div class="post-audio__meta">
+        <span class="post-audio__label">朗读</span>
+        <span class="post-audio__time"><span class="post-audio__elapsed">0:00</span><span aria-hidden="true"> / </span><span class="post-audio__total">20:52</span></span>
+      </div>
+      <input class="post-audio__track" type="range" min="0" max="0" step="0.1" value="0" disabled aria-label="播放进度" />
+    </div>
+    <label class="post-audio__speed">
+      <span class="visually-hidden">播放速度</span>
+      <select class="post-audio__speed-select">
+        <option value="0.75">0.75×</option>
+        <option value="1">1×</option>
+        <option value="1.25" selected>1.25×</option>
+        <option value="1.5">1.5×</option>
+        <option value="1.75">1.75×</option>
+        <option value="2">2×</option>
+      </select>
+    </label>
+  </div>
+</section>
+
+
+
+    
+
+    <div
+      class="page-content "
+    >
+      <p>第一卷 顾宁篇</p>
+<p>这个时间会是谁呢？</p>
+<p>难不成是祈桐懂？这才走了多久，这么快就做好饭了？</p>
+<p>夏临扶着桌沿，慢慢坐回轮椅，朝玄关挪去。到了门口，他扶住门框，小心翼翼地用没受伤的那只脚撑起身体，凑到猫眼前往外看了一眼。</p>
+<p>门外站着两个人，都穿着警服。</p>
+<p>警察？</p>
+<p>他愣了一下，重新坐回轮椅，拉开了房门。门外的年轻警员一眼认出了他，脸上顿时露出笑容。</p>
+<p>“顾医生，又见面了。”</p>
+<p>“是你啊。”</p>
+<p>“看来您还记得我。”年轻警员显得挺高兴，目光随即落到他裹着敷料的脚上，神色一下变得关切起来，“脚上的伤好点了吗？听说您出院了，医生说没事了？”</p>
+<p>“好多了，主要是得在家静养。”</p>
+<p>夏临在心里叹了口气。记得，怎么不记得，两天过去，这小子对她还真是念念不忘啊。</p>
+<p>“那就好，那就好。”年轻警员说着侧过身，让出后面那个满脸胡茬的中年男人，“这次我们来，主要是想跟您再了解一下那晚事故的情况。这位是——”</p>
+<p>“市局刑侦支队，周黎明。”中年男人接过话，亮了一下证件，还是那副沙哑的烟嗓，“顾医生，没打扰你休息吧？方便进去聊聊吗？”</p>
+<p>夏临也认出了他。那晚在救护车上，正是这个人问了自己遇袭的经过。</p>
+<p>这两人来得太过突然，但他也明白警方迟早会找上门。毕竟自己不仅是事故的亲历者，恐怕还是车上目前唯一醒着、能开口说话的随车人员。</p>
+<p>他犹豫了一秒，点点头，把轮椅往后退了退。</p>
+<p>“……请进。”</p>
+<p>两人进了门。年轻警员见他单脚撑地推轮椅费劲，赶紧上前一步扶住椅背，动作轻手轻脚地把他推进客厅，又顺手把茶几边挡路的一把木椅往旁边挪了挪，留出足够轮椅停放的空当。</p>
+<p>“您坐这儿就行，不用勉强站起来。”他低声叮嘱了一句。</p>
+<p>“谢谢。”夏临干笑两声，心说自己压根也没想站起来，“你们随便坐吧，就不给你们泡茶了。”</p>
+<p>说这话时，他不免有点心虚。实际上，他连水杯放在哪儿都不知道，这屋里的情况他还没祈桐懂熟。</p>
+<p>“没事，不用麻烦。”</p>
+<p>周黎明在客厅里扫了一眼，神色沉稳，闻言摆摆手，拉开茶几对面的椅子坐下。年轻警员也在旁边落了座。</p>
+<p>“本来应该让你多休息两天的。”周黎明从随身的公文袋里取出一本记录簿，翻开，并没有急着切入正题，而是先看了一眼夏临缠着纱布的右手，“身体恢复得怎么样？听医院说，你那天撞到了头，有些事记不太清。这几天有没有再想起什么？”</p>
+<p>“好多了。”夏临斟酌着措辞，尽量让语气听起来自然，“不过翻车之后发生的事，我还是没什么印象，怎么进的巷子也不记得了。倒是出事之前的那一段，慢慢想起了一些。”</p>
+<p>“想起一点算一点，不急。”周黎明点点头，握着笔在纸上落下一行字，“我们这几天查了事故现场，也调了医疗运输车沿途的行车轨迹。有几件事，需要跟你重新核实一下。”</p>
+<p>“您问吧。”</p>
+<p>“对。不过出发前任务是临时提前的，原本说是第二天早上走。”夏临回忆着脑海里那段模糊却清晰的画面，“后来在路上听电台说城南高速发生连环追尾，双向封路，司机才临时改走了国道。”</p>
+<p>周黎明记下，抬头看他：“翻车前最后那几分钟，车上发生了什么？”</p>
+<p>“后车厢里有一座转运舱的警示灯出了异常，本来是一闪一闪的黄灯，后来突然常亮，还响了警报，里头也有闷响。”夏临顿了顿，“我当时觉得不太对劲，就让司机前面先找地方靠边停车，我想进去检查一下。”</p>
+<p>“然后呢？”</p>
+<p>“然后车灯前就突然冒出来一个人。”夏临皱了皱眉，“站马路正中间，撑着一把黑伞。司机鸣笛急刹，可那人压根没躲。司机只能猛向右打方向盘，车就失控翻了。”</p>
+<p>他说这段话时很流畅，没有半点迟疑。周黎明微微颔首，眼神在记录簿上停了一会。</p>
+<p>“和我们目前查到的监控对得上。”周黎明说，“国道拐弯前两百米有个卡口探头，确实曾拍到过一个撑黑伞的身影往事发路段靠近。不过当晚雨下得太大，距离又远，看不清长相，目前还查不到这人是什么身份。”</p>
+<p>“深更半夜下那么大雨，撑把黑伞往国道中间站，车灯晃着都不躲？”旁边的年轻警员忍不住插了句嘴，眉头拧成一团，“这人不是有病，就是故意的吧？”</p>
+<p>周黎明斜了搭档一眼，没有接他的话茬，只把笔尖轻轻点了点纸面。</p>
+<p>“这个人的身份我们会继续调查。不过顾医生，今天过来，重点不只是交通事故。”</p>
+<p>周黎明话锋一转，客厅里的气氛顿时沉了下来。夏临咽了口唾沫，左手不自觉攥了下裤腿。</p>
+<p>周黎明合上上一页，翻到新的一页，目光平稳地落在夏临脸上：“上次在救护车上，你说自己在附近的居民巷里遭到了袭击。后来我们派人过去，确实找到了一具尸体。”</p>
+<p>夏临悄悄松了口气，还好，差点以为自己哪儿暴露了。这件事祈桐懂早就告诉过他了。</p>
+<p>“现场勘查的痕迹，还有尸体上的伤势，都和你当时描述的搏斗经过基本吻合。”周黎明顿了顿，“所以我们想再确认一下，袭击你的那个东西，究竟是什么？”</p>
+<p>夏临垂眸看了一眼自己缠着纱布的右手，想了想，如实道：“C13，一只实验体。”</p>
+<p>年轻警员倒吸了一口气。他虽然没进法医室，但在现场外围见过抬出来的尸袋，也听同事私下提过几句那玩意儿的模样，绝不是什么普通野兽。</p>
+<p>他看向坐在轮椅上的女人，神色复杂里透着几分敬佩和同情：“顾医生，你一个女同志，脚底还扎着玻璃，能一个人把那东西解决了，真是……换我遇上，估计都得腿软。”</p>
+<p>夏临嘴角动了动，没好意思搭这话。其实当时他也快吓尿了。</p>
+<p>周黎明却没有顺着这个话头往下夸，语气依旧平实无波：“除了巷子里的那具尸体，我们在侧翻的车厢里，还发现了三座金属舱。从结构和线路来看，明显是用来收容特殊对象的。”</p>
+<p>他抬起眼，直视着夏临：“而且我们赶到现场的时候，三座舱全都是空的。”</p>
+<p>夏临心里咯噔一下。</p>
+<p>果然还是绕到这上面来了。</p>
+<p>“顾医生，如果只是普通车祸，交警部门就能结案。但现在牵扯到非同寻常的实验体，车上又空了三个舱。”周黎明语速不快，“我需要确认清楚，当晚车上一共运载了几个对象？除了巷子里已经死亡的那只，另外两个是不是也具有危险性？”</p>
+<p>房间里一时安静下来。</p>
+<p>夏临往椅背里微微靠了靠，左手顺势搭在了轮椅的扶手上。</p>
+<p>他知道车厢里确实有三座金属舱，其中三号舱里装的就是被自己杀死的C13。至于另外两只，听祈桐懂之前的反应，院里显然一直没有对外公开下落，多半至今还没找到。</p>
+<p>可问题是，自己能说吗？</p>
+<p>这些事牵扯到旧城联合医疗中心背后的研究项目，他压根就不知道顾宁在这件事里究竟扮演什么角色。如果全盘托出，医院会不会立刻面临调查？顾宁本人要不要承担什么责任？</p>
+<p>更让夏临心里没底的是，沈明远来病房看过他，今早还发了邮件让他安心养伤，却从头到尾没提过一句该怎么应对警方。他是觉得顾宁本来就不清楚内幕，还是事故太突然，上面压根没来得及统一口径？</p>
+<p>而且，自己压根不是真正的顾宁。话一旦说多，警察顺藤摸瓜越问越深，万一问到什么专业细节或者项目内情，他到时候拿什么去圆呢？</p>
+<p>夏临低垂着视线，脑子里念头转得飞快，迟迟没有开口。</p>
+<p>周黎明静静看着他，也没催促，笔尖悬在纸面上方，神情里丝毫没有不耐，倒像是真在等一个刚受过创伤的病人理清思绪。</p>
+<p>反倒是年轻警员先坐不住了，轻轻碰了碰周黎明的胳膊：“周队，顾医生才刚出院，脑袋又撞过，医院里那些交接的事一时想不起来也正常。再说她自己也是受害者，咱们别逼得这么紧……”</p>
+<p>“小江。”周黎明低声喊了一句，语气依然平和，却带着不容打断的分量。</p>
+<p>年轻警员抿了抿嘴，不说话了，只朝夏临投去一个略带歉意的眼神。</p>
+<p>周黎明重新看向夏临，声音放缓了些：“顾医生，我不是把你当嫌疑人审问，也没有怀疑医院的意思。但巷子里那东西什么样，你亲眼见过。如果车上还有类似的实验体跑出来了，现在就藏在这座城市的某个角落里，那随时可能出人命。这是公共安全问题。”</p>
+<p>夏临怔了一下，心里那点戒备顿时松动了。</p>
+<p>说到底他只是个普通人，怕惹麻烦是真的，不想替顾宁招祸也是真的。可如果那辆车里跑出来的另外两只东西真像C13一样发狂伤人，他为了明哲保身装傻充愣，这种事他夏临可干不出来。</p>
+<p>短暂权衡之后，夏临抬起头。唉，不知道的事不瞎猜，知道的事实也不隐瞒，他现在也没有别的选择了。</p>
+<p>“周警官，车厢里确实有三座转运舱。”他慢慢说道，“装的都是医院的特殊研究对象。C13在三号舱里，我之前负责参与对它的医学观察。”</p>
+<p>周黎明的笔立刻动了起来。</p>
+<p>“至于另外两座舱里装的究竟是什么，我不负责那边的研究，平时也接触不到。”夏临如实摊手，“翻车之后我人昏过去了，等有意识的时候就已经在巷子里，根本没看见那两个舱里的东西去了哪儿。”</p>
+<p>“也就是说，”周黎明抬起眼，眼神锐利了几分，“车上还有两个未知的实验体，目前下落不明？”</p>
+<p>“从我的记忆来看，是的。”</p>
+<p>“按你的专业判断，它们有没有可能和C13一样，具有极强的攻击性？”</p>
+<p>夏临沉默了两秒，摇摇头：“我没法给你们肯定的答复。我既不清楚另外两个对象的状态，也不能保证它们不会伤人。说实话，就连C13那天晚上为什么会突然表现出那么强的攻击性，我现在也解释不清楚。”</p>
+<p>他停顿了一下，补充道：“这次转运的具体清单和实验对象的完整资料，应该都在医疗中心那边。你们直接向医院核实，肯定比问我清楚得多。”</p>
+<p>周黎明盯着他的脸，仿佛要从他脸上看出什么破绽。</p>
+<p>夏临被他看得有些发毛，刚才自己回答应该得还算谨慎，没有胡乱编造，也没有刻意替院方遮掩。在周黎明看来，这应该很符合一个脑部受过震荡、又顾忌单位保密规定的医生该有的反应。</p>
+<p>“行，医疗中心那边我们已经在对接了。”周黎明在记录簿上画了个圈，神色凝重了几分。</p>
+<p>至少现在，警方从亲历者口中确认了一个最坏的可能——那场事故里逃脱的危险对象，恐怕不止巷子里已经死掉的那一只。</p>
+<p>问询临近尾声，周黎明又翻回前面一页，问了最后一个问题。</p>
+<p>“关于那个撑黑伞的男人，我再跟你确认一次。除了他站在国道中央没躲开之外，你对他的身高、体型或者穿着，还有没有别的印象？以前见过这个人吗？”</p>
+<p>夏临脑海里再次浮现出雨幕中那道突兀的身影。</p>
+<p>车灯惨白的光柱劈开暴雨，那人撑着一把纯黑色的雨伞，孤零零立在路中央，面对即将失控的运输车，似乎连头都没抬一下。</p>
+<p>“没见过。”夏临摇了摇头，犹豫着还是把心里的感觉说了出来，“当时雨太大，雨刷器都快刮不过来了，我只看清他个子挺高，撑着把黑伞。不过……那个人出现得实在太突然了，怎么看都不像是深更半夜碰巧路过的。”</p>
+<p>周黎明听完，脸上没什么波澜，只是把记录簿合上，装回公文袋里。</p>
+<p>“情况我们基本掌握了。”他站起身，从口袋里摸出一张印着联系方式的警民联系卡，放到茶几上，“后续调查如果还需要核实细节，可能还会再麻烦你。这几天你要是又想起了什么——哪怕是不起眼的小事，麻烦第一时间联系我。”</p>
+<p>“好的，没问题。”</p>
+<p>年轻警员也跟着起身，看着夏临准备去推轮椅，连忙摆手：“您别动，千万别送了！这几天好好养伤，门窗记得锁好。要是楼下或者附近发现什么不对劲的人或事，也可以直接打我电话。”</p>
+<p>他顺手借周黎明的笔，在联系卡背面匆匆写下自己的手机号，冲夏临笑了笑。</p>
+<p>“那我们先走了，顾医生保重。”</p>
+<p>房门轻轻合上，客厅里重新恢复了安静。</p>
+<p>夏临没急着回书房，独自坐在轮椅上，盯着茶几上那张白色的联系卡发了会儿呆。</p>
+<p>这顾宁他娘的也真够倒霉的，这么多巧合貌似全都凑在同一个晚上了。他捏了捏眉心，只觉得脑子里一团乱麻。</p>
+<p>不过好在警方已经正式介入了。与其在这儿胡思乱想，倒不如继续去看看顾宁留下的东西，说不定还能再翻出点别的线索。</p>
+
+    </div>
+    
+  <nav class="novel-navigation" aria-label="小说阅读导航">
+    <a rel="prev" href="/PMAT77/2026/11/18/shenyuan-game-08/"><span>← 上一章</span><small>第八章 观察笔记</small></a>
+    <a class="novel-directory" href="/PMAT77/novels/shenyuan-game/">目录<small>深渊游戏</small></a>
+    <span></span>
+  </nav>
+
+
+  </main>
+</div>
+ <footer class="footer">
+    <small class="footer_copyright">
+      <div id="bottom-inner">
+        © 2021 Site by Paolos using
+        <a target="_blank" rel="noopener" href="http://hexo.io">hexo blog framework</a>.
+        <br>
+        <p> Theme is <a target="_blank" rel="noopener" href="https://github.com/dewjohn/hexo-theme-klise">Klise</a></p>
+      </div>
+    </small>
+  </footer>
+  
+   
+<script src="/PMAT77/js/search.js"></script>
+
+<script src="/PMAT77/js/main.js"></script>
+
+<script src="/PMAT77/js/audio.js"></script>
+ 
+
+<script>
+  // 当前页面完整 URL（去除#后部分）
+  const url = window.location.href.split("#")[0];
+</script>
+
+<script>
+  window.FPConfig = {
+    delay: 0,
+    ignoreKeywords: [],
+    maxRPS: 3,
+    hoverDelay: 50,
+  };
+
+  function initializeSearch() {
+    const searchInput = document.querySelector("#search-input") || null;
+    const searchResults = document.querySelector("#search-results") || null;
+
+    if (!searchInput) return;
+
+    // 检查SimpleJekyllSearch是否已加载
+    if (typeof SimpleJekyllSearch === "undefined") {
+      console.error("SimpleJekyllSearch library not loaded");
+      return;
+    }
+
+    try {
+      var sjs = SimpleJekyllSearch({
+        searchInput: searchInput,
+        resultsContainer: searchResults,
+        json: searchInput.dataset.searchType === 'tech'
+          ? "/PMAT77/tech-search.json"
+          : "/PMAT77/search.json",
+        templateMiddleware: function (key, value) {
+          return String(value == null ? '' : value).replace(/[&<>"']/g, function (character) {
+            return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[character];
+          });
+        },
+        noResultsText: "未找到相关文章",
+        searchResultTemplate: '<li><a href="{url}" title="标签：{tags}">{title}</a></li>',
+      });
+    } catch (error) {
+      console.error("Search initialization failed:", error);
+    }
+  }
+
+  // 主题未配置搜索脚本时，从站点根路径加载
+  function loadSearchLibrary() {
+    if (typeof SimpleJekyllSearch === "undefined") {
+      const script = document.createElement("script");
+      script.src = "/PMAT77/js/search.js";
+      script.onload = initializeSearch;
+      script.onerror = function () {
+        console.error("Failed to load search library");
+      };
+      document.head.appendChild(script);
+    } else {
+      initializeSearch();
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", loadSearchLibrary);
+</script>
+
+<script
+  defer
+  src="https://cdn.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"
+></script>
+
+  </body>
+</html>
